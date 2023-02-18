@@ -1,2 +1,2 @@
 # Studazon 
-## A book selling platform for student
+<img src="./readme-docs/studazon-green.png" alt="studazon-green.png">
