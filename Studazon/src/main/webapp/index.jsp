@@ -5,7 +5,7 @@
     <title>Studazon</title>
 </head>
 <body>
-<h1 style="color: darkolivegreen">Welcome to Studazon!</h1>
+<h1 style="color: rebeccapurple">Welcome to Studazon!</h1>
 <h3>A book selling platform</h3>
 <br/>
 <a href="loginUser">Login</a><br>
