@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <%@include file="header.jsp" %>
     <title>Studazon</title>
 </head>
 <body>

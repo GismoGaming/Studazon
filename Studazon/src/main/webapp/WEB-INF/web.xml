@@ -5,15 +5,15 @@
          version="5.0">
     <servlet>
         <servlet-name>studazonPage</servlet-name>
-        <servlet-class>com.studazon.studazon.studazonPage</servlet-class>
+        <servlet-class>com.studazon.portal.studazonPage</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>loginUser</servlet-name>
-        <servlet-class>com.studazon.studazon.loginUser</servlet-class>
+        <servlet-class>com.studazon.portal.loginUser</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>registerUser</servlet-name>
-        <servlet-class>com.studazon.studazon.registerUser</servlet-class>
+        <servlet-class>com.studazon.portal.registerUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>studazonPage</servlet-name>

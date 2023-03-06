@@ -1,4 +1,4 @@
-package com.studazon.studazon;
+package com.studazon.portal;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

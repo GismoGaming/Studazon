@@ -1,4 +1,4 @@
-package com.studazon.studazon;
+package com.studazon.portal;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,11 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "studazonPage", value = "/studazonPage")
-public class studazonPage extends HttpServlet {
+@WebServlet(name = "loginUser", value = "/loginUser")
+public class loginUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/studazon/index.jsp");
+        response.sendRedirect("login.jsp");
     }
 
     @Override
