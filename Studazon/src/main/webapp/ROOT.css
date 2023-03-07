@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+
+:root {
+
+    /* Colors */
+    --primary-base: #2691d9;
+    --primary-base-hover: #40a9ff;
+
+    --primary-darkblue: #005899;
+    --primary-parroblue: #0d86ab;
+
+    --secondary-base: #366D67;
+    --secondary-base-hover: #58B4AA;
+
+    --primary-red: #E45F64;
+    --primary-red-hover: #D06993;
+
+    --primary-darkred: darkred;
+    --primary-lightred: #ffdddd;
+
+    --primary-green: #279F47;
+    --primary-green-hover: #38C190;
+    --primary-lightgreen: #d6f0e7;
+
+
+    --primary-grey: #3C4856;
+    --primary-lightgrey: #A0ACBD;
+
+    --primary-brown: #875300;
+    --primary-lightbrown: #E19E20;
+
+    --primary-background: #f5f5f5;
+
+    /* Fonts  */
+    --font-base: "Poppins", sans-serif;
+    --font-size-button: 20px;
+    --font-size-header: 40px;
+    --font-size-title: 25px;
+}
+

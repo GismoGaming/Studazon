@@ -3,12 +3,17 @@
 <html>
 <head>
     <%@include file="header.jsp" %>
-    <title>Studazon</title>
+    <link rel="stylesheet" href="./assets/css/SHARED.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
 </head>
 <body>
-<h1>Login</h1>
-<br/>
-<a href="studazonPage">Home</a><br>
-<a href="registerUser">Not Registered? Create an account!</a>
+<h1 style="color: rebeccapurple; margin-top: 1%">Login</h1>
+<div class="main">
+    <div class="btn-holder">
+        <button><a href="studazonPage">Home</a></button>
+        <button><a href="registerUser">Not Registered? Create an account!</a></button>
+    </div>
+</div>
+<%@include file="footer.jsp" %>
 </body>
 </html>
