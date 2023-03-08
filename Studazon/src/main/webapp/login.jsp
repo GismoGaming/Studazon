@@ -10,7 +10,7 @@
 <h1 style="color: rebeccapurple; margin-top: 1%">Login</h1>
 <div class="main">
     <div class="btn-holder">
-        <button><a href="studazonPage">Home</a></button>
+        <button><a href="studazonPage">Go To Home</a></button>
         <button><a href="registerUser">Not Registered? Create an account!</a></button>
     </div>
 </div>
