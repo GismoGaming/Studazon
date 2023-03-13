@@ -1,51 +1,50 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../images/book_blur.jpeg");
-    background-size: cover;
-    height: 100vh;
     overflow: hidden;
     text-align: center;
     align-content: center;
     align-items: center;
+    font: var(--font);
 }
 
 button {
-    box-sizing: border-box;
-    appearance: none;
-    background-color: transparent;
-    border: 2px solid var(--primary-red);
-    border-radius: 0.6em;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    align-self: center;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1;
-    margin: 20px;
-    padding: 1.2em 2.8em;
-    text-decoration: none;
+    background: var(--sg-gold);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+
+    border:none;
+
+    margin: 10px;
+    font-style: normal;
+    font-weight: 30;
+    font-size: var(--font-size-button);
+    line-height: 32px;
+    /* or 89% */
+
+    align-items: center;
     text-align: center;
-    text-transform: uppercase;
+
+    color: #FFFFFF;
 }
 
 button:hover, :focus {
-    outline: 0;
-    background-color: orange;
-    transition: ease-in 0.5s;
+    background-color: var(--sg-gold-clicked);
 }
 
 a:hover, a:focus {
-    outline: 0;
+    color: snow;
+}
+
+a
+{
     color: white;
-    font-weight: bold;
+    padding-right:10px;
+    padding-left:10px;
 }
 
 .main {
@@ -53,5 +52,6 @@ a:hover, a:focus {
 }
 
 .btn-holder {
-    display: inline-flex;
+    display:flex;
+    flex-direction: column;
 }

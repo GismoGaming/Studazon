@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
-<h1 style="color: rebeccapurple; margin-top: 1%">Welcome to Studazon!</h1>
-<h3 style="margin-bottom: 3%">A book selling platform</h3>
+<img src="assets/banner/Studazon%20-%20Banner%20Style.png" alt="Studazon Logo">
+</div>
 <div class="main">
     <div class="btn-holder">
         <button><a href="loginUser">Login</a></button>
