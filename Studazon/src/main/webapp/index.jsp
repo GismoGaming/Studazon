@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
-<img src="assets/banner/Studazon%20-%20Banner%20Style.png" alt="Studazon Logo">
+<div class="banner">
+    <img src="assets/banner/Studazon%20-%20Banner%20Style.png" alt="Studazon Logo">
 </div>
 <div class="main">
     <div class="btn-holder">
