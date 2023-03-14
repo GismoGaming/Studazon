@@ -8,15 +8,25 @@
     <title>Studazon</title>
 </head>
 <body>
-<h1 style="color: rebeccapurple; margin-top: 1%">Register</h1>
-<div class="main">
-    <div class="btn-holder">
-        <button><a href="studazonPage">Home</a></button>
-        <button><a href="loginUser">Already have an account? Log in</a></button>
-    </div>
-</div>
+<div class="rectangle"></div>
+<img src="./assets/icon/Studazon%20-%20Icon%20Style.png" class="icon" alt="Studazon logo">
+<h1>Register</h1>
 
+<label class="name" for="fullName">Full Name</label>
+<input type="text" id="fullName">
+
+<label class="email" for="email">Email</label>
+<input type="email" id="email">
+
+<label class="password" for="password">Password</label>
+<input type="password" id="password">
+
+<label class="confirmPassword" for="confirmPassword">Confirm Password</label>
+<input type="password" id="confirmPassword">
+
+<button id="register">Register</button>
+<label class="login">Have an account?<a href="loginUser"> Log in!</a></label>
+<button><a href="studazonPage">Home</a></button>
 <%@include file="footer.jsp" %>
-
 </body>
 </html>
