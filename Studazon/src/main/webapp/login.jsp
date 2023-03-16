@@ -11,7 +11,7 @@
 <div class="rectangle"></div>
 <img src="./assets/icon/Studazon%20-%20Icon%20Style.svg" class="icon" alt="Studazon logo">
 <h1>Login</h1>
-<form action="loginUser" method="post">
+<form action="login" method="post">
     <label class="email" for="email">Email</label>
     <input type="email" id="email" name="email">
 
@@ -20,8 +20,8 @@
 
     <button id="login" type="submit">Login</button>
 </form>
-<label class="register">Need an account?<a href="registerUser"> Sign up!</a></label>
-<button><a href="studazonPage">Go To Home</a></button>
+<label class="register">Need an account?<a href="register"> Sign up!</a></label>
+<button><a href="home">Go To Home</a></button>
 <%@include file="footer.jsp" %>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.studazon.portal;
+package com.studazon.portal.entity;
 
 public class User {
     private int id;
@@ -38,6 +38,9 @@ public class User {
         this.password = password;
     }
 
-
-
+    public User(String fullname, String email, String password) {
+        this.fullname = fullname;
+        this.email = email;
+        this.password = password;
+    }
 }

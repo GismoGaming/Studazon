@@ -12,8 +12,8 @@
 </div>
 <div class="main">
     <div class="btn-holder">
-        <button><a href="loginUser">Login</a></button>
-        <button><a href="registerUser">Register</a></button>
+        <button><a href="login">Login</a></button>
+        <button><a href="register">Register</a></button>
     </div>
 </div>
 

@@ -1,5 +1,7 @@
-package com.studazon.portal;
+package com.studazon.portal.api;
 
+import com.studazon.portal.dao.UserDAO;
+import com.studazon.portal.entity.User;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,15 +13,17 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "loginUser", value = "/loginUser")
-public class loginUser extends HttpServlet {
+@WebServlet(name = "login", value = "/login")
+public class login extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    public loginUser() {
+
+    public login() {
         super();
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("login.jsp");
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     @Override
@@ -36,13 +40,13 @@ public class loginUser extends HttpServlet {
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-                destPage = "home.jsp";
+                destPage = "/dashboard";
             } else {
                 String message = "Invalid email/password";
                 request.setAttribute("message", message);
             }
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/dashboard");
             dispatcher.forward(request, response);
 
         } catch (SQLException | ClassNotFoundException ex) {

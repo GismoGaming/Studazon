@@ -1,21 +1,21 @@
-package com.studazon.portal;
+package com.studazon.portal.api;
 
-import jakarta.servlet.RequestDispatcher;
+import com.studazon.portal.dao.UserDAO;
+import com.studazon.portal.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "registerUser", value = "/registerUser")
-public class registerUser extends HttpServlet {
+@WebServlet(name = "register", value = "/register")
+public class register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("register.jsp");
+        request.getRequestDispatcher("register.jsp").forward(request, response);
     }
 
     @Override
@@ -23,13 +23,12 @@ public class registerUser extends HttpServlet {
         String fullName = request.getParameter("fullName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        System.out.println(fullName);
-        UserDAO userDao = new UserDAO();
+        User user = new User(fullName, email, password);
 
         try {
-            userDao.registerUser(fullName, email, password);
-
-        } catch (SQLException | ClassNotFoundException ex) {
+            UserDAO.registerUser(user);
+            response.sendRedirect("login.jsp");
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new ServletException(ex);
         }
     }

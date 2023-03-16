@@ -1,4 +1,4 @@
-package com.studazon.portal;
+package com.studazon.portal.api;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,11 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "studazonPage", value = "/studazonPage")
-public class studazonPage extends HttpServlet {
+@WebServlet(name = "dashboard", value = "/dashboard")
+public class dashboard extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/studazon/index.jsp");
+        request.getRequestDispatcher("jsp/dashboard.jsp").forward(request, response);
     }
 
     @Override
