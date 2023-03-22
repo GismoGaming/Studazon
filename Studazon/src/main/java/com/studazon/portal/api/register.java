@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 @WebServlet(name = "register", value = "/register")
@@ -28,7 +29,7 @@ public class register extends HttpServlet {
         try {
             UserDAO.registerUser(user);
             response.sendRedirect("login.jsp");
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException | NoSuchAlgorithmException | SQLException ex) {
             throw new ServletException(ex);
         }
     }

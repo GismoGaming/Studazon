@@ -12,7 +12,7 @@ import java.io.IOException;
 public class dashboard extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("jsp/dashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("dash.jsp").forward(request, response);
     }
 
     @Override

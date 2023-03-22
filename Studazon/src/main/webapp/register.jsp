@@ -26,7 +26,6 @@
     <button id="register" type="submit">Register</button>
 </form>
 <label class="login">Have an account?<a href="login"> Log in!</a></label>
-<button><a href="home">Home</a></button>
 <%@include file="footer.jsp" %>
 </body>
 </html>

@@ -1,8 +1,10 @@
 package com.studazon.portal.dao;
 
 import com.studazon.portal.entity.User;
+import com.studazon.portal.util.PasswordUtil;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.Properties;
 
@@ -25,16 +27,17 @@ public class UserDAO {
         return currentCon;
     }
 
-    public static void registerUser(User user) throws SQLException, ClassNotFoundException {
+    public static void registerUser(User user) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException {
 
         Connection currentCon = getConnection();
 
         String sql = "INSERT INTO user (fullName, email, password) VALUES (?,?,?)";
         PreparedStatement statement = currentCon.prepareStatement(sql);
 
+
         statement.setString(1, user.getFullname());
         statement.setString(2, user.getEmail());
-        statement.setString(3, user.getPassword());
+        statement.setString(3, PasswordUtil.hashedPassword(user.getPassword()));
 
 
         int result = statement.executeUpdate();
@@ -64,4 +67,6 @@ public class UserDAO {
 
         return user;
     }
+
+
 }

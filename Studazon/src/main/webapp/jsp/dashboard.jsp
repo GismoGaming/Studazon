@@ -1,11 +1,11 @@
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
     <%@include file="../header.jsp" %>
     <%--    <link href="<c:url value="../assets/css/SHARED.css"/>" rel="stylesheet">--%>
-    <%--    <link href="<c:url value="../assets/css/index.css"/>" rel="stylesheet">--%>
+    <link rel="stylesheet" href="../assets/css/SHARED.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
 </head>
 <body>
 <div class="banner">
@@ -13,7 +13,9 @@
 </div>
 <div class="main">
     <div class="btn-holder">
-        <button><a href="login">Login</a></button>
+        <form action="login" method="get">
+            <button type="submit">Login</button>
+        </form>
         <button><a href="register">Register</a></button>
     </div>
 </div>
