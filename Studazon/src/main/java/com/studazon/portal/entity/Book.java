@@ -1,17 +1,39 @@
 package com.studazon.portal.entity;
 
 
-import java.util.Date;
-
 public class Book {
-    protected String title;
-    protected String author;
-    protected String ISBN;
-    protected String condition;
-    protected String comments;
-    protected Date created;
-    protected Date deleted;
+    private int id;
+    private int userId;
+    private String title;
+    private String author;
+    private String ISBN;
+    private String book_condition;
+    private String imageUrl;
+    private String comments;
 
+
+    public Book(int id, int userId, String title, String author, String ISBN, String book_condition, String imageUrl, String comments) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.book_condition = book_condition;
+        this.imageUrl = imageUrl;
+        this.comments = comments;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
 
     public String getTitle() {
         return title;
@@ -37,12 +59,20 @@ public class Book {
         this.ISBN = ISBN;
     }
 
-    public String getCondition() {
-        return condition;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public void setCondition(String condition) {
-        this.condition = condition;
+    public String getBook_condition() {
+        return book_condition;
+    }
+
+    public void setBook_condition(String book_condition) {
+        this.book_condition = book_condition;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public String getComments() {
@@ -53,19 +83,7 @@ public class Book {
         this.comments = comments;
     }
 
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Date deleted) {
-        this.deleted = deleted;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
