@@ -1,10 +1,11 @@
 package com.studazon.portal.dao;
 
 import com.studazon.portal.entity.User;
-import com.studazon.portal.util.PasswordUtil;
+import org.apache.commons.codec.digest.Crypt;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.sql.*;
 import java.util.Properties;
 
@@ -27,7 +28,7 @@ public class UserDAO {
         return currentCon;
     }
 
-    public static void registerUser(User user) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException {
+    public static void registerUser(User user) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException, NoSuchProviderException {
 
         Connection currentCon = getConnection();
 
@@ -37,8 +38,7 @@ public class UserDAO {
 
         statement.setString(1, user.getFullname());
         statement.setString(2, user.getEmail());
-        statement.setString(3, PasswordUtil.hashedPassword(user.getPassword()));
-
+        statement.setString(3, Crypt.crypt(user.getPassword(), "$1$SZ"));
 
         int result = statement.executeUpdate();
 

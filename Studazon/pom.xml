@@ -56,6 +56,17 @@
             <artifactId>scalajs-java-securerandom_sjs1_2.13</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.14</version>
+        </dependency>
+        <dependency>
+            <groupId>jbcrypt</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.3</version>
+        </dependency>
+
 
     </dependencies>
     <build>

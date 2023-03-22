@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.sql.SQLException;
 
 @WebServlet(name = "register", value = "/register")
@@ -31,6 +32,8 @@ public class register extends HttpServlet {
             response.sendRedirect("login.jsp");
         } catch (ClassNotFoundException | NoSuchAlgorithmException | SQLException ex) {
             throw new ServletException(ex);
+        } catch (NoSuchProviderException e) {
+            throw new RuntimeException(e);
         }
     }
 }
