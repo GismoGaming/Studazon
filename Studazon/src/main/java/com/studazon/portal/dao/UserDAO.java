@@ -71,5 +71,31 @@ public class UserDAO {
         return user;
     }
 
+    public static User findByEmail(String email) throws SQLException {
+        User user = null;
 
+        Connection currentCon = getConnection();
+        String sql = "SELECT * FROM user WHERE email = ?";
+        PreparedStatement statement = currentCon.prepareStatement(sql);
+        statement.setString(1, email);
+
+
+        try (ResultSet rs = statement.executeQuery()) {
+            if (rs.next()) {
+                user = new User();
+                String name = rs.getString("fullName");
+                String emailFound = rs.getString("email");
+                String password = rs.getString("password");
+
+                // create a new User object using the retrieved values
+                user.setEmail(emailFound);
+                user.setPassword(password);
+                user.setFullname(name);
+            }
+        } catch (SQLException exception) {
+            System.err.println("UserDAO (findByEmail): ERROR: " + exception);
+        }
+        currentCon.close();
+        return user;
+    }
 }

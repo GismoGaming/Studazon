@@ -1,6 +1,9 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
+<% if (session.getAttribute("user") == null) {
+    response.sendRedirect("index");
+}%>
 <head>
     <%@include file="header.jsp" %>
     <link rel="stylesheet" href="./assets/css/SHARED.css">
@@ -9,7 +12,8 @@
 <body>
 <header>
     <nav>
-        <a href="#" class="logo">Studazon Dashboard</a>
+        <a href="#" class="logo">Hello <%=session.getAttribute("user")%>
+        </a>
         <form>
             <input type="text" placeholder="Search books...">
             <button type="submit">Search</button>
@@ -18,6 +22,7 @@
             <li><a href="#">My Listings</a></li>
             <li><a href="#">Messages</a></li>
             <li><a href="#">Profile</a></li>
+            <li><a href="logout">Logout</a></li>
         </ul>
     </nav>
 </header>

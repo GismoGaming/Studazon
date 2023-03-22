@@ -1,7 +1,7 @@
 <%@include file="header.jsp" %>
 <style>
     * {
-        font-family: var(--font-base);
+        font-family: var(--font);
     }
 
     footer {
@@ -33,7 +33,7 @@
     .border {
         width: 100px;
         height: 4px;
-        background: var(--primary-brown);
+        background: var(--sg-bronze-clicked);
     }
 
     @media screen and (max-width: 960px) {
@@ -43,7 +43,7 @@
     }
 
     a {
-        color: var(--primary-grey);
+        color: var(--sg-black);
         text-decoration: none;
     }
 
@@ -54,7 +54,7 @@
 <footer>
     <div class="footer-container">
         <div class="left-col">
-            <a href="${pageContext.request.contextPath}/home"><img
+            <a href="${pageContext.request.contextPath}/index"><img
                     src="./assets/icon/Studazon%20-%20Icon%20Style.svg" alt="heir_atlas_logo" class="logo"></a>
             <p class="rights-text">&copy 2023 <b>Studazon</b> All Rights Reserved.</p>
         </div>

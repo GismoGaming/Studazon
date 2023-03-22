@@ -2,13 +2,13 @@ package com.studazon.portal.api;
 
 import com.studazon.portal.dao.UserDAO;
 import com.studazon.portal.entity.User;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.apache.commons.codec.digest.Crypt;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -33,24 +33,37 @@ public class login extends HttpServlet {
 
         UserDAO userDao = new UserDAO();
 
-        try {
-            User user = userDao.checkLogin(email, password);
-            String destPage = "login.jsp";
+        // find the user by email
+        //   - if not found, send error back to login
+        // check the password
+        //   - if not correct, send error back to login
+        // save user to session
+        // redirect to dash
 
-            if (user != null) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
-                destPage = "/dashboard";
-            } else {
-                String message = "Invalid email/password";
-                request.setAttribute("message", message);
+        // TODO find the the user
+        try {
+            User userRecord = UserDAO.findByEmail(email);
+            if (null == userRecord) {
+                request.setAttribute("status", "failed");
+                request.setAttribute("message", "User not found");
+                request.getRequestDispatcher("login.jsp").include(request, response);
+                return;
+            }
+            if (!Crypt.crypt(password, "$1$SZ").equals(userRecord.getPassword())) {
+                request.setAttribute("status", "failed");
+                request.setAttribute("message", "Incorrect Password");
+                request.getRequestDispatcher("login.jsp").include(request, response);
+                return;
             }
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/dashboard");
-            dispatcher.forward(request, response);
+            System.out.println("Login success");
+            HttpSession session = request.getSession();
+            session.setAttribute("user", userRecord.getFullname());
+            response.sendRedirect("dash");
 
-        } catch (SQLException | ClassNotFoundException ex) {
-            throw new ServletException(ex);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
+
     }
 }

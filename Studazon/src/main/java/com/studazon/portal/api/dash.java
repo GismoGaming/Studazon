@@ -8,11 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "home", value = "/home")
-public class home extends HttpServlet {
+@WebServlet(name = "dash", value = "/dash")
+public class dash extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/studazon/index.jsp");
+        request.getRequestDispatcher("dash.jsp").forward(request, response);
     }
 
     @Override
