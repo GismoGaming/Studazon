@@ -62,6 +62,9 @@ public class UserDAO {
             user.setFullname(result.getString("fullname"));
             user.setEmail(email);
         }
+//        IF true = password matches
+//        IF false = password did not match
+//        if(Crypt.crypt(password,"$1$SZ").equals(user.getPassword()));
 
         currentCon.close();
 
