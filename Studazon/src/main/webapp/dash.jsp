@@ -4,20 +4,32 @@
 <head>
     <%@include file="header.jsp" %>
     <link rel="stylesheet" href="./assets/css/SHARED.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/dash.css">
 </head>
 <body>
-<div class="banner">
-    <img src="assets/banner/Studazon%20-%20Banner%20Style.png" alt="Studazon Logo">
-</div>
-<div class="main">
-    <div class="btn-holder">
-        <%=session.getAttribute("user")%>
-        <button><a href="login">Login</a></button>
-        <button><a href="register">Register</a></button>
-    </div>
-</div>
+<header>
+    <nav>
+        <a href="#" class="logo">Studazon Dashboard</a>
+        <form>
+            <input type="text" placeholder="Search books...">
+            <button type="submit">Search</button>
+        </form>
+        <ul>
+            <li><a href="#">My Listings</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </nav>
+</header>
 
-<%@include file="footer.jsp" %>
+<main>
+    <h1>Welcome to Book Dashboard</h1>
+    <p>Explore and discover books that interest you.</p>
+</main>
+
+<footer>
+    <p>&copy; 2023 Studazon Dashboard</p>
+</footer>
+
 </body>
 </html>
