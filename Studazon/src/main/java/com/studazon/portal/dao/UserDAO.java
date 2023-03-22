@@ -32,7 +32,7 @@ public class UserDAO {
 
         Connection currentCon = getConnection();
 
-        String sql = "INSERT INTO user (fullName, email, password) VALUES (?,?,?)";
+        String sql = "INSERT INTO users (fullname, email, password) VALUES (?,?,?)";
         PreparedStatement statement = currentCon.prepareStatement(sql);
 
 
@@ -45,37 +45,11 @@ public class UserDAO {
         currentCon.close();
     }
 
-    public User checkLogin(String email, String password) throws SQLException, ClassNotFoundException {
-        Connection currentCon = getConnection();
-
-        String sql = "SELECT * FROM user WHERE email = ? and password = ?";
-        PreparedStatement statement = currentCon.prepareStatement(sql);
-        statement.setString(1, email);
-        statement.setString(2, password);
-
-        ResultSet result = statement.executeQuery();
-
-        User user = null;
-
-        if (result.next()) {
-//            user = new User();
-            user.setFullname(result.getString("fullname"));
-            user.setEmail(email);
-        }
-//        IF true = password matches
-//        IF false = password did not match
-//        if(Crypt.crypt(password,"$1$SZ").equals(user.getPassword()));
-
-        currentCon.close();
-
-        return user;
-    }
-
     public static User findByEmail(String email) throws SQLException {
         User user = null;
 
         Connection currentCon = getConnection();
-        String sql = "SELECT * FROM user WHERE email = ?";
+        String sql = "SELECT * FROM users WHERE email = ?";
         PreparedStatement statement = currentCon.prepareStatement(sql);
         statement.setString(1, email);
 
@@ -83,7 +57,7 @@ public class UserDAO {
         try (ResultSet rs = statement.executeQuery()) {
             if (rs.next()) {
                 user = new User();
-                String name = rs.getString("fullName");
+                String name = rs.getString("fullname");
                 String emailFound = rs.getString("email");
                 String password = rs.getString("password");
 

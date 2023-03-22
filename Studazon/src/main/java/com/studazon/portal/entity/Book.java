@@ -8,8 +8,10 @@ public class Book {
     protected String author;
     protected String ISBN;
     protected String condition;
+    protected String comments;
     protected Date created;
     protected Date deleted;
+
 
     public String getTitle() {
         return title;
@@ -41,6 +43,14 @@ public class Book {
 
     public void setCondition(String condition) {
         this.condition = condition;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 
     public Date getCreated() {

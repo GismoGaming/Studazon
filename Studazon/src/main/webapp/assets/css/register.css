@@ -95,9 +95,11 @@ input{
 
     background: #FFFFFF;
     border: 1px solid #000000;
+    font-weight: bold;
+    padding: 1%;
 }
 
-#fullName{
+#fullname {
     position: absolute;
     left: 627px;
     top: 270px;

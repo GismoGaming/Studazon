@@ -15,12 +15,6 @@ import java.sql.SQLException;
 
 @WebServlet(name = "login", value = "/login")
 public class login extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    public login() {
-        super();
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -33,14 +27,6 @@ public class login extends HttpServlet {
 
         UserDAO userDao = new UserDAO();
 
-        // find the user by email
-        //   - if not found, send error back to login
-        // check the password
-        //   - if not correct, send error back to login
-        // save user to session
-        // redirect to dash
-
-        // TODO find the the user
         try {
             User userRecord = UserDAO.findByEmail(email);
             if (null == userRecord) {
@@ -55,8 +41,6 @@ public class login extends HttpServlet {
                 request.getRequestDispatcher("login.jsp").include(request, response);
                 return;
             }
-
-            System.out.println("Login success");
             HttpSession session = request.getSession();
             session.setAttribute("user", userRecord.getFullname());
             response.sendRedirect("dash");
@@ -64,6 +48,5 @@ public class login extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

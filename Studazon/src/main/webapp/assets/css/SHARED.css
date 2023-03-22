@@ -33,16 +33,22 @@ button {
     color: #FFFFFF;
 }
 
-button:hover, :focus {
+button:hover {
     background-color: var(--sg-gold-clicked);
+    text-decoration: none;
+}
+
+:focus {
+    border: var(--sg-bronze);
+    color: #555555;
 }
 
 /*Remove */
-a
-{
+a {
     color: white;
-    padding-right:10px;
-    padding-left:10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
 }
 
 .main {
