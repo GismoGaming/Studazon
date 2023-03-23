@@ -8,33 +8,29 @@
     <%@include file="header.jsp" %>
     <link rel="stylesheet" href="./assets/css/SHARED.css">
     <link rel="stylesheet" href="assets/css/dash.css">
+    <title>Studazon - Dashboard</title>
 </head>
 <body>
-<header>
-    <nav>
-        <a href="#" class="logo">Hello <%=session.getAttribute("user")%>
-        </a>
-        <form>
-            <input type="text" placeholder="Search books...">
-            <button type="submit">Search</button>
+<div class="background_circle">
+    <form action="TEMPacount">
+        <input type="image" class="img_account" src="./assets/Interactivity/account_circle.png" alt = "Account Icon">
+    </form>
+    <div>
+        <form action="TEMPnotifications">
+            <input type="image" class="img_notification" src="./assets/Interactivity/Notification%20Popup.png" alt = "Notification Icon">
         </form>
-        <ul>
-            <li><a href="#">My Listings</a></li>
-            <li><a href="#">Messages</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="logout">Logout</a></li>
-        </ul>
-    </nav>
-</header>
+    </div>
+</div>
+<div class="background_square">
 
-<main>
-    <h1>Welcome to Book Dashboard</h1>
-    <p>Explore and discover books that interest you.</p>
-</main>
-
-<footer>
-    <p>&copy; 2023 Studazon Dashboard</p>
-</footer>
+    <img class="logo" src="./assets/banner/Studazon%20-%20Banner%20Style.svg" alt = "Studazon Logo">
+    <div class="search-container">
+        <form action="TEMPsearch">
+            <input type="image" src = "./assets/Interactivity/Search%20Icon.png" alt = "Search Icon">
+            <input class="input-field" type="text" placeholder="Search for a book...">
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
