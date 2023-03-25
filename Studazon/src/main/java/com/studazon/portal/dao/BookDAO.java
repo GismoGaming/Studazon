@@ -62,22 +62,29 @@ public class BookDAO {
         return null;
     }
 
-    public void insertBook(Book book) {
-        try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(INSERT_BOOK_SQL)) {
+    public static void insertBook(Book book) {
+        try {
+            System.out.println("insertBook requested");
+            Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(INSERT_BOOK_SQL);
+
+            System.out.println(book.toString());
             stmt.setInt(1, book.getUserId());
             stmt.setString(2, book.getTitle());
             stmt.setString(3, book.getAuthor());
             stmt.setString(4, book.getISBN());
             stmt.setString(5, book.getBook_condition());
             stmt.setString(6, book.getImageUrl());
+            stmt.setString(7, book.getComments());
             stmt.executeUpdate();
+            conn.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void updateBook(Book book) {
+    public static void updateBook(Book book) {
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(UPDATE_BOOK_SQL)) {
             stmt.setInt(1, book.getUserId());
@@ -93,7 +100,7 @@ public class BookDAO {
         }
     }
 
-    public void deleteBook(int id) {
+    public static void deleteBook(int id) {
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(DELETE_BOOK_SQL)) {
             stmt.setInt(1, id);

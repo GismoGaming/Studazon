@@ -23,6 +23,29 @@ public class Book {
         this.comments = comments;
     }
 
+    public Book(int userId, String title, String author, String ISBN, String book_condition, String imageUrl, String comments) {
+        this.userId = userId;
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.book_condition = book_condition;
+        this.imageUrl = imageUrl;
+        this.comments = comments;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "userId=" + userId +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", book_condition='" + book_condition + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", comments='" + comments + '\'' +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

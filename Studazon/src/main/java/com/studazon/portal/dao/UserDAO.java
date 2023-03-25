@@ -57,11 +57,13 @@ public class UserDAO {
         try (ResultSet rs = statement.executeQuery()) {
             if (rs.next()) {
                 user = new User();
+                String id = rs.getString("id");
                 String name = rs.getString("fullname");
                 String emailFound = rs.getString("email");
                 String password = rs.getString("password");
 
                 // create a new User object using the retrieved values
+                user.setId(Integer.parseInt(id));
                 user.setEmail(emailFound);
                 user.setPassword(password);
                 user.setFullname(name);

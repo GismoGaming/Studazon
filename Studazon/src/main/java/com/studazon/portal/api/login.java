@@ -25,8 +25,6 @@ public class login extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        UserDAO userDao = new UserDAO();
-
         try {
             User userRecord = UserDAO.findByEmail(email);
             if (null == userRecord) {
@@ -42,7 +40,8 @@ public class login extends HttpServlet {
                 return;
             }
             HttpSession session = request.getSession();
-            session.setAttribute("user", userRecord.getFullname());
+            session.setAttribute("user", userRecord);
+            System.out.println("Login (POST) : " + userRecord.getId());
             response.sendRedirect("dash");
 
         } catch (SQLException e) {
