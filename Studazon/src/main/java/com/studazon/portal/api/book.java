@@ -11,10 +11,11 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @WebServlet(name = "book", value = "/book")
 @MultipartConfig(
-        fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+        fileSizeThreshold = 1024 * 1024, // 1 MB
         maxFileSize = 1024 * 1024 * 10,      // 10 MB
         maxRequestSize = 1024 * 1024 * 100   // 100 MB
 )
@@ -71,7 +72,10 @@ public class book extends HttpServlet {
         }
     }
 
-    private void listBooks(HttpServletRequest request, HttpServletResponse response) {
+    private void listBooks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Book> books = BookDAO.getAllBooks();
+        request.setAttribute("books", books);
+        request.getRequestDispatcher("dash.jsp").forward(request, response);
     }
 
     private void viewBook(HttpServletRequest request, HttpServletResponse response) {
@@ -88,20 +92,22 @@ public class book extends HttpServlet {
         String isbn = request.getParameter("isbn");
         String book_condition = request.getParameter("condition");
         String comments = request.getParameter("comments");
-        InputStream inputStream = null;
-        Part filePart = request.getPart("imageUrl");
+        // read the image file as a byte array
+        Part imagePart = request.getPart("imageUrl");
+        InputStream imageStream = imagePart.getInputStream();
+        byte[] imageData = imageStream.readAllBytes();
 
-        System.out.println("Book (createBook): Title: " + title + " Author: " + author + " ISBN: " + isbn + " BookCondition: " + book_condition + " Comments: " + comments + " imageUrl: " + filePart);
-        if (null == title || null == author || null == isbn || null == book_condition || null == comments || null == filePart) {
+        System.out.println("Book (createBook): Title: " + title + " Author: " + author + " ISBN: " + isbn + " BookCondition: " + book_condition + " Comments: " + comments);
+        if (null == title || null == author || null == isbn || null == book_condition || null == comments) {
             request.setAttribute("status", "failed");
             request.setAttribute("message", "Invalid (Blank) Request");
             request.getRequestDispatcher("dash.jsp").include(request, response);
             return;
         }
-        inputStream = filePart.getInputStream();
+
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        Book book = new Book(user.getId(), title, author, isbn, book_condition, inputStream.toString(), comments);
+        Book book = new Book(user.getId(), title, author, isbn, book_condition, imageData, comments);
         System.out.println(book.toString());
         BookDAO.insertBook(book);
         request.setAttribute("status", "success");

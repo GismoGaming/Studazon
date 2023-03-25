@@ -2,6 +2,7 @@ package com.studazon.portal.dao;
 
 import com.studazon.portal.entity.Book;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -32,39 +33,29 @@ public class BookDAO {
         return currentCon;
     }
 
-    public List<Book> getAllBooks() {
+    public static List<Book> getAllBooks() {
         List<Book> books = new ArrayList<>();
-        try (Connection conn = getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(SELECT_ALL_BOOKS_SQL)) {
+        try {
+            System.out.println("BookDAO (getAllBooks): service requested");
+            Connection conn = getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(SELECT_ALL_BOOKS_SQL);
             while (rs.next()) {
-                Book book = new Book(rs.getInt("id"), rs.getInt("user_id"), rs.getString("title"), rs.getString("author"), rs.getString("isbn"), rs.getString("book_condition"), rs.getString("image_url"), rs.getString("comments"));
+                Book book = new Book(rs.getInt("id"), rs.getInt("user_id"), rs.getString("title"), rs.getString("author"), rs.getString("isbn"), rs.getString("book_condition"), rs.getBytes("image_url"), rs.getString("comments"));
+                System.out.println(book.getTitle());
                 books.add(book);
             }
+            conn.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+        System.out.println("BookDAO (getAllBooks): service complete");
         return books;
-    }
-
-    public Book getBookById(int id) {
-        try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(SELECT_BOOK_BY_ID_SQL)) {
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                Book book = new Book(rs.getInt("id"), rs.getInt("user_id"), rs.getString("title"), rs.getString("author"), rs.getString("isbn"), rs.getString("book_condition"), rs.getString("image_url"), rs.getString("comments"));
-                return book;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     public static void insertBook(Book book) {
         try {
-            System.out.println("insertBook requested");
+            System.out.println("BookDAO (insertBook): service requested");
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(INSERT_BOOK_SQL);
 
@@ -74,14 +65,14 @@ public class BookDAO {
             stmt.setString(3, book.getAuthor());
             stmt.setString(4, book.getISBN());
             stmt.setString(5, book.getBook_condition());
-            stmt.setString(6, book.getImageUrl());
+            stmt.setBlob(6, new ByteArrayInputStream(book.getImageUrl()));
             stmt.setString(7, book.getComments());
             stmt.executeUpdate();
             conn.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println("BookDAO (insertBook): service complete");
     }
 
     public static void updateBook(Book book) {
@@ -92,12 +83,27 @@ public class BookDAO {
             stmt.setString(3, book.getAuthor());
             stmt.setString(4, book.getISBN());
             stmt.setString(5, book.getBook_condition());
-            stmt.setString(6, book.getImageUrl());
+            stmt.setBlob(6, new ByteArrayInputStream(book.getImageUrl()));
             stmt.setInt(7, book.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public Book getBookById(int id) {
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(SELECT_BOOK_BY_ID_SQL)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                Book book = new Book(rs.getInt("id"), rs.getInt("user_id"), rs.getString("title"), rs.getString("author"), rs.getString("isbn"), rs.getString("book_condition"), rs.getBytes("image_url"), rs.getString("comments"));
+                return book;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static void deleteBook(int id) {

@@ -1,6 +1,8 @@
 package com.studazon.portal.entity;
 
 
+import java.util.Arrays;
+
 public class Book {
     private int id;
     private int userId;
@@ -8,11 +10,11 @@ public class Book {
     private String author;
     private String ISBN;
     private String book_condition;
-    private String imageUrl;
+    private byte[] imageUrl;
     private String comments;
 
 
-    public Book(int id, int userId, String title, String author, String ISBN, String book_condition, String imageUrl, String comments) {
+    public Book(int id, int userId, String title, String author, String ISBN, String book_condition, byte[] imageUrl, String comments) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -23,7 +25,7 @@ public class Book {
         this.comments = comments;
     }
 
-    public Book(int userId, String title, String author, String ISBN, String book_condition, String imageUrl, String comments) {
+    public Book(int userId, String title, String author, String ISBN, String book_condition, byte[] imageUrl, String comments) {
         this.userId = userId;
         this.title = title;
         this.author = author;
@@ -41,7 +43,7 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", ISBN='" + ISBN + '\'' +
                 ", book_condition='" + book_condition + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
+                ", imageUrl='" + Arrays.toString(imageUrl) + '\'' +
                 ", comments='" + comments + '\'' +
                 '}';
     }
@@ -94,7 +96,7 @@ public class Book {
         this.book_condition = book_condition;
     }
 
-    public String getImageUrl() {
+    public byte[] getImageUrl() {
         return imageUrl;
     }
 
@@ -106,7 +108,7 @@ public class Book {
         this.comments = comments;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public void setImageUrl(byte[] imageUrl) {
         this.imageUrl = imageUrl;
     }
 }
