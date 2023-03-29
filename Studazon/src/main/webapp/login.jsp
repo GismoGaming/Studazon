@@ -15,8 +15,7 @@
 <%-- Body--%>
 <body>
 <div class="rectangle">
-    <button><a href="index">Go To Home</a></button>
-    <img src="./assets/icon/Studazon%20-%20Icon%20Style.svg" class="icon" alt="Studazon logo">
+    <a href="index"><img src="./assets/icon/Studazon%20-%20Icon%20Style.svg" class="icon" alt="Studazon logo"></a>
     <h1>Login</h1>
 
     <form action="login" method="post">
