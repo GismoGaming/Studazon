@@ -14,19 +14,22 @@
 
 <%-- Body--%>
 <body>
-<div class="rectangle"></div>
-<img src="./assets/icon/Studazon%20-%20Icon%20Style.svg" class="icon" alt="Studazon logo">
-<h1>Login</h1>
-<form action="login" method="post">
-    <label class="email" for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+<div class="rectangle">
+    <img src="./assets/icon/Studazon%20-%20Icon%20Style.svg" class="icon" alt="Studazon logo">
+    <h1>Login</h1>
 
-    <label class="password" for="password">Password</label>
-    <input type="password" id="password" name="password" required>
+    <form action="login" method="post">
+        <label class="email" for="email">Email</label>
+        <input type="email" id="email" name="email" required>
 
-    <button id="login" type="submit">Login</button>
-</form>
-<label class="register">Need an account?<a href="register"> Sign up!</a></label>
+        <label class="password" for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button id="login" type="submit">Login</button>
+    </form>
+
+    <label class="register">Need an account?<a href="register"> Sign up!</a></label>
+</div>
 <button><a href="index">Go To Home</a></button>
 <%@include file="footer.jsp" %>
 </body>
