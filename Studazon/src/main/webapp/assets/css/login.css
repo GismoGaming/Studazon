@@ -1,14 +1,12 @@
 body
 {
-    background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%);
+    background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
     color: #000000;
-    flex-wrap: wrap;
 }
 
 h1
 {
-    height: 32px;
-
+    height: auto;
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 700;
@@ -16,6 +14,7 @@ h1
     line-height: 32px;
 
     text-align: center;
+    margin: 0;
 
     color: #000000;
 }
@@ -24,22 +23,27 @@ img
 {
     height: 101px;
     width: 80px;
-    margin-top: 3vh;
 }
 
 .rectangle
 {
-    height: 500px;
+    position: absolute;
+    height: auto;
     width: 450px;
     background: #FFFFFF;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 24px;
 
-    margin-top: 10vh;
     margin-right: auto;
     margin-left: auto;
 
     align-content: center;
+    padding: 1vh;
+
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 label
@@ -80,8 +84,31 @@ input
     display: block;
 }
 
+button
+{
+    display: block;
+}
+
+#login
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#signup
+{
+    color: black;
+    padding: 0;
+}
+
 @media only screen and (min-width: 500px)
 {
+    body
+    {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
     h1
     {
         width: 100%;

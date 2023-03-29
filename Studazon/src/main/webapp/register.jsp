@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="rectangle">
+    <button><a href="index">Go To Home</a></button>
     <img src="./assets/icon/Studazon%20-%20Icon%20Style.png" class="icon" alt="Studazon logo">
     <h1>Register</h1>
 
@@ -26,9 +27,7 @@
         <input type="password" id="confirmPassword" required/>
         <button id="register" type="submit">Register</button>
     </form>
-    <label class="login">Have an account?<a href="login">Log in!</a></label>
+    <label class="login">Have an account?<a href="login" id="loginLink"> Log in!</a></label>
 </div>
-<button><a href="index">Go To Home</a></button>
-<%@include file="footer.jsp" %>
 </body>
 </html>

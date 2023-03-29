@@ -15,6 +15,7 @@
 <%-- Body--%>
 <body>
 <div class="rectangle">
+    <button><a href="index">Go To Home</a></button>
     <img src="./assets/icon/Studazon%20-%20Icon%20Style.svg" class="icon" alt="Studazon logo">
     <h1>Login</h1>
 
@@ -28,10 +29,8 @@
         <button id="login" type="submit">Login</button>
     </form>
 
-    <label class="register">Need an account?<a href="register"> Sign up!</a></label>
+    <label class="register">Need an account?<a href="register" id="signup"> Sign up!</a></label>
 </div>
-<button><a href="index">Go To Home</a></button>
-<%@include file="footer.jsp" %>
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="./assets/js/alert.js"></script>
