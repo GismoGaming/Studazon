@@ -1,17 +1,6 @@
 body {
     background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
 }
-
-.background_square {
-    background: #FFFFFF;
-    border-radius: 24px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 20px;
-    width: 90%;
-    height : 90vh;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
 .background_circle {
     position: absolute;
     top: 10px;
@@ -45,10 +34,10 @@ body {
 
 .btn_createListing
 {
-    position: absolute;
+    left: 5px;
+    display:block;
+    position: relative;
 
-    top: 10px;
-    right: 10px;
     width: 50px;
     height: 50px;
 
@@ -87,13 +76,7 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 70px;
-    padding-right: 70px;
-    background-color: white;
-
-    border-top-left-radius:   24px;
-    border-top-right-radius:   24px;
-
-    border-bottom:2px solid #868686;
+    padding-right: 5px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -109,6 +92,8 @@ body {
     height: 70vh;
     clip-path: inset(0 0 0 0);
     overflow-y:scroll;
+    margin-left: 50px;
+    margin-right: 5px
 }
 
 /* Float two columns side by side */
@@ -120,7 +105,7 @@ body {
 
 /* Remove extra left and right margins, due to padding */
 .listingCard-row {
-    margin: 0 10px;
+    margin: 0px 10px;
 }
 
 /* Clear floats after the columns */
@@ -143,7 +128,7 @@ body {
 .listingCard {
     display: block;
     background: rgb(251, 251, 251);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 5px;
     border-radius: 24px;
     cursor:pointer;
