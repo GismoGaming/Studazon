@@ -1,191 +1,169 @@
 body {
-    background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%);
-    background-attachment: fixed;
+    background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
 }
 
-@media only screen and (min-width: 400px) {
-    .background_square {
-        background: #FFFFFF;
-        border-radius: 24px;
-        margin-right: auto;
-        margin-left: auto;
+.background_square {
+    background: #FFFFFF;
+    border-radius: 24px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    width: 90%;
+    height : 90vh;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.background_circle {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    z-index: 1000 !important;
+    background: #ffffff;
 
-        padding-top: 20px;
-
-        width: 50%;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
-        overflow: visible;
-    }
-
-    .background_circle {
-        position: relative;
-        top: 2rem;
-        z-index: 1000 !important;
-        background: #ffffff;
-
-        margin-right: auto;
-        margin-left: auto;
-
-        margin-top: 17vh;
-        width: 5rem;
-        height: 5rem;
-        border-radius: 100%;
-
-        align-items: center;
-        text-align: center;
-    }
+    max-height:50px;
+    max-width: 50px;
 
 
-    .img_notification {
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 100%;
 
-        width: 32px;
-        height: 32px;
-        left: 50px;
-        top: -10px;
-        position: absolute;
-    }
+    align-items: center;
+    text-align: center;
 
-    .search-container {
-        align-self: center;
-        align-items: center;
-        padding: 20px;
-        width: 50vw;
-    }
-
-    .search-container form {
-        color: #555;
-        display: flex;
-        border: 1px solid black;
-        border-radius: 50px;
-        padding: 20px 5px;
-    }
-
-    .search-container input[type="text"] {
-        border: none;
-        font-size: 24px;
-        width: 100%;
-        background: transparent;
-    }
-
-    .search-container input[type="image"] {
-        border: none;
-        width: 40px;
-        height: 40px;
-    }
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.logo {
-    max-width: 400px;
-    width: 40vw;
+
+.img_notification {
+
+    width: 32px;
+    height: 32px;
+    left: 30px;
+    top: -10px;
+    position: absolute;
 }
 
+.btn_createListing
+{
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.search-container form {
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: #555;
+    display: flex;
+    border-radius: 20px;
+    padding: 5px 5px;
+}
+
+.search-container input[type="text"] {
+    border: none;
+    font-size: 24px;
+    width: 100%;
+    background: transparent;
+}
+
+.search-container input[type="image"] {
+    border: none;
+    width: 40px;
+    height: 40px;
+}
 
 .search-container :focus-visible {
     outline: none;
 }
 
-
-@media only screen and (max-width: 399px) {
-    .background_square {
-        background: #FFFFFF;
-        border-radius: 24px;
-
-        margin-right: auto;
-        margin-left: auto;
-
-        width: 50%;
-        padding-top: 20px;
-
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
-        overflow: visible;
-    }
-
-    .background_circle {
-        position: relative;
-        top: 1em;
-
-        background: #ffffff;
-        z-index: 1000 !important;
-        margin-right: auto;
-        margin-left: auto;
-
-        margin-top: 17vh;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 100%;
-
-        align-items: center;
-        text-align: center;
-    }
-
-    .img_notification {
-        position: absolute;
-
-        left: 30px;
-        top: -10px;
-
-        width: 32px;
-        height: 32px;
-    }
-}
 .search-container {
     align-self: center;
     align-items: center;
-    padding: 10px;
-    width: 100%;
-}
-@media only screen and (min-width: 200px) and (max-width: 399px) {
-    .search-container form {
-        color: #555;
-        display: flex;
-        border: 1px solid black;
-        border-radius: 20px;
-        padding: 5px;
-    }
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    background-color: white;
 
-    .search-container input[type="text"] {
-        border: none;
-        font-size: 10px;
-        width: 100%;
-        background: transparent;
-    }
+    border-top-left-radius:   24px;
+    border-top-right-radius:   24px;
 
-    .search-container input[type="image"] {
-        border: none;
-        width: 20px;
-        height: 20px;
-    }
-
-}
-
-@media only screen and (max-width: 199px) {
-    .search-container form {
-        color: #555;
-        display: flex;
-        border: 1px solid black;
-        border-radius: 20px;
-        padding: 5px;
-    }
-
-    .search-container input[type="text"] {
-        border: none;
-        font-size: 10px;
-        width: 100%;
-        background: transparent;
-    }
-
-    .search-container input[type="image"] {
-        border: none;
-        width: 0;
-        height: 0;
-    }
-
+    border-bottom:2px solid #868686;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .img_account {
     padding: 10%;
     width: 100%;
     height: 100%;
+}
+
+/* Start listing */
+.listingBG {
+    margin-top: 10px;
+    height: 70vh;
+    clip-path: inset(0 0 0 0);
+    overflow-y:scroll;
+}
+
+/* Float two columns side by side */
+.listingCard-column {
+    float: left;
+    width: 50%;
+    padding: 10px 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.listingCard-row {
+    margin: 0 10px;
+}
+
+/* Clear floats after the columns */
+.listingCard-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .listingCard-column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* Style the counter cards */
+.listingCard {
+    display: block;
+    background: rgb(251, 251, 251);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 5px;
+    border-radius: 24px;
+    cursor:pointer;
+}
+
+.listing-picturePriceCond_priceCond
+{
+    vertical-align: middle;
+    display: inline-block;
+}
+.listing-picturePriceCond_priceCond span
+{
+    display: block;
+}
+.listing-picturePriceCond img
+{
+    vertical-align: middle;
+    width: 100vh;
+    height: 100vh;
+    object-fit: scale-down;
+    max-width: 150px;
+    max-height: 150px;
 }
