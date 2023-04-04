@@ -44,25 +44,31 @@
             <!-- Repeating code for card -->
             <c:forEach var="book" items="${books}">
             <div class="listingCard-column">
-                <div class="listingCard" onclick= "location.href = 'TEMPbookURL';">
-
-                    <div class="listing-picturePriceCond">
-                        <img src="data:image/jpg;base64,${Base64.getEncoder().encodeToString(book.imageUrl)}"
-                             alt="${book.title}">
-                        <div class="listing-picturePriceCond_priceCond">
-                            <span>TEMPbookPrice</span>
-                            <span>${book.book_condition}</span>
-                        </div>
+                <div class="listingCard" onclick="openModal()">
+                    <div class="listing-priceCond">
+                        <div class="listing-price">book.price</div>
+                        <div class="listing-cond">${book.book_condition}</div>
                     </div>
-                    <p>${book.title}</p>
-                    <p><i>${book.author}</i></p>
-                    <p><i>${book.ISBN}</i></p>
+                    <img class="listing-picture" src="data:image/jpg;base64,${Base64.getEncoder().encodeToString(book.imageUrl)}" alt="${book.title}">
+                    <p class = "listing-text"><b>${book.title}</b></p>
+                    <p class = "listing-text"><i>${book.author}</i></p>
                 </div>
             </div>
             </c:forEach>
             <!-- End Repeated -->
         </div>
     </div>
+<!-- Start modal popup -->
+<div id="modalPopup" class="modal_bg">
+    <!-- Modal content -->
+    <div class="modal_content">
+        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png">
+    </div>
+    <!-- End modal popup -->
+
+    <!-- <%@include file="footer.jsp" %> -->
+    <script src="./assets/js/modalPopup.js"></script>
+    <script src="./assets/js/card-conditionChanger.js"></script>
 <!-- <%@include file="footer.jsp" %> -->
 </body>
 </html>
