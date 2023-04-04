@@ -5,7 +5,7 @@
     <%@include file="header.jsp" %>
     <link rel="stylesheet" href="./assets/css/SHARED.css">
     <link rel="stylesheet" href="./assets/css/register.css">
-    <title>Studazon</title>
+    <title>Studazon - Register</title>
 </head>
 <body>
 <div class="rectangle">
