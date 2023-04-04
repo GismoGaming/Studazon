@@ -60,7 +60,7 @@
 <div id="modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png">
+        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png" alt="Close Modal">
     </div>
 </div>
     <!-- End modal popup -->
