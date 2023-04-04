@@ -15,9 +15,10 @@
 </head>
 <body>
 <div class="search-container">
-    <form action="search-Book">
+    <form action="dash">
         <input type="image" src="./assets/Interactivity/Search%20Icon.png" alt="Search Icon">
-        <input class="input-field" type="text" placeholder="Search for a book...">
+        <input class="input-field" type="text" placeholder="Search for a book..." name="searchQuery"
+               <% if(request.getParameter("searchQuery")!=null) { %>value="<%=request.getParameter("searchQuery")%>"<% } %>>
     </form>
 </div>
 <div class="background_circle">
@@ -43,7 +44,7 @@
             <div class="listingCard-column">
                 <div class="listingCard" onclick="openModal()">
                     <div class="listing-priceCond">
-                        <div class="listing-price">book.price</div>
+                        <div class="listing-price">${book.price}</div>
                         <div class="listing-cond">${book.book_condition}</div>
                     </div>
                     <img class="listing-picture" src="data:image/jpg;base64,${Base64.getEncoder().encodeToString(book.imageUrl)}" alt="${book.title}">
@@ -59,7 +60,7 @@
 <div id="modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png">
+        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png" alt="Close Modal">
     </div>
 </div>
     <!-- End modal popup -->
