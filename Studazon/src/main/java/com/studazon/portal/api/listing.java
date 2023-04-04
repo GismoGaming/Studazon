@@ -2,6 +2,7 @@ package com.studazon.portal.api;
 
 import com.studazon.portal.dao.BookDAO;
 import com.studazon.portal.entity.Book;
+import com.studazon.portal.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,7 +16,8 @@ import java.util.List;
 public class listing extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Book> books = BookDAO.getAllBooks();
+        User user = (User) request.getSession().getAttribute("user");
+        List<Book> books = BookDAO.getAllBooks(user.getId());
         request.setAttribute("books", books);
         request.getRequestDispatcher("listing.jsp").forward(request, response);
     }

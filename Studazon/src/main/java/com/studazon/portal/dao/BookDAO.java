@@ -12,7 +12,7 @@ import java.util.Properties;
 public class BookDAO {
     protected static Properties props;
     private static final String SELECT_ALL_BOOKS_SQL = "SELECT * FROM books";
-    private static final String SELECT_ALL_USER_BOOKS_SQL = "SELECT * FROM books";
+    private static final String SELECT_ALL_USER_BOOKS_SQL = "SELECT * FROM books WHERE user_id = ?";
     private static final String SELECT_BOOK_BY_ID_SQL = "SELECT * FROM books WHERE id = ?";
     private static final String INSERT_BOOK_SQL = "INSERT INTO books (user_id, title, author, isbn, book_condition, image_url,comments,price) VALUES (?, ?, ?, ?, ?, ?,?,?)";
     private static final String UPDATE_BOOK_SQL = "UPDATE books SET user_id = ?, title = ?, author = ?, isbn = ?, book_condition = ?, image_url = ?, comments = ?, price = ? WHERE id = ?";
@@ -76,6 +76,28 @@ public class BookDAO {
         System.out.println("BookDAO (getAllBooks w. search): service complete");
         return books;
     }
+
+    public static List<Book> getAllBooks(int userId) {
+        List<Book> books = new ArrayList<>();
+        try {
+            System.out.println("BookDAO (getAllBooks): service requested");
+            Connection conn = getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(SELECT_ALL_USER_BOOKS_SQL);
+            pstmt.setInt(1, userId);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Book book = new Book(rs.getInt("id"), rs.getInt("user_id"), rs.getString("title"), rs.getString("author"), rs.getString("isbn"), rs.getString("book_condition"), rs.getBytes("image_url"), rs.getString("comments"), rs.getDouble("price"));
+                System.out.println(book.getTitle());
+                books.add(book);
+            }
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("BookDAO (getAllBooks): service complete");
+        return books;
+    }
+
     public static void insertBook(Book book) {
         try {
             System.out.println("BookDAO (insertBook): service requested");
