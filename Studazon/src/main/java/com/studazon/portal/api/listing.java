@@ -2,6 +2,7 @@ package com.studazon.portal.api;
 
 import com.studazon.portal.dao.BookDAO;
 import com.studazon.portal.entity.Book;
+import com.studazon.portal.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,22 +12,18 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "dash", value = "/dash")
-public class dash extends HttpServlet {
+@WebServlet(name = "listing", value = "/listing")
+public class listing extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String searchQuery = request.getParameter("searchQuery");
-        List<Book> books;
-        if (searchQuery == null || searchQuery.equals("")) {
-            books = BookDAO.getAllBooks();
-        } else {
-            books = BookDAO.getAllBooks(searchQuery);
-        }
+        User user = (User) request.getSession().getAttribute("user");
+        List<Book> books = BookDAO.getAllBooks(user.getId());
         request.setAttribute("books", books);
-        request.getRequestDispatcher("dash.jsp").include(request, response);
+        request.getRequestDispatcher("listing.jsp").forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }

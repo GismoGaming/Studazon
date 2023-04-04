@@ -12,6 +12,7 @@ import java.util.Properties;
 public class UserDAO {
 
     protected static Properties props;
+    private static final String UPDATE_USER_SQL = "UPDATE users SET fullname=?,email=?,password=? WHERE id=?";
 
     protected static Connection getConnection() {
         props = new Properties();
@@ -73,5 +74,21 @@ public class UserDAO {
         }
         currentCon.close();
         return user;
+    }
+
+    public static void updateUser(User user) throws SQLException {
+
+        Connection currentCon = getConnection();
+
+        PreparedStatement statement = currentCon.prepareStatement(UPDATE_USER_SQL);
+
+        statement.setString(1, user.getFullname());
+        statement.setString(2, user.getEmail());
+        statement.setString(3, Crypt.crypt(user.getPassword(), "$1$SZ"));
+        statement.setInt(4, user.getId());
+
+        statement.executeUpdate();
+
+        currentCon.close();
     }
 }

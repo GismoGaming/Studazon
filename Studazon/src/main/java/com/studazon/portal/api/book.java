@@ -92,12 +92,14 @@ public class book extends HttpServlet {
         String isbn = request.getParameter("isbn");
         String book_condition = request.getParameter("condition");
         String comments = request.getParameter("comments");
+        String price = request.getParameter("price");
+
         // read the image file as a byte array
         Part imagePart = request.getPart("imageUrl");
         InputStream imageStream = imagePart.getInputStream();
         byte[] imageData = imageStream.readAllBytes();
 
-        System.out.println("Book (createBook): Title: " + title + " Author: " + author + " ISBN: " + isbn + " BookCondition: " + book_condition + " Comments: " + comments);
+        System.out.println("Book (createBook): Title: " + title + " Author: " + author + " ISBN: " + isbn + " BookCondition: " + book_condition + " Comments: " + comments + "Price: " + price);
         if (null == title || null == author || null == isbn || null == book_condition || null == comments) {
             request.setAttribute("status", "failed");
             request.setAttribute("message", "Invalid (Blank) Request");
@@ -107,8 +109,7 @@ public class book extends HttpServlet {
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        Book book = new Book(user.getId(), title, author, isbn, book_condition, imageData, comments);
-        System.out.println(book.toString());
+        Book book = new Book(user.getId(), title, author, isbn, book_condition, imageData, comments, Double.parseDouble(price));
         BookDAO.insertBook(book);
         request.setAttribute("status", "success");
         request.setAttribute("message", title + " is added to listings");

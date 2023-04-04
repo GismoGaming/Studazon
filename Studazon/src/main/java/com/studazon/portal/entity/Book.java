@@ -12,9 +12,10 @@ public class Book {
     private String book_condition;
     private byte[] imageUrl;
     private String comments;
+    private double price;
 
 
-    public Book(int id, int userId, String title, String author, String ISBN, String book_condition, byte[] imageUrl, String comments) {
+    public Book(int id, int userId, String title, String author, String ISBN, String book_condition, byte[] imageUrl, String comments, double price) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -23,9 +24,10 @@ public class Book {
         this.book_condition = book_condition;
         this.imageUrl = imageUrl;
         this.comments = comments;
+        this.price = price;
     }
 
-    public Book(int userId, String title, String author, String ISBN, String book_condition, byte[] imageUrl, String comments) {
+    public Book(int userId, String title, String author, String ISBN, String book_condition, byte[] imageUrl, String comments, double price) {
         this.userId = userId;
         this.title = title;
         this.author = author;
@@ -33,6 +35,7 @@ public class Book {
         this.book_condition = book_condition;
         this.imageUrl = imageUrl;
         this.comments = comments;
+        this.price = price;
     }
 
     @Override
@@ -45,6 +48,7 @@ public class Book {
                 ", book_condition='" + book_condition + '\'' +
                 ", imageUrl='" + Arrays.toString(imageUrl) + '\'' +
                 ", comments='" + comments + '\'' +
+                ", price='" + price + '\'' +
                 '}';
     }
 
@@ -110,5 +114,13 @@ public class Book {
 
     public void setImageUrl(byte[] imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

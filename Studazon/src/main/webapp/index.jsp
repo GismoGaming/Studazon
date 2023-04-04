@@ -3,6 +3,7 @@
 <html>
 <head>
     <%@include file="header.jsp" %>
+    <title>Studazon - For Students</title>
     <link rel="stylesheet" href="./assets/css/SHARED.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
@@ -12,8 +13,8 @@
 </div>
 <div class="main">
     <div class="btn-holder">
-        <button><a href="login">Login</a></button>
-        <button><a href="register">Register</a></button>
+        <button><a href="login" style="text-decoration: none">Login</a></button>
+        <button><a href="register" style="text-decoration: none">Register</a></button>
     </div>
 </div>
 
