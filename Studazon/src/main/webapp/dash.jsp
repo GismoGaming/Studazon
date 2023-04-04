@@ -25,13 +25,13 @@
                    alt="Notification Icon">
         </form>
     </div>
-
 </div>
 
 <div class="search-container">
-    <form action="listing">
+    <form action="dash">
         <input type="image" src="./assets/Interactivity/Search%20Icon.png" alt="Search Icon">
-        <input class="input-field" type="text" placeholder="Search for a book...">
+        <input class="input-field" type="text" placeholder="Search for a book..." name="searchQuery"
+               value="<%request.getParameter("searchQuery");%>">
     </form>
 </div>
 
@@ -44,13 +44,13 @@
         <!-- Repeating code for card -->
         <c:forEach var="book" items="${books}">
             <div class="listingCard-column">
-                <div class="listingCard" onclick= "location.href = 'TEMPbookURL';">
+                <div class="listingCard" onclick="location.href = 'TEMPbookURL';">
 
                     <div class="listing-picturePriceCond">
                         <img src="data:image/jpg;base64,${Base64.getEncoder().encodeToString(book.imageUrl)}"
                              alt="${book.title}">
                         <div class="listing-picturePriceCond_priceCond">
-                            <span>TEMPbookPrice</span>
+                            <span>${book.price}</span>
                             <span>${book.book_condition}</span>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     <p><i>${book.ISBN}</i></p>
                 </div>
             </div>
-            </c:forEach>
+        </c:forEach>
             <!-- End Repeated -->
         </div>
     </div>

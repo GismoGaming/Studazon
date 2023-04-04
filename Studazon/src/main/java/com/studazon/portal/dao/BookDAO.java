@@ -54,6 +54,30 @@ public class BookDAO {
         return books;
     }
 
+    public static List<Book> getAllBooks(String search) {
+        List<Book> books = new ArrayList<>();
+        try {
+            System.out.println("BookDAO (getAllBooks w. search): service requested");
+            Connection conn = getConnection();
+            String sql = SELECT_ALL_BOOKS_SQL;
+            if (search != null && !search.isEmpty()) {
+                sql += " WHERE title LIKE '%" + search + "%' OR author LIKE '%" + search + "%' OR isbn LIKE '%" + search + "%'";
+            }
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Book book = new Book(rs.getInt("id"), rs.getInt("user_id"), rs.getString("title"), rs.getString("author"), rs.getString("isbn"), rs.getString("book_condition"), rs.getBytes("image_url"), rs.getString("comments"), rs.getDouble("price"));
+                System.out.println(book.getTitle());
+                books.add(book);
+            }
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("BookDAO (getAllBooks w. search): service complete");
+        return books;
+    }
+
     public static void insertBook(Book book) {
         try {
             System.out.println("BookDAO (insertBook): service requested");

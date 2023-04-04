@@ -15,7 +15,13 @@ import java.util.List;
 public class dash extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Book> books = BookDAO.getAllBooks();
+        String searchQuery = request.getParameter("searchQuery");
+        List<Book> books = null;
+        if (searchQuery == null || searchQuery.equals("") || searchQuery.equals(" ")) {
+            books = BookDAO.getAllBooks();
+        } else {
+            books = BookDAO.getAllBooks(searchQuery);
+        }
         request.setAttribute("books", books);
         request.getRequestDispatcher("dash.jsp").forward(request, response);
     }
