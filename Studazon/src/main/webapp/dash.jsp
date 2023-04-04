@@ -14,6 +14,12 @@
     <title>Studazon - Dashboard</title>
 </head>
 <body>
+<div class="search-container">
+    <form action="search-Book">
+        <input type="image" src="./assets/Interactivity/Search%20Icon.png" alt="Search Icon">
+        <input class="input-field" type="text" placeholder="Search for a book...">
+    </form>
+</div>
 <div class="background_circle">
     <form action="account">
         <input type="image" class="img_account" src="./assets/Interactivity/account_circle.png"
@@ -25,17 +31,8 @@
                    alt="Notification Icon">
         </form>
     </div>
-
 </div>
-
-<div class="search-container">
-    <form action="search-Book">
-        <input type="image" src="./assets/Interactivity/Search%20Icon.png" alt="Search Icon">
-        <input class="input-field" type="text" placeholder="Search for a book...">
-    </form>
-</div>
-
-<form action="book-new">
+<form action="listing">
     <input type="image" class="btn_createListing" src="./assets/Interactivity/Create New.png"
            alt="Create new listing icon">
 </form>
@@ -64,6 +61,7 @@
     <div class="modal_content">
         <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png">
     </div>
+</div>
     <!-- End modal popup -->
 
     <!-- <%@include file="footer.jsp" %> -->
