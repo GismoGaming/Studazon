@@ -16,18 +16,17 @@ public class dash extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String searchQuery = request.getParameter("searchQuery");
-        List<Book> books = null;
-        if (searchQuery == null || searchQuery.equals("") || searchQuery.equals(" ")) {
+        List<Book> books;
+        if (searchQuery == null || searchQuery.equals("")) {
             books = BookDAO.getAllBooks();
         } else {
             books = BookDAO.getAllBooks(searchQuery);
         }
         request.setAttribute("books", books);
-        request.getRequestDispatcher("dash.jsp").forward(request, response);
+        request.getRequestDispatcher("dash.jsp").include(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
     }
 }

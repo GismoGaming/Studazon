@@ -53,7 +53,6 @@ public class BookDAO {
         System.out.println("BookDAO (getAllBooks): service complete");
         return books;
     }
-
     public static List<Book> getAllBooks(String search) {
         List<Book> books = new ArrayList<>();
         try {
@@ -77,7 +76,6 @@ public class BookDAO {
         System.out.println("BookDAO (getAllBooks w. search): service complete");
         return books;
     }
-
     public static void insertBook(Book book) {
         try {
             System.out.println("BookDAO (insertBook): service requested");
