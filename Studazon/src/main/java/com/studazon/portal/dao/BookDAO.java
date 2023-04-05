@@ -112,6 +112,7 @@ public class BookDAO {
             stmt.setString(5, book.getBook_condition());
             stmt.setBlob(6, new ByteArrayInputStream(book.getImageUrl()));
             stmt.setString(7, book.getComments());
+            stmt.setDouble(8, book.getPrice());
             stmt.executeUpdate();
             conn.close();
         } catch (SQLException e) {

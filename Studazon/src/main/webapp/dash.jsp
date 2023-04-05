@@ -49,17 +49,19 @@
         <div class="listingCard-row">
             <!-- Repeating code for card -->
             <c:forEach var="book" items="${books}">
-            <div class="listingCard-column">
-                <div class="listingCard" onclick="openModal()">
-                    <div class="listing-priceCond">
-                        <div class="listing-price">${book.price}</div>
-                        <div class="listing-cond">${book.book_condition}</div>
+                <div class="listingCard-column">
+                    <div class="listingCard" onclick="openModal()">
+                        <div class="listing-priceCond">
+                            <div class="listing-price">$${book.price}</div>
+                            <div class="listing-cond">${book.book_condition}</div>
+                        </div>
+                        <img class="listing-picture"
+                             src="data:image/jpg;base64,${Base64.getEncoder().encodeToString(book.imageUrl)}"
+                             alt="${book.title}">
+                        <p class="listing-text"><b>${book.title}</b></p>
+                        <p class="listing-text"><i>${book.author}</i></p>
                     </div>
-                    <img class="listing-picture" src="data:image/jpg;base64,${Base64.getEncoder().encodeToString(book.imageUrl)}" alt="${book.title}">
-                    <p class = "listing-text"><b>${book.title}</b></p>
-                    <p class = "listing-text"><i>${book.author}</i></p>
                 </div>
-            </div>
             </c:forEach>
             <!-- End Repeated -->
         </div>

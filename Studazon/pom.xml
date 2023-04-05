@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.studazon</groupId>
-    <artifactId>Studazon</artifactId>
+    <artifactId>studazon</artifactId>
     <version>1</version>
     <name>Studazon</name>
     <packaging>war</packaging>
