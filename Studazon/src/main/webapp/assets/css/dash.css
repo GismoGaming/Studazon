@@ -196,3 +196,103 @@ body {
     padding-left: 10px;
     padding-right: 10px;
 }
+/* Modal additional styling */
+.modal-masterContainer
+{
+    width: 100%;
+    height: 100%;
+    /* background: aqua; */
+    display: flex;
+}
+.modal-imageTitleISBNContainer
+{
+    flex: 0 0 60%;
+}
+
+.modal-picture{
+    vertical-align: middle;
+    width: 100%;
+    max-width: 30vh;
+    object-fit: scale-down;
+    margin: 0;
+}
+
+.modal-pictureText-title
+{
+    vertical-align: middle;
+    font-size: 36px;
+    margin-top:5px;
+}
+
+
+.modal-pictureText-ISBN
+{
+    vertical-align: middle;
+    font-size: 18px;
+    margin-top:5px;
+}
+
+.modal-condCommentsSend
+{
+    flex: 1;
+}
+
+.modal-condComments-header
+{
+    text-align: left;
+    font-size: 20px;
+    margin-bottom:0;
+}
+
+.modal-condComments-content
+{
+    text-align: left;
+    font-size: 18px;
+
+    margin: 0;
+}
+
+.modal-bookCostInterest-bookCost
+{
+    font-size: 32px;
+    margin-top:0;
+    margin-bottom:0;
+}
+.modal-bookCostInterest-sendInterestButton
+{
+    background-color:#95CD95;
+}
+
+@media only screen and (min-width: 470px) {
+    .modal-bookCostInterest
+    {
+        position: absolute;
+        right:calc(12%);
+        margin-top:0;
+        margin-bottom:0;
+    }
+
+    .modal-commentOverflow
+    {
+        width: 100%;
+        height: 40%;
+        overflow: auto  ;
+        margin-top:0;
+        margin-bottom:0;
+    }
+}
+@media only screen and (max-width: 469px) {
+    .modal-bookCostInterest
+    {
+        margin-top:0;
+        margin-bottom:0;
+    }
+    .modal-commentOverflow
+    {
+        width: 100%;
+        height: 20%;
+        overflow: auto ;
+        margin-top:0;
+        margin-bottom:0;
+    }
+}

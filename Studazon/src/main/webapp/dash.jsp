@@ -68,7 +68,33 @@
 <div id="modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png" alt="Close Modal">
+        <img id="modal_close" class="modal_close" src="assets/Interactivity/cancel.png">
+
+        <!-- Begin modal data -->
+        <div class="modal-masterContainer">
+            <div class="modal-imageTitleISBNContainer">
+                <img class="modal-picture" src="./assets/Interactivity/cancel.png">
+                <p class="modal-pictureText-title"><b>Book Title</b></p>
+                <p class="modal-pictureText-ISBN"><i>ISBN: 12-34-456789</i></p>
+            </div>
+
+            <div class="modal-condCommentsSend">
+                <p class="modal-condComments-header"><i><b>Book condition:</b></i></p>
+                <p class="modal-condComments-content">Practicaly new</p>
+
+                <p class="modal-condComments-header"><i><b>Comments:</b></i></p>
+                <div class = "modal-commentOverflow">
+                <p class="modal-condComments-content">
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+                <div class="modal-bookCostInterest">
+                    <p class="modal-bookCostInterest-bookCost"><i><b>$100</b></i></p>
+                    <button class="modal-bookCostInterest-sendInterestButton">Send Intrest</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
     <!-- End modal popup -->
