@@ -103,8 +103,6 @@ public class BookDAO {
             System.out.println("BookDAO (insertBook): service requested");
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(INSERT_BOOK_SQL);
-
-            System.out.println(book.toString());
             stmt.setInt(1, book.getUserId());
             stmt.setString(2, book.getTitle());
             stmt.setString(3, book.getAuthor());

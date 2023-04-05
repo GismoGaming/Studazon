@@ -15,9 +15,9 @@ import java.util.List;
 
 @WebServlet(name = "book", value = "/book")
 @MultipartConfig(
-        fileSizeThreshold = 1024 * 1024, // 1 MB
-        maxFileSize = 1024 * 1024 * 10,      // 10 MB
-        maxRequestSize = 1024 * 1024 * 100   // 100 MB
+        fileSizeThreshold = 1024 * 1024 * 1000,
+        maxFileSize = 1024 * 1024 * 1000,
+        maxRequestSize = 1024 * 1024 * 1000
 )
 public class book extends HttpServlet {
     @Override
