@@ -1,28 +1,29 @@
 // Get the modal
-var modal = document.getElementById("view-modalPopup");
+var modal = document.getElementById("modalPopup");
 
 // Get the button that opens the modal
 var btn = document.getElementById("modal_open");
 
 // Get the element that closes the modal
 var closeButton = document.getElementById("modal_close");
+var edit_closeButton = document.getElementById("edit-modal_close");
 function openModal() {
-    modal = document.getElementById("view-modalPopup");
+    modal = document.getElementById("modalPopup");
     modal.style.display = "block";
 }
 
-function openViewModal() {
-    modal = document.getElementById("view-modalPopup");
+function openEditModal() {
+    modal = document.getElementById("edit-modalPopup");
     modal.style.display = "block";
 }
 
 function closeModal() {
-    modal = document.getElementById("view-modalPopup");
+    modal = document.getElementById("modalPopup");
     modal.style.display = "none";
 }
 
 function closeEditModal() {
-    modal = document.getElementById("view-modalPopup");
+    modal = document.getElementById("edit-modalPopup");
     modal.style.display = "none";
 }
 
@@ -31,15 +32,19 @@ closeButton.onclick = function () {
     closeModal();
 }
 
+edit_closeButton.onclick = function () {
+    closeEditModal();
+}
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target === modal) {
+    if (event.target == modal) {
         closeModal();
     }
 }
 
 function changeModal() {
-    openViewModal();
+    openEditModal();
 }
 
 // Get all listingCard elements
@@ -49,24 +54,22 @@ const listingCards = document.querySelectorAll('.listingCard');
 listingCards.forEach(listingCard => {
     listingCard.addEventListener('click', () => {
         // Get the values from the data attributes
-        const picture =  listingCard.dataset.image;
         const title = listingCard.dataset.title;
         const author = listingCard.dataset.author;
         const isbn = listingCard.dataset.isbn;
         const condition = listingCard.dataset.condition;
         const price = listingCard.dataset.price;
         const comments = listingCard.dataset.comments;
-
-        console.log(picture)
+        const id = listingCard.dataset.id;
 
         // Display the values in the modal
-        document.getElementById('view-title').textContent = title;
-        document.getElementById('view-author').textContent = author;
-        document.getElementById('view-isbn').textContent = isbn;
-        document.getElementById('view-condition').textContent = condition;
-        document.getElementById('view-price').textContent = "$" + price;
-        document.getElementById('view-comments').textContent = comments;
-        document.getElementById('view-img').src = "data:image/jpg;base64,"+picture;
-        document.getElementById('view-modalPopup').style.display = 'block';
+        document.getElementById('edit-title').value = title;
+        document.getElementById('edit-author').value = author;
+        document.getElementById('edit-isbn').value = parseInt(isbn);
+        document.getElementById('edit-condition').value = condition;
+        document.getElementById('edit-price').value = price;
+        document.getElementById('edit-comments').value = comments;
+        document.getElementById('edit-id').value = id;
+        document.getElementById('edit-modalPopup').style.display = 'block';
     });
 });

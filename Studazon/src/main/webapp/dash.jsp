@@ -71,12 +71,12 @@
 <div id="view-modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id="modal_close" class="modal_close" src="assets/Interactivity/cancel.png">
+        <img id="modal_close" class="modal_close" src="assets/Interactivity/cancel.png" alt="Exit Modal Buttons">
 
         <!-- Begin modal data -->
         <div class="modal-masterContainer">
             <div class="modal-imageTitleISBNContainer">
-                <img id = "view-img" class="modal-picture" src="./assets/Interactivity/cancel.png">
+                <img id = "view-img" class="modal-picture" src="./assets/Interactivity/cancel.png" alt="Modal Close Button">
                 <p id = "view-title" class="modal-pictureText-title"><b>Book Title</b></p>
                 <p id = "view-author" class="modal-pictureText-title">Book Author</p>
                 <p id = "view-isbn" class="modal-pictureText-ISBN"><i>ISBN: 12-34-456789</i></p>
