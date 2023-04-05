@@ -73,9 +73,9 @@
 <div id="modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png" alt="Close Button">
+        <img id="modal_close" class="modal_close" src="assets/Interactivity/cancel.png" alt="Close Button">
         <h1>Create a Listing</h1>
-        <form action="book" method="post" enctype="multipart/form-data">
+        <form action="book" method="post" enctype="multipart/form-data" id="myForm">
             <input type="hidden" name="action" value="create">
 
             <input type="text" id="title" name="title" placeholder="Title" required>
@@ -108,4 +108,16 @@
 <!-- <%@include file="footer.jsp" %> -->
 <script src="./assets/js/modalPopup.js"></script>
 </body>
+<script>
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+        var fileInput = document.getElementById("imageUrl");
+        if (fileInput.files.length > 0) {
+            var fileSize = fileInput.files[0].size; // in bytes
+            if (fileSize > 100000) {
+                alert("Please select an image file that is less than 100kb.");
+                e.preventDefault(); // prevent form submission
+            }
+        }
+    });
+</script>
 </html>
