@@ -145,7 +145,7 @@
 </div>
 
 <!-- <%@include file="footer.jsp" %> -->
-<script src="./assets/js/modalPopup.js"></script>
+<script src="assets/js/modalPopup-editListing.js"></script>
 </body>
 <script>
     document.getElementById("myForm").addEventListener("submit", function (e) {

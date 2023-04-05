@@ -50,7 +50,8 @@
             <!-- Repeating code for card -->
             <c:forEach var="book" items="${books}">
                 <div class="listingCard-column">
-                    <div class="listingCard" onclick="openModal()">
+                    <div class="listingCard" onclick="changeModal.call(this)" data-title="${book.title}" data-author="${book.author}" data-isbn="${book.ISBN}"
+                         data-image= "${Base64.getEncoder().encodeToString(book.imageUrl)}" data-condition="${book.book_condition}" data-price="${book.price}" data-comments="${book.comments}">
                         <div class="listing-priceCond">
                             <div class="listing-price">$${book.price}</div>
                             <div class="listing-cond">${book.book_condition}</div>
@@ -67,7 +68,7 @@
         </div>
     </div>
 <!-- Start modal popup -->
-<div id="modalPopup" class="modal_bg">
+<div id="view-modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
         <img id="modal_close" class="modal_close" src="assets/Interactivity/cancel.png">
@@ -75,24 +76,25 @@
         <!-- Begin modal data -->
         <div class="modal-masterContainer">
             <div class="modal-imageTitleISBNContainer">
-                <img class="modal-picture" src="./assets/Interactivity/cancel.png">
-                <p class="modal-pictureText-title"><b>Book Title</b></p>
-                <p class="modal-pictureText-ISBN"><i>ISBN: 12-34-456789</i></p>
+                <img id = "view-img" class="modal-picture" src="./assets/Interactivity/cancel.png">
+                <p id = "view-title" class="modal-pictureText-title"><b>Book Title</b></p>
+                <p id = "view-author" class="modal-pictureText-title">Book Author</p>
+                <p id = "view-isbn" class="modal-pictureText-ISBN"><i>ISBN: 12-34-456789</i></p>
             </div>
 
             <div class="modal-condCommentsSend">
                 <p class="modal-condComments-header"><i><b>Book condition:</b></i></p>
-                <p class="modal-condComments-content">Practicaly new</p>
+                <p id = "view-condition" class="modal-condComments-content">Practicaly new</p>
 
                 <p class="modal-condComments-header"><i><b>Comments:</b></i></p>
                 <div class = "modal-commentOverflow">
-                <p class="modal-condComments-content">
+                <p id = "view-comments" class="modal-condComments-content">
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
             </div>
                 <div class="modal-bookCostInterest">
-                    <p class="modal-bookCostInterest-bookCost"><i><b>$100</b></i></p>
+                    <p id = "view-price" class="modal-bookCostInterest-bookCost"><i><b>$100</b></i></p>
                     <button class="modal-bookCostInterest-sendInterestButton">Send Intrest</button>
                 </div>
             </div>
@@ -102,7 +104,7 @@
     <!-- End modal popup -->
 
     <!-- <%@include file="footer.jsp" %> -->
-    <script src="./assets/js/modalPopup.js"></script>
+    <script src="./assets/js/modalPopup-dash.js"></script>
     <script src="./assets/js/card-conditionChanger.js"></script>
 <!-- <%@include file="footer.jsp" %> -->
 </body>
