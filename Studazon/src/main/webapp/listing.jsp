@@ -53,18 +53,15 @@
         <c:forEach var="book" items="${books}">
             <div class="listingCard-column">
                 <div class="listingCard" onclick="openModal()">
-
-                    <div class="listing-picturePriceCond">
-                        <img src="data:image/jpg;base64,${Base64.getEncoder().encodeToString(book.imageUrl)}"
-                             alt="${book.title}">
-                        <div class="listing-picturePriceCond_priceCond">
-                            <span>${book.price}</span>
-                            <span>${book.book_condition}</span>
-                        </div>
+                    <div class="listing-priceCond">
+                        <div class="listing-price">$${book.price}</div>
+                        <div class="listing-cond">${book.book_condition}</div>
                     </div>
-                    <p>${book.title}</p>
-                    <p><i>${book.author}</i></p>
-                    <p><i>${book.ISBN}</i></p>
+                    <img class="listing-picture"
+                         src="data:image/jpg;base64,${Base64.getEncoder().encodeToString(book.imageUrl)}"
+                         alt="${book.title}">
+                    <p class="listing-text"><b>${book.title}</b></p>
+                    <p class="listing-text"><i>${book.author}</i></p>
                 </div>
             </div>
         </c:forEach>
@@ -76,7 +73,7 @@
 <div id="modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png">
+        <img id = "modal_close" class="modal_close" src = "assets/Interactivity/cancel.png" alt="Close Button">
         <h1>Create a Listing</h1>
         <form action="book" method="post" enctype="multipart/form-data">
             <input type="hidden" name="action" value="create">
@@ -84,14 +81,23 @@
             <input type="text" id="title" name="title" placeholder="Title" required>
             <input type="text" id="author" name="author" placeholder="Author" required>
             <input type="number" id="isbn" name="isbn" placeholder="ISBN" required>
-            <label for="condition">Book Condition:</label>
-            <select id="condition" name="condition">
-                <option value="War Torn">War Torn</option>
-                <option value="Used">Used</option>
-                <option value="New">New</option>
-            </select>
+
+            <div class="condition_container">
+                <label for="condition">Book Condition: </label>
+                <select id="condition" name="condition">
+                    <option value="War Torn">War Torn</option>
+                    <option value="Used">Used</option>
+                    <option value="New">New</option>
+                </select>
+            </div>
+
             <input type="number" id="price" name="price" placeholder="Price" step="0.01" required>
-            <input type="file" accept="image/*" id="imageUrl" name="imageUrl" placeholder="Choose Book Image" required>
+
+            <div class="image_container">
+                <label for="imageUrl">Image: </label>
+                <input type="file" accept="image/*" id="imageUrl" name="imageUrl" placeholder="Choose Book Image" required>
+            </div>
+
             <textarea type="text" id="comments" name="comments" placeholder="Comments" required></textarea>
 
             <button id="createListingBtn" type="submit">Create Listing</button>

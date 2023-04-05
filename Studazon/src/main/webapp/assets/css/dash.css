@@ -1,47 +1,6 @@
 body {
     background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
 }
-.background_circle {
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    background: #ffffff;
-
-    max-height:50px;
-    max-width: 50px;
-
-
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 100%;
-
-    align-items: center;
-    text-align: center;
-
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-
-.img_notification {
-
-    width: 32px;
-    height: 32px;
-    left: 30px;
-    top: -10px;
-    position: absolute;
-}
-
-.btn_createListing
-{
-    left: 5px;
-    display:block;
-    position: relative;
-
-    width: 50px;
-    height: 50px;
-
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
 
 .search-container form {
     background-color: white;
@@ -65,10 +24,6 @@ body {
     height: 40px;
 }
 
-.search-container :focus-visible {
-    outline: none;
-}
-
 .search-container {
     align-self: center;
     align-items: center;
@@ -76,126 +31,6 @@ body {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.img_account {
-    padding: 10%;
-    width: 100%;
-    height: 100%;
-}
-
-/* Start listing */
-.listingBG {
-    margin-top: 10px;
-    height: 70vh;
-    clip-path: inset(0 0 0 0);
-    overflow-y:scroll;
-    margin-left: 50px;
-    margin-right: 5px
-}
-
-/* Float three columns side by side */
-.listingCard-column {
-    float: left;
-    width: 33%;
-    padding: 10px 10px;
-}
-
-/* Remove extra left and right margins, due to padding */
-.listingCard-row {
-    margin: 0 10px;
-}
-
-/* Clear floats after the columns */
-.listingCard-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-    .listingCard-column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
-}
-
-/* Style the counter cards */
-.listingCard {
-    display: block;
-    background: rgb(251, 251, 251);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 24px;
-    cursor:pointer;
-    max-width: 300px;
-}
-
-.listing-priceCond
-{
-    position: relative;
-    width: 100%;
-}
-
-.listing-price
-{
-    position: absolute;
-    color: white;
-    margin-top: 20px;
-    line-height:  50px;
-    font-size: clamp( 18px,3vw, 30px );
-
-    width:40%;
-    max-width: 150px;
-    min-width: 60px;
-
-    height: 50px;
-
-    background-color:#95CD95;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    border-top-right-radius: 32px;
-    border-bottom-right-radius: 32px;
-}
-.listing-cond
-{
-    position: absolute;
-    color: white;
-    right: 0;
-    margin-top: 20px;
-    line-height:  50px;
-    font-size: clamp( 18px,3vw, 30px );
-
-    width:40%;
-    max-width: 150px;
-    min-width: 60px;
-
-    height: 50px;
-
-    /* Assume the condition is good to reduce popin color effects */
-    background-color:rgba(111, 194, 217, 1);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    border-top-left-radius: 32px;
-    border-bottom-left-radius: 32px;
-}
-
-.listing-picture
-{
-    vertical-align: middle;
-    margin-top: 80px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 100%;
-    height: 100%;
-    object-fit: scale-down;
-    max-width: 200px;
-    max-height: 200px;
-}
-.listing-text
-{
-    padding-left: 10px;
-    padding-right: 10px;
-}
 /* Modal additional styling */
 .modal-masterContainer
 {
