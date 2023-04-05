@@ -37,6 +37,16 @@
            alt="Create new listing icon">
 </form>
 
+<form action="dash">
+    <input type="image" class="btn_createListing" src="./assets/Interactivity/Home Icon.png"
+           alt="Dashboard icon">
+</form>
+
+<form action="logout">
+    <input type="image" class="btn_createListing" src="./assets/Interactivity/Logout%20Icon.png"
+           alt="Logout icon">
+</form>
+
 <div class="listingBG">
     <div class="listingCard-row">
         <!-- Repeating code for card -->
