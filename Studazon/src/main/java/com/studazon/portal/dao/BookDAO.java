@@ -137,7 +137,7 @@ public class BookDAO {
         }
     }
 
-    public Book getBookById(int id) {
+    public static Book getBookById(int id) {
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(SELECT_BOOK_BY_ID_SQL)) {
             stmt.setInt(1, id);
