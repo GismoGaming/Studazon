@@ -1,11 +1,12 @@
 // Get the modal
-var modal = document.getElementById("view-modalPopup");
+let modal = document.getElementById("view-modalPopup");
 
 // Get the button that opens the modal
-var btn = document.getElementById("modal_open");
+let btn = document.getElementById("modal_open");
 
 // Get the element that closes the modal
-var closeButton = document.getElementById("modal_close");
+let closeButton = document.getElementById("modal_close");
+
 function openModal() {
     modal = document.getElementById("view-modalPopup");
     modal.style.display = "block";
@@ -44,7 +45,12 @@ function changeModal() {
 
 // Get all listingCard elements
 const listingCards = document.querySelectorAll('.listingCard');
-
+window.addEventListener("keydown", function(event) {
+    if (event.key === "Escape")
+    {
+        closeModal();
+    }
+});
 // Attach a click event listener to each listingCard
 listingCards.forEach(listingCard => {
     listingCard.addEventListener('click', () => {
@@ -56,8 +62,6 @@ listingCards.forEach(listingCard => {
         const condition = listingCard.dataset.condition;
         const price = listingCard.dataset.price;
         const comments = listingCard.dataset.comments;
-
-        console.log(picture)
 
         // Display the values in the modal
         document.getElementById('view-title').textContent = title;

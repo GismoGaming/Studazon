@@ -1,15 +1,22 @@
 // Get the modal
-var modal = document.getElementById("modalPopup");
+let modal = document.getElementById("modalPopup");
 
 // Get the button that opens the modal
-var btn = document.getElementById("modal_open");
+let btn = document.getElementById("modal_open");
 
 // Get the element that closes the modal
-var closeButton = document.getElementById("modal_close");
-var edit_closeButton = document.getElementById("edit-modal_close");
+let closeButton = document.getElementById("modal_close");
+let edit_closeButton = document.getElementById("edit-modal_close");
 
-var modifyButton = document.getElementById("modifyListingBtn");
-var deleteButton = document.getElementById("deleteListingBtn");
+let modifyButton = document.getElementById("modifyListingBtn");
+let deleteButton = document.getElementById("deleteListingBtn");
+window.addEventListener("keydown", function(event) {
+    if (event.key === "Escape")
+    {
+        closeEditModal();
+    }
+});
+
 function openModal() {
     modal = document.getElementById("modalPopup");
     modal.style.display = "block";
@@ -41,7 +48,7 @@ edit_closeButton.onclick = function () {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target == modal) {
+    if (event.target === modal) {
         closeModal();
     }
 }
