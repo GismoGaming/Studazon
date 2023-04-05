@@ -23,27 +23,6 @@ body {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-
-.img_notification {
-
-    width: 32px;
-    height: 32px;
-    left: 30px;
-    top: -10px;
-    position: absolute;
-}
-
-.btn_createListing {
-    left: 5px;
-    display: block;
-    position: relative;
-
-    width: 50px;
-    height: 50px;
-
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
 .search-container button {
     border-radius: 20px;
     height: 100%;
@@ -56,90 +35,11 @@ body {
     margin: 0;
 }
 
-.search-container :focus-visible {
-    outline: none;
-}
-
 .search-container {
     align-self: center;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 70px;
-    padding-right: 5px;
+    padding: 10px 5px 10px 70px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.img_account {
-    padding: 10%;
-    width: 100%;
-    height: 100%;
-}
-
-/* Start listing */
-.listingBG {
-    margin-top: 10px;
-    height: 70vh;
-    clip-path: inset(0 0 0 0);
-    overflow-y: scroll;
-    margin-left: 50px;
-    margin-right: 5px
-}
-
-/* Float two columns side by side */
-.listingCard-column {
-    float: left;
-    width: 50%;
-    padding: 10px 10px;
-}
-
-/* Remove extra left and right margins, due to padding */
-.listingCard-row {
-    margin: 0 10px;
-}
-
-/* Clear floats after the columns */
-.listingCard-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-    .listingCard-column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
-}
-
-/* Style the counter cards */
-.listingCard {
-    display: block;
-    background: rgb(251, 251, 251);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 5px;
-    border-radius: 24px;
-    cursor: pointer;
-}
-
-.listing-picturePriceCond_priceCond {
-    vertical-align: middle;
-    display: inline-block;
-}
-
-.listing-picturePriceCond_priceCond span {
-    display: block;
-}
-
-.listing-picturePriceCond img {
-    vertical-align: middle;
-    width: 100vh;
-    height: 100vh;
-    object-fit: scale-down;
-    max-width: 150px;
-    max-height: 150px;
 }
 
 h1
@@ -185,9 +85,10 @@ label
 select
 {
     height: 6vh;
-    width: 100%;
+    width: auto;
     font-size: 18px;
     margin-bottom: 5px;
+    margin-left: 5px;
 }
 
 textarea
@@ -195,4 +96,22 @@ textarea
     height: 6vh;
     width: 100%;
     font-size: 18px;
+}
+
+.condition_container
+{
+    display: flex;
+    width: 100%;
+}
+
+.image_container
+{
+    display: flex;
+    width: 100%;
+}
+
+input[type=file]
+{
+    margin-left: 5px;
+
 }
