@@ -128,9 +128,10 @@
             <div class="condition_container">
                 <label for="edit-condition">Book Condition: </label>
                 <select id="edit-condition" name="edit-condition">
-                    <option value="War Torn">War Torn</option>
-                    <option value="Used">Used</option>
                     <option value="New">New</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
                 </select>
             </div>
 
