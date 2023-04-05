@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="assets/css/listing.css">
     <title>Studazon - My Listings</title>
 </head>
+<%-- Alert Code (has to be on every page)--%>
+<input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
+<input type="hidden" id="message" value="<%= request.getAttribute("message")%>">
+
 <body>
 <%--<%@include file="navbar.jsp"%>--%>
 <div class="background_circle">

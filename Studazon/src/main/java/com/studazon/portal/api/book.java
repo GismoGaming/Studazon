@@ -156,7 +156,13 @@ public class book extends HttpServlet {
         response.sendRedirect("listing");
     }
 
-    private void deleteBook(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteBook(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        System.out.println(request.getParameter("edit-id"));
+        int id = Integer.parseInt(request.getParameter("edit-id"));
+        BookDAO.deleteBook(id);
+        request.setAttribute("status", "success");
+        request.setAttribute("message", request.getParameter("edit-title") + " is deleted");
+        response.sendRedirect("listing");
     }
 
 }
