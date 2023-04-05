@@ -52,7 +52,8 @@
         <!-- Repeating code for card -->
         <c:forEach var="book" items="${books}">
             <div class="listingCard-column">
-                <div class="listingCard" onclick="openModal()">
+                <div class="listingCard" onclick="changeModal.call(this)" data-title="${book.title}" data-author="${book.author}" data-isbn="${book.ISBN}"
+                     data-condition="${book.book_condition}" data-price="${book.price}" data-comments="${book.comments}" data-id="${book.id}">
                     <div class="listing-priceCond">
                         <div class="listing-price">$${book.price}</div>
                         <div class="listing-cond">${book.book_condition}</div>
@@ -69,7 +70,7 @@
     </div>
 </div>
 
-<!-- The Modal -->
+<!-- The Create Listing Modal -->
 <div id="modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
@@ -101,6 +102,44 @@
             <textarea type="text" id="comments" name="comments" placeholder="Comments" required></textarea>
 
             <button id="createListingBtn" type="submit">Create Listing</button>
+        </form>
+    </div>
+</div>
+
+<!-- The Modify Listing Modal -->
+<div id="edit-modalPopup" class="modal_bg">
+    <!-- Modal content -->
+    <div class="modal_content">
+        <img id = "edit-modal_close" class="modal_close" src = "assets/Interactivity/cancel.png" alt="Close Button">
+        <h1>Modify Listing</h1>
+        <form action="book" method="post" enctype="multipart/form-data" name="modifyForm">
+            <input type="hidden" name="action" value="update">
+            <input type="hidden" name="edit-id">
+
+            <input type="text" id="edit-title" name="edit-title" placeholder="Title" required>
+            <input type="text" id="edit-author" name="edit-author" placeholder="Author" required>
+            <input type="number" id="edit-isbn" name="edit-isbn" placeholder="ISBN" required>
+
+            <div class="condition_container">
+                <label for="edit-condition">Book Condition: </label>
+                <select id="edit-condition" name="edit-condition">
+                    <option value="War Torn">War Torn</option>
+                    <option value="Used">Used</option>
+                    <option value="New">New</option>
+                </select>
+            </div>
+
+            <input type="number" id="edit-price" name="edit-price" placeholder="Price" step="0.01" required>
+
+            <div class="image_container">
+                <label for="imageUrl">Image: </label>
+                <input type="file" accept="image/*" id="edit-imageUrl" name="edit-imageUrl">
+            </div>
+
+            <textarea type="text" id="edit-comments" name="edit-comments" placeholder="Comments" required></textarea>
+
+            <button id="modifyListingBtn" type="submit">Modify Listing</button>
+            <button id="deleteListingBtn" type="submit">Delete Listing</button>
         </form>
     </div>
 </div>
