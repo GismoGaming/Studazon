@@ -117,7 +117,7 @@
         <img id="edit-modal_close" class="modal_close" src="assets/Interactivity/cancel.png" alt="Close Button">
         <h1>Modify Listing</h1>
         <form action="book" method="post" enctype="multipart/form-data" name="modifyForm">
-            <input type="hidden" name="action" value="update">
+            <input type="hidden" name="action" id="action" value="update">
             <input type="hidden" name="edit-id" id="edit-id" value="">
 
             <input type="text" id="edit-title" name="edit-title" placeholder="Title" required>

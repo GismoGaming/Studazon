@@ -7,6 +7,9 @@ var btn = document.getElementById("modal_open");
 // Get the element that closes the modal
 var closeButton = document.getElementById("modal_close");
 var edit_closeButton = document.getElementById("edit-modal_close");
+
+var modifyButton = document.getElementById("modifyListingBtn");
+var deleteButton = document.getElementById("deleteListingBtn");
 function openModal() {
     modal = document.getElementById("modalPopup");
     modal.style.display = "block";
@@ -73,3 +76,15 @@ listingCards.forEach(listingCard => {
         document.getElementById('edit-modalPopup').style.display = 'block';
     });
 });
+
+ modifyButton.onclick = function() {
+     document.getElementById('action').value = "update";
+     alert(document.getElementById('action').value)
+     closeEditModal();
+ }
+
+ deleteButton.onclick = function() {
+     document.getElementById('action').value = "delete";
+     //console.log(document.getElementById('action').value)
+     closeEditModal();
+ }
