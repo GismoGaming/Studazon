@@ -35,7 +35,7 @@
     </div>
     <div class="background_circle">
         <form action="listing">
-            <input type="image" class="btn_sidebar" src="./assets/Interactivity/create new.png"
+            <input type="image" class="btn_sidebar" src="./assets/Interactivity/Create%20New.png"
                    alt="Create New Listing Icon">
         </form>
     </div>

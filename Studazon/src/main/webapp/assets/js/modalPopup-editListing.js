@@ -4,46 +4,42 @@ let modal = document.getElementById("modalPopup");
 // Get the button that opens the modal
 let btn = document.getElementById("modal_open");
 
-// Get the element that closes the modal
+// Get the element that closes the modals
 let closeButton = document.getElementById("modal_close");
 let edit_closeButton = document.getElementById("edit-modal_close");
-
 let modifyButton = document.getElementById("modifyListingBtn");
 let deleteButton = document.getElementById("deleteListingBtn");
-let yesDeleteButton = document.getElementById("yesDeleteBtn");
-let noDeleteButton = document.getElementById("noDeleteBtn");
-window.addEventListener("keydown", function(event) {
-    if (event.key === "Escape")
-    {
-        closeEditModal();
-    }
-});
 
+// Open the 'Create Listing' Modal
 function openModal() {
     modal = document.getElementById("modalPopup");
     modal.style.display = "block";
 }
 
+// Open the 'Modify Listing' Modal
 function openEditModal() {
     modal = document.getElementById("edit-modalPopup");
     modal.style.display = "block";
 }
 
+// Close the 'Create Listing' Modal
 function closeModal() {
     modal = document.getElementById("modalPopup");
     modal.style.display = "none";
 }
 
+// Close the 'Modify Listing' Modal
 function closeEditModal() {
     modal = document.getElementById("edit-modalPopup");
     modal.style.display = "none";
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x) in 'Create Listing' modal, close the modal
 closeButton.onclick = function () {
     closeModal();
 }
 
+// When the user clicks on <span> (x) in 'Modify Listing' modal, close the modal
 edit_closeButton.onclick = function () {
     closeEditModal();
 }
@@ -52,8 +48,18 @@ edit_closeButton.onclick = function () {
 window.onclick = function (event) {
     if (event.target === modal) {
         closeModal();
+        closeEditModal();
     }
 }
+
+// When the user presses Esc, the modal will close
+window.addEventListener("keydown", function(event) {
+    if (event.key === "Escape")
+    {
+        closeModal();
+        closeEditModal();
+    }
+});
 
 function changeModal() {
     openEditModal();
@@ -65,6 +71,7 @@ const listingCards = document.querySelectorAll('.listingCard');
 // Attach a click event listener to each listingCard
 listingCards.forEach(listingCard => {
     listingCard.addEventListener('click', () => {
+
         // Get the values from the data attributes
         const title = listingCard.dataset.title;
         const author = listingCard.dataset.author;
@@ -86,11 +93,13 @@ listingCards.forEach(listingCard => {
     });
 });
 
+// If the user clicks on the "Modify" button, update the listing
  modifyButton.onclick = function() {
      document.getElementById('action').value = "update";
      closeEditModal();
  }
 
+// If the user clicks on the "Delete" button, get confirmation and then delete listing
  deleteButton.onclick = function() {
      if(confirm('Are you sure you want to delete this listing?')){
          document.getElementById('action').value = "delete";
