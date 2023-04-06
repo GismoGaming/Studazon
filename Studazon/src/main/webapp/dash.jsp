@@ -14,6 +14,38 @@
     <title>Studazon - Dashboard</title>
 </head>
 <body>
+<div class="sidebar">
+    <div class="background_circle">
+        <form action="account">
+            <input type="image" class="btn_sidebar" src="./assets/Interactivity/account_circle.png"
+                   alt="Account Icon">
+        </form>
+        <div>
+            <form action="account-notifications">
+                <input type="image" class="img_notification" src="./assets/Interactivity/Notification%20Popup.png"
+                       alt="Notification Icon">
+            </form>
+        </div>
+    </div>
+    <div class="background_circle">
+        <form action="dash">
+            <input type="image" class="btn_sidebar" src="./assets/Interactivity/home.png"
+                   alt="Home Icon">
+        </form>
+    </div>
+    <div class="background_circle">
+        <form action="listing">
+            <input type="image" class="btn_sidebar" src="./assets/Interactivity/create new.png"
+                   alt="Create New Listing Icon">
+        </form>
+    </div>
+    <div class="background_circle_logout">
+        <form action="logout">
+            <input type="image" class="btn_sidebar_logout" src="./assets/Interactivity/logout.png"
+                   alt="Logout Icon">
+        </form>
+    </div>
+</div>
 <div class="search-container">
     <form action="dash">
         <input type="image" src="./assets/Interactivity/Search%20Icon.png" alt="Search Icon">
@@ -21,30 +53,30 @@
                <% if(request.getParameter("searchQuery")!=null) { %>value="<%=request.getParameter("searchQuery")%>"<% } %>>
     </form>
 </div>
-<div class="background_circle">
-    <form action="account">
-        <input type="image" class="img_account" src="./assets/Interactivity/account_circle.png"
-               alt="Account Icon">
-    </form>
-    <div>
-        <form action="account-notifications">
-            <input type="image" class="img_notification" src="./assets/Interactivity/Notification%20Popup.png"
-                   alt="Notification Icon">
-        </form>
-    </div>
-</div>
-<form action="listing">
-    <input type="image" class="btn_createListing" src="./assets/Interactivity/Create New.png"
-           alt="Create new listing icon">
-</form>
-<form action="dash">
-    <input type="image" class="btn_createListing" src="./assets/Interactivity/Home Icon.png"
-           alt="Dashboard icon">
-</form>
-<form action="logout">
-    <input type="image" class="btn_createListing" src="./assets/Interactivity/Logout%20Icon.png"
-           alt="Logout icon">
-</form>
+<%--<div class="background_circle">--%>
+<%--    <form action="account">--%>
+<%--        <input type="image" class="img_account" src="./assets/Interactivity/account_circle.png"--%>
+<%--               alt="Account Icon">--%>
+<%--    </form>--%>
+<%--    <div>--%>
+<%--        <form action="account-notifications">--%>
+<%--            <input type="image" class="img_notification" src="./assets/Interactivity/Notification%20Popup.png"--%>
+<%--                   alt="Notification Icon">--%>
+<%--        </form>--%>
+<%--    </div>--%>
+<%--</div>--%>
+<%--<form action="listing">--%>
+<%--    <input type="image" class="btn_createListing" src="./assets/Interactivity/Create New.png"--%>
+<%--           alt="Create new listing icon">--%>
+<%--</form>--%>
+<%--<form action="dash">--%>
+<%--    <input type="image" class="btn_createListing" src="./assets/Interactivity/Home Icon.png"--%>
+<%--           alt="Dashboard icon">--%>
+<%--</form>--%>
+<%--<form action="logout">--%>
+<%--    <input type="image" class="btn_createListing" src="./assets/Interactivity/Logout%20Icon.png"--%>
+<%--           alt="Logout icon">--%>
+<%--</form>--%>
     <div class="listingBG">
         <div class="listingCard-row">
             <!-- Repeating code for card -->
