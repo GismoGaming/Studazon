@@ -97,9 +97,14 @@ a {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.modal_close:hover,
+.modal_close:hover
+{
+    transform: scale(1.1);
+    cursor: pointer;
+}
 .modal_close:focus {
     cursor: pointer;
 }
@@ -135,7 +140,10 @@ a {
         top: -10px;
         position: absolute;
     }
-
+    .img_notification:hover
+    {
+        transform: scale(1.1);
+    }
     .background_circle {
         background: #ffffff;
 
@@ -158,8 +166,13 @@ a {
         margin-top: auto;
         border-radius: 100%;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transition: 0.3s;
     }
-
+    .btn_sidebar_logout:hover
+    {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+        transform: scale(1.01);
+    }
     .background_circle_logout {
         background: #ffffff;
 
@@ -167,13 +180,18 @@ a {
         width: 50px;
 
         border-radius: 100%;
-        left: 5px;
-        bottom: 0;
         margin-top: auto;
         margin-bottom: 10px;
+        margin-left: 10px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
 }
+.btn_sidebar:hover
+{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.01);
+}
+
 .btn_sidebar {
     background: #ffffff;
 
@@ -183,6 +201,7 @@ a {
 
     border-radius: 100%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: 0.3s;
 }
 @media only screen and (max-width: 549px) {
     .sidebar {
@@ -202,8 +221,12 @@ a {
         left: 30px;
         top: -10px;
         position: absolute;
+        transition:0.3s;
     }
-
+    .img_notification:hover
+    {
+        transform: scale(1.1);
+    }
     .background_circle {
         /* background: #ffffff; */
 
@@ -223,9 +246,15 @@ a {
         height: 50px;
         width: 50px;
         padding: 5px;
-        margin-left: auto;
+        margin-left: 10px;
         border-radius: 100%;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transition: 0.3s;
+    }
+    .btn_sidebar_logout:hover
+    {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+        transform: scale(1.01);
     }
 
     .background_circle_logout {
@@ -246,12 +275,20 @@ a {
 /* Search bar */
 
 .search-container form {
-    background-color: white;
+    background-color: #ffffff;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     color: #555;
     display: flex;
     border-radius: 20px;
     padding: 5px 5px;
+
+    transition: 0.3s;
+}
+
+.search-container form:hover
+{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.01);
 }
 
 .search-container input[type="text"] {
@@ -343,6 +380,14 @@ a {
     border-radius: 24px;
     cursor:pointer;
     max-width: 300px;
+
+    transition: 0.3s;
+}
+
+.listingCard:hover
+{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.01);
 }
 
 .listing-priceCond
