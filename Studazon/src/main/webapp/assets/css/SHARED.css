@@ -9,7 +9,7 @@ body {
     text-align: center;
     align-content: center;
     align-items: center;
-    font: var(--font);
+    font-family: var(--font);
 }
 
 button {
@@ -295,7 +295,7 @@ a {
 @media only screen and (min-width: 550px) {
     .listingBG {
         margin-top: 10px;
-        height: 70vh;
+        height: 85vh;
         clip-path: inset(0 0 0 0);
         overflow-y:auto;
         margin-left: 50px;
@@ -305,7 +305,7 @@ a {
 @media only screen and (max-width: 549px) {
     .listingBG {
         margin-top: 10px;
-        height: 70vh;
+        height: 85vh;
         clip-path: inset(0 0 0 0);
         overflow-y:auto;
         margin-left: 0;
@@ -322,13 +322,8 @@ a {
 /* Remove extra left and right margins, due to padding */
 .listingCard-row {
     margin: 0 10px;
-}
-
-/* Clear floats after the columns */
-.listingCard-row:after {
-    content: "";
-    display: table;
-    clear: both;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Responsive columns */
