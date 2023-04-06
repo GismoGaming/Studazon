@@ -10,6 +10,8 @@ let edit_closeButton = document.getElementById("edit-modal_close");
 
 let modifyButton = document.getElementById("modifyListingBtn");
 let deleteButton = document.getElementById("deleteListingBtn");
+let yesDeleteButton = document.getElementById("yesDeleteBtn");
+let noDeleteButton = document.getElementById("noDeleteBtn");
 window.addEventListener("keydown", function(event) {
     if (event.key === "Escape")
     {
@@ -90,6 +92,8 @@ listingCards.forEach(listingCard => {
  }
 
  deleteButton.onclick = function() {
-     document.getElementById('action').value = "delete";
+     if(confirm('Are you sure you want to delete this listing?')){
+         document.getElementById('action').value = "delete";
+     }
      closeEditModal();
  }
