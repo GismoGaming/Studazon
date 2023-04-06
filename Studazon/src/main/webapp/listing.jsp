@@ -83,9 +83,9 @@
         <form action="book" method="post" enctype="multipart/form-data" id="myForm">
             <input type="hidden" name="action" value="create">
 
-            <input type="text" id="title" name="title" placeholder="Title" required>
-            <input type="text" id="author" name="author" placeholder="Author" required>
-            <input type="number" id="isbn" name="isbn" placeholder="ISBN" required>
+            <input type="text" id="title" name="title" placeholder="Title" class="inputField" required>
+            <input type="text" id="author" name="author" placeholder="Author" class="inputField" required>
+            <input type="number" id="isbn" name="isbn" placeholder="ISBN" class="inputField" required>
 
             <div class="condition_container">
                 <label for="condition">Book Condition: </label>
@@ -97,14 +97,14 @@
                 </select>
             </div>
 
-            <input type="number" id="price" name="price" placeholder="Price" step="0.01" required>
+            <input type="number" id="price" name="price" placeholder="Price" class="inputField" step="0.01" required>
 
             <div class="image_container">
                 <label for="imageUrl">Image: </label>
-                <input type="file" accept="image/*" id="imageUrl" name="imageUrl" placeholder="Choose Book Image" required>
+                <input type="file" accept="image/*" id="imageUrl" name="imageUrl" required>
             </div>
 
-            <textarea type="text" id="comments" name="comments" placeholder="Comments" required></textarea>
+            <textarea type="text" id="comments" name="comments" placeholder="Comments" class="inputField" required></textarea>
 
             <button id="createListingBtn" type="submit">Create Listing</button>
         </form>

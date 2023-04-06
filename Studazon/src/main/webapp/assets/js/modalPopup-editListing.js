@@ -86,12 +86,10 @@ listingCards.forEach(listingCard => {
 
  modifyButton.onclick = function() {
      document.getElementById('action').value = "update";
-     alert(document.getElementById('action').value)
      closeEditModal();
  }
 
  deleteButton.onclick = function() {
      document.getElementById('action').value = "delete";
-     //console.log(document.getElementById('action').value)
      closeEditModal();
  }
