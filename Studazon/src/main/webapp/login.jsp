@@ -28,7 +28,7 @@
         <button id="login" type="submit">Login</button>
     </form>
 
-    <label class="register">Need an account?<a href="register" id="signup"> Sign up!</a></label>
+    <label class="register">Need an account? <u><a href="register" id="signup">Sign up!</a></u></label>
 </div>
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

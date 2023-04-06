@@ -26,7 +26,7 @@
         <input type="password" id="confirmPassword" required/>
         <button id="register" type="submit">Register</button>
     </form>
-    <label class="login">Have an account?<a href="login" id="loginLink"> Log in!</a></label>
+    <label class="login">Have an account? <u><a href="login" id="loginLink">Log in!</a></u></label>
 </div>
 </body>
 </html>
