@@ -51,8 +51,25 @@ window.addEventListener("keydown", function(event) {
         closeModal();
     }
 });
+
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
+
+function GetCost(text)
+{
+    let cost = formatter.format(parseFloat(text));
+
+    if (cost === "$0.00")
+        return "Free";
+    return cost;
+}
+
 // Attach a click event listener to each listingCard
 listingCards.forEach(listingCard => {
+    let priceText = listingCard.querySelector('.listing-price') ;
+    priceText.textContent = GetCost(priceText.textContent);
     listingCard.addEventListener('click', () => {
         // Get the values from the data attributes
         const picture =  listingCard.dataset.image;
@@ -68,7 +85,7 @@ listingCards.forEach(listingCard => {
         document.getElementById('view-author').textContent = author;
         document.getElementById('view-isbn').textContent = isbn;
         document.getElementById('view-condition').textContent = condition;
-        document.getElementById('view-price').textContent = "$" + price;
+        document.getElementById('view-price').textContent = GetCost(price);
         document.getElementById('view-comments').textContent = comments;
         document.getElementById('view-img').src = "data:image/jpg;base64,"+picture;
         document.getElementById('view-modalPopup').style.display = 'block';

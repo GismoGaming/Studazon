@@ -65,11 +65,27 @@ function changeModal() {
     openEditModal();
 }
 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
+
+function GetCost(text)
+{
+    let cost = formatter.format(parseFloat(text));
+
+    if (cost === "$0.00")
+        return "Free";
+    return cost;
+}
+
 // Get all listingCard elements
 const listingCards = document.querySelectorAll('.listingCard');
 
 // Attach a click event listener to each listingCard
 listingCards.forEach(listingCard => {
+    let priceText = listingCard.querySelector('.listing-price') ;
+    priceText.textContent = GetCost(priceText.textContent);
     listingCard.addEventListener('click', () => {
 
         // Get the values from the data attributes

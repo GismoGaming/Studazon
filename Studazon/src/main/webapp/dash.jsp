@@ -53,30 +53,6 @@
                <% if(request.getParameter("searchQuery")!=null) { %>value="<%=request.getParameter("searchQuery")%>"<% } %>>
     </form>
 </div>
-<%--<div class="background_circle">--%>
-<%--    <form action="account">--%>
-<%--        <input type="image" class="img_account" src="./assets/Interactivity/account_circle.png"--%>
-<%--               alt="Account Icon">--%>
-<%--    </form>--%>
-<%--    <div>--%>
-<%--        <form action="account-notifications">--%>
-<%--            <input type="image" class="img_notification" src="./assets/Interactivity/Notification%20Popup.png"--%>
-<%--                   alt="Notification Icon">--%>
-<%--        </form>--%>
-<%--    </div>--%>
-<%--</div>--%>
-<%--<form action="listing">--%>
-<%--    <input type="image" class="btn_createListing" src="./assets/Interactivity/Create New.png"--%>
-<%--           alt="Create new listing icon">--%>
-<%--</form>--%>
-<%--<form action="dash">--%>
-<%--    <input type="image" class="btn_createListing" src="./assets/Interactivity/Home Icon.png"--%>
-<%--           alt="Dashboard icon">--%>
-<%--</form>--%>
-<%--<form action="logout">--%>
-<%--    <input type="image" class="btn_createListing" src="./assets/Interactivity/Logout%20Icon.png"--%>
-<%--           alt="Logout icon">--%>
-<%--</form>--%>
     <div class="listingBG">
         <div class="listingCard-row">
             <!-- Repeating code for card -->
@@ -85,7 +61,7 @@
                     <div class="listingCard" onclick="changeModal.call(this)" data-title="${book.title}" data-author="${book.author}" data-isbn="${book.ISBN}"
                          data-image= "${Base64.getEncoder().encodeToString(book.imageUrl)}" data-condition="${book.book_condition}" data-price="${book.price}" data-comments="${book.comments}">
                         <div class="listing-priceCond">
-                            <div class="listing-price">$${book.price}</div>
+                            <div class="listing-price">${book.price}</div>
                             <div class="listing-cond">${book.book_condition}</div>
                         </div>
                         <img class="listing-picture"

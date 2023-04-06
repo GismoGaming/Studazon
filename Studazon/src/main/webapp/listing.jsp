@@ -75,7 +75,7 @@
                 <div class="listingCard" onclick="changeModal.call(this)" data-title="${book.title}" data-author="${book.author}" data-isbn="${book.ISBN}"
                      data-condition="${book.book_condition}" data-price="${book.price}" data-comments="${book.comments}" data-id="${book.id}">
                     <div class="listing-priceCond">
-                        <div class="listing-price">$${book.price}</div>
+                        <div class="listing-price">${book.price}</div>
                         <div class="listing-cond">${book.book_condition}</div>
                     </div>
                     <img class="listing-picture"
