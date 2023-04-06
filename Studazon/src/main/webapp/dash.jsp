@@ -103,7 +103,7 @@
             </div>
                 <div class="modal-bookCostInterest">
                     <p id = "view-price" class="modal-bookCostInterest-bookCost"><i><b>$100</b></i></p>
-                    <button class="modal-bookCostInterest-sendInterestButton">Send Intrest</button>
+                    <button class="modal-bookCostInterest-sendInterestButton">Send Interest</button>
                 </div>
             </div>
         </div>
