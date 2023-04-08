@@ -10,6 +10,15 @@ body {
     /* background: aqua; */
     display: flex;
 }
+@media screen and (max-width: 539px) {
+    .modal-masterContainer
+    {
+        width: 100%;
+        height: 100%;
+        /* background: aqua; */
+        display: inherit;
+    }
+}
 .modal-imageTitleISBNContainer
 {
     flex: 0 0 60%;
@@ -26,10 +35,13 @@ body {
 
 .modal-pictureText-title
  {
-     vertical-align: middle;
-     font-size: 36px;
-     margin-top:5px;
+    vertical-align: middle;
+    font-size: 36px;
+    margin-top: 5px;
+    /*background: aquamarine;*/
     margin-bottom: 5px;
+    overflow: auto;
+    max-height: 30vh;
  }
 
 
@@ -56,10 +68,14 @@ body {
 {
     text-align: left;
     font-size: 18px;
-
     margin: 0;
+    overflow: auto;
+    max-width: 30vw;
 }
-
+.modal-bookCostInterest {
+    width: fit-content;
+    margin: auto;
+}
 .modal-bookCostInterest-bookCost
 {
     font-size: 32px;
@@ -69,38 +85,4 @@ body {
 .modal-bookCostInterest-sendInterestButton
 {
     background-color:#95CD95;
-}
-
-@media only screen and (min-width: 470px) {
-    .modal-bookCostInterest
-    {
-        position: absolute;
-        right:calc(12%);
-        margin-top:0;
-        margin-bottom:0;
-    }
-
-    .modal-commentOverflow
-    {
-        width: 100%;
-        height: 40%;
-        overflow: auto  ;
-        margin-top:0;
-        margin-bottom:0;
-    }
-}
-@media only screen and (max-width: 469px) {
-    .modal-bookCostInterest
-    {
-        margin-top:0;
-        margin-bottom:0;
-    }
-    .modal-commentOverflow
-    {
-        width: 100%;
-        height: 20%;
-        overflow: auto ;
-        margin-top:0;
-        margin-bottom:0;
-    }
 }

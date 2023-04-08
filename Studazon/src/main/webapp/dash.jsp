@@ -14,45 +14,9 @@
     <title>Studazon - Dashboard</title>
 </head>
 <body>
-<div class="sidebar">
-    <div class="background_circle">
-        <form action="account">
-            <input type="image" class="btn_sidebar" src="./assets/Interactivity/account_circle.png"
-                   alt="Account Icon">
-        </form>
-        <div>
-            <form action="account-notifications">
-                <input type="image" class="img_notification" src="./assets/Interactivity/Notification%20Popup.png"
-                       alt="Notification Icon">
-            </form>
-        </div>
-    </div>
-    <div class="background_circle">
-        <form action="dash">
-            <input type="image" class="btn_sidebar" src="./assets/Interactivity/home.png"
-                   alt="Home Icon">
-        </form>
-    </div>
-    <div class="background_circle">
-        <form action="listing">
-            <input type="image" class="btn_sidebar" src="./assets/Interactivity/Create%20New.png"
-                   alt="Create New Listing Icon">
-        </form>
-    </div>
-    <div class="background_circle_logout">
-        <form action="logout">
-            <input type="image" class="btn_sidebar_logout" src="./assets/Interactivity/logout.png"
-                   alt="Logout Icon">
-        </form>
-    </div>
-</div>
-<div class="search-container">
-    <form action="dash">
-        <input type="image" src="./assets/Interactivity/Search%20Icon.png" alt="Search Icon">
-        <input class="input-field" type="text" placeholder="Search for a book..." name="searchQuery"
-               <% if(request.getParameter("searchQuery")!=null) { %>value="<%=request.getParameter("searchQuery")%>"<% } %>>
-    </form>
-</div>
+<%@include file="sideBar.jsp"%>
+<%@include file="searchContainer.jsp"%>
+
     <div class="listingBG">
         <div class="listingCard-row">
             <!-- Repeating code for card -->
@@ -95,7 +59,7 @@
                 <p id = "view-condition" class="modal-condComments-content">Practicaly new</p>
 
                 <p class="modal-condComments-header"><i><b>Comments:</b></i></p>
-                <div class = "modal-commentOverflow">
+                <div>
                 <p id = "view-comments" class="modal-condComments-content">
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

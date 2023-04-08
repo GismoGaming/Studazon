@@ -1,154 +1,80 @@
 body {
     background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
 }
-
-.background_circle {
+.accountBG
+{
+    background: white;
+    width:80%;
     position: absolute;
-    top: 15px;
-    left: 5px;
-    z-index: 1000 !important;
-    background: #ffffff;
+    height: auto;
 
-    max-height: 50px;
-    max-width: 50px;
-
-
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
     margin-right: auto;
     margin-left: auto;
-    border-radius: 100%;
-
-    align-items: center;
-    text-align: center;
-
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    align-content: center;
+    padding: 1vh;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
-
-.img_notification {
-
-    width: 32px;
-    height: 32px;
-    left: 30px;
-    top: -10px;
-    position: absolute;
-}
-
-.btn_createListing {
-    left: 5px;
-    display: block;
-    position: relative;
-
-    width: 50px;
+.accountButton
+{
+    width: 80%;
     height: 50px;
-
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    top: 20px;
+    display:inline-block;
 }
 
-.search-container form {
-    background-color: white;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    color: #555;
-    display: flex;
-    border-radius: 20px;
-    padding: 5px 5px;
+.myListings
+{
+    background-color: #6FC2D9;
 }
-
-.search-container input[type="text"] {
-    border: none;
-    font-size: 24px;
-    width: 100%;
-    background: transparent;
-}
-
-.search-container input[type="image"] {
-    border: none;
-    width: 40px;
-    height: 40px;
-}
-
-.search-container :focus-visible {
-    outline: none;
-}
-
-.search-container {
-    align-self: center;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 70px;
-    padding-right: 5px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.img_account {
-    padding: 10%;
+.modal-masterContainer
+{
     width: 100%;
     height: 100%;
+    /* background: aqua; */
+}
+h1
+{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+label
+{
+    height: 32px;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 32px;
+
+    display: flex;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+
+    color: #000000;
 }
 
-/* Start listing */
-.listingBG {
-    margin-top: 10px;
-    height: 70vh;
-    clip-path: inset(0 0 0 0);
-    overflow-y: scroll;
-    margin-left: 50px;
-    margin-right: 5px
-}
+.modal-input
+{
+    box-sizing: border-box;
 
-/* Float two columns side by side */
-.listingCard-column {
-    float: left;
-    width: 50%;
-    padding: 10px 10px;
-}
+    height: 50px;
 
-/* Remove extra left and right margins, due to padding */
-.listingCard-row {
-    margin: 0 10px;
-}
+    background: #FFFFFF;
+    border: 1px solid #000000;
 
-/* Clear floats after the columns */
-.listingCard-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+    font-weight: bold;
+    padding: 1%;
+    border-radius: 6px;
 
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-    .listingCard-column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
+    width: 100%;
 }
-
-/* Style the counter cards */
-.listingCard {
-    display: block;
-    background: rgb(251, 251, 251);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 5px;
-    border-radius: 24px;
-    cursor: pointer;
-}
-
-.listing-picturePriceCond_priceCond {
-    vertical-align: middle;
-    display: inline-block;
-}
-
-.listing-picturePriceCond_priceCond span {
-    display: block;
-}
-
-.listing-picturePriceCond img {
-    vertical-align: middle;
-    width: 100vh;
-    height: 100vh;
-    object-fit: scale-down;
-    max-width: 150px;
-    max-height: 150px;
+.modal-editProfile
+{
+    background: #95CD95;
 }
