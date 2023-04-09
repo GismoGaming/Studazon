@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%@ page import="java.util.Base64" %>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +23,7 @@
     <h1>My Account</h1>
     <p>${user.fullname}</p>
     <p>${user.email}</p>
-    <button class = "accountButton" onclick="changeModal.call(this)">Edit Profile</button>
+    <button title = "Edit your profile data" class = "accountButton" onclick="changeModal.call(this)">Edit Profile</button>
 </div>
 
 <!-- Start modal popup -->
@@ -40,18 +39,18 @@
             <input type="hidden" name="action" value="update_profile"/>
 
             <label for="fullname">Full Name:</label>
-            <input class = "modal-input" type="text" id="fullname" name="fullname" value="${user.fullname}" required>
+            <input class = "modal-input" type="text"  placeholder = "Full Name" id="fullname" name="fullname" value="${user.fullname}" required>
 
             <label for="email">Email:</label>
-            <input  class = "modal-input" type="email" id="email" name="email" value="${user.email}" readonly>
+            <input title = "Your email address, this cannot be changed" placeholder = "Email" class = "modal-input" type="email" id="email" name="email" value="${user.email}" readonly>
 
             <label for="old_password">Old Password:</label>
-            <input  class = "modal-input" type="old_password" id="old_password" name="old_password">
+            <input placeholder = "Old Password"  class = "modal-input" type="password" id="old_password" name="old_password">
 
             <label for="new_password">New Password:</label>
-            <input  class = "modal-input" type="new_password" id="new_password" name="new_password">
+            <input placeholder = "New Password" class = "modal-input" type="password" id="new_password" name="new_password">
 
-            <button type="submit">Update Profile</button>
+            <button title = "Submit changes to profile" type="submit">Update Profile</button>
         </form>
         </div>
     </div>

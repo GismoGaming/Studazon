@@ -39,7 +39,8 @@
             <!-- End Repeated -->
         </div>
     </div>
-<!-- Start modal popup -->
+
+<!-- Start modal popup - View Listing -->
 <div id="view-modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
@@ -50,7 +51,7 @@
             <div class="modal-imageTitleISBNContainer">
                 <img id = "view-img" class="modal-picture" src="./assets/Interactivity/cancel.png" alt="Modal Close Button">
                 <p id = "view-title" class="modal-pictureText-title"><b>Book Title</b></p>
-                <p id = "view-author" class="modal-pictureText-title">Book Author</p>
+                <p id = "view-author" class="modal-pictureText-title modal-pictureText-author">Book Author</p>
                 <p id = "view-isbn" class="modal-pictureText-ISBN"><i>ISBN: 12-34-456789</i></p>
             </div>
 
@@ -67,7 +68,16 @@
             </div>
                 <div class="modal-bookCostInterest">
                     <p id = "view-price" class="modal-bookCostInterest-bookCost"><i><b>$100</b></i></p>
-                    <button class="modal-bookCostInterest-sendInterestButton">Send Interest</button>
+                        <div class = "modal-buttonFlex">
+                            <form action = "SendInterestWONotes">
+                        <button id="sendInterest" type="submit" class="modal-bookCostInterest-sendInterestButton">
+                            Send Interest
+                        </button>
+                            </form>
+                        <div title = "Send interest with a note attached" class = "modal-bookCostInterest-sendInterestButton-addNotes" onclick="changeSendModal.call(this)">
+                            <img class = "modal-image-addNotes" src="assets/Interactivity/add_notes.png" alt="Add note to interest button">
+                        </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -75,8 +85,29 @@
 </div>
     <!-- End modal popup -->
 
+<!-- Start modal popup - Send Notes -->
+<div id="sendNotes-modalPopup" class="modal_bg">
+    <!-- Modal content -->
+    <div class="modal_content">
+        <img id="sendNotes_modal_close" class="modal_close" src="assets/Interactivity/cancel.png" alt="Exit Modal Buttons">
+
+        <!-- Begin modal data -->
+        <div class="modal-masterContainerAddNote">
+             <form action="SendInterestWNotes">
+                 <label for="send-note">Add a message to the seller (optional):</label>
+                 <textarea id="send-note" name="send-note" required></textarea>
+                 <div style = "text-align: right">
+                     <button class = "modal-sendWithNotes" id="sendNote" type="submit">Send Interest With Message</button>
+                 </div>
+             </form>
+        </div>
+    </div>
+</div>
+<!-- End modal popup -->
+
     <!-- <%@include file="footer.jsp" %> -->
-    <script src="./assets/js/modalPopup-dash.js"></script>
+<script src="assets/js/modalPopup-dashViewListing.js"></script>
+<script src="assets/js/modalPopup-dashSendNotes.js"></script>
     <script src="./assets/js/card-conditionChanger.js"></script>
 <!-- <%@include file="footer.jsp" %> -->
 </body>

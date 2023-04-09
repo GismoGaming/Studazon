@@ -1,43 +1,32 @@
 // Get the modal
 let modal = document.getElementById("view-modalPopup");
 
-// Get the button that opens the modal
-let btn = document.getElementById("modal_open");
-
 // Get the element that closes the modal
 let closeButton = document.getElementById("modal_close");
-
-function openModal() {
-    modal = document.getElementById("view-modalPopup");
-    modal.style.display = "block";
-}
-
+let viewListingUp = false;
 function openViewModal() {
     modal = document.getElementById("view-modalPopup");
     modal.style.display = "block";
+    viewListingUp = true;
 }
 
-function closeModal() {
+function closeViewModal() {
     modal = document.getElementById("view-modalPopup");
     modal.style.display = "none";
-}
-
-function closeEditModal() {
-    modal = document.getElementById("view-modalPopup");
-    modal.style.display = "none";
+    viewListingUp = false;
 }
 
 // When the user clicks on <span> (x), close the modal
 closeButton.onclick = function () {
-    closeModal();
+    closeViewModal();
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
+window.addEventListener("click",  function (event) {
     if (event.target === modal) {
-        closeModal();
+        closeViewModal();
     }
-}
+})
 
 function changeModal() {
     openViewModal();
@@ -46,7 +35,7 @@ function changeModal() {
 // Get all listingCard elements
 const listingCards = document.querySelectorAll('.listingCard');
 window.addEventListener("keydown", function(event) {
-    if (event.key === "Escape")
+    if (viewListingUp && event.key === "Escape")
     {
         closeModal();
     }

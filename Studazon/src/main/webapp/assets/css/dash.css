@@ -2,13 +2,38 @@ body {
     background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
 }
 
-/* Modal additional styling */
-.modal-masterContainer
+.modal-masterContainerAddNote
 {
     width: 100%;
     height: 100%;
-    /* background: aqua; */
-    display: flex;
+    margin-top: 10px;
+}
+
+/* Modal additional styling */
+@media screen and (min-width: 540px) {
+    .modal-masterContainer {
+        width: 100%;
+        height: 100%;
+        /* background: aqua; */
+        display: flex;
+    }
+
+    .modal-condComments-content {
+        text-align: left;
+        font-size: 18px;
+        margin: 0;
+        overflow: auto;
+        max-width: 30vw;
+    }
+    .modal-bookCostInterest-sendInterestButton
+    {
+        background-color: #95CD95;
+        height: 80px;
+        width: 20vw;
+        transition: 0.3s;
+        margin-right: -25px;
+
+    }
 }
 @media screen and (max-width: 539px) {
     .modal-masterContainer
@@ -17,6 +42,22 @@ body {
         height: 100%;
         /* background: aqua; */
         display: inherit;
+    }
+    .modal-condComments-content
+    {
+        text-align: left;
+        font-size: 18px;
+        margin: 0;
+        overflow: auto;
+    }
+    .modal-bookCostInterest-sendInterestButton
+    {
+        background-color: #95CD95;
+        height: 80px;
+        width: 50vw;
+        transition: 0.3s;
+        margin-right: -25px;
+
     }
 }
 .modal-imageTitleISBNContainer
@@ -44,6 +85,11 @@ body {
     max-height: 30vh;
  }
 
+.modal-pictureText-author
+{
+    font-weight: lighter;
+}
+
 
 .modal-pictureText-ISBN
 {
@@ -64,14 +110,7 @@ body {
     margin-bottom:0;
 }
 
-.modal-condComments-content
-{
-    text-align: left;
-    font-size: 18px;
-    margin: 0;
-    overflow: auto;
-    max-width: 30vw;
-}
+
 .modal-bookCostInterest {
     width: fit-content;
     margin: auto;
@@ -82,7 +121,81 @@ body {
     margin-top:0;
     margin-bottom:0;
 }
-.modal-bookCostInterest-sendInterestButton
+
+.modal-bookCostInterest-sendInterestButton:hover,
+.modal-bookCostInterest-sendInterestButton:focus {
+    background-color: #7bb97b;
+}
+.modal-bookCostInterest-sendInterestButton-addNotes
 {
-    background-color:#95CD95;
+    border-radius: 10px;
+    background-color:#6FC2D9;
+    width: 55px;
+    height: 55px;
+    margin-left: 0;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal-bookCostInterest-sendInterestButton-addNotes:focus
+,.modal-bookCostInterest-sendInterestButton-addNotes:hover
+{
+    background-color: #4f8591;
+}
+.modal-image-addNotes
+{
+    width:100%;
+    height:100%;
+    padding: 5px;
+}
+
+.modal-buttonFlex
+{
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+.modal-masterContainerAddNote label
+{
+    height: 32px;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 32px;
+
+    display: flex;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+
+    color: #000000;
+}
+
+.modal-masterContainerAddNote textarea
+{
+    box-sizing: border-box;
+
+    height: 50px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+
+    font-weight: bold;
+    padding: 1%;
+    border-radius: 6px;
+
+    width: 100%;
+    min-height: 200px;
+}
+.modal-sendWithNotes
+{
+    background: #95CD95;
+    width:200px;
+}
+
+.modal-sendWithNotes:hover,
+.modal-sendWithNotes:focus {
+    background-color: #7bb97b;
 }

@@ -13,8 +13,12 @@
 </div>
 <div class="main">
     <div class="btn-holder">
-        <button><a href="login" style="text-decoration: none">Login</a></button>
-        <button><a href="register" style="text-decoration: none">Register</a></button>
+        <form action = "login">
+            <input title = "Log into your Studazon account" class="login" type="submit" value="Login">
+        </form>
+        <form action = "register">
+            <input title = "Register a new account with Studazon" class="register" type="submit" value="Register">
+        </form>
     </div>
 </div>
 
