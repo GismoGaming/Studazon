@@ -15,6 +15,10 @@ function closeSendModal() {
     modalSendNote = document.getElementById("sendNotes-modalPopup");
     modalSendNote.style.display = "none";
     sendNotesUp = false;
+
+    document.getElementById('send-bookID').value = document.getElementById('view-bookID').value;
+
+    console.log(document.getElementById('send-bookID').value)
 }
 // When the user clicks on <span> (x), close the modal
 closeSendButton.onclick = function () {

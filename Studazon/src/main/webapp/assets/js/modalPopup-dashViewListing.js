@@ -78,8 +78,6 @@ listingCards.forEach(listingCard => {
         document.getElementById('view-price').textContent = GetCost(price);
         document.getElementById('view-comments').textContent = comments;
         document.getElementById('view-bookID').value = bookID;
-
-        console.log(document.getElementById('view-bookID').value);
         document.getElementById('view-img').src = "data:image/jpg;base64,"+picture;
         document.getElementById('view-modalPopup').style.display = 'block';
     });
