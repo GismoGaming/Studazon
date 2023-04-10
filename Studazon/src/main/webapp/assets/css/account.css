@@ -78,3 +78,8 @@ label
 {
     background: #95CD95;
 }
+
+.changeButton:disabled
+{
+    background: #60563b;
+}

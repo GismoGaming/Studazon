@@ -48,9 +48,9 @@
             <input placeholder = "Old Password"  class = "modal-input" type="password" id="old_password" name="old_password">
 
             <label for="new_password">New Password:</label>
-            <input placeholder = "New Password" class = "modal-input" type="password" id="new_password" name="new_password">
+            <input autocomplete="new-password"  placeholder = "New Password" class = "modal-input" type="password" id="new_password" name="new_password">
 
-            <button title = "Submit changes to profile" type="submit">Update Profile</button>
+            <button class = "changeButton" id = "changesSubmit" title = "Submit changes to profile" type="submit" >Update Profile</button>
         </form>
         </div>
     </div>
@@ -59,6 +59,7 @@
 <!-- <%@include file="footer.jsp" %> -->
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="./assets/js/emptyPasswordChecker.js"></script>
 <script src="./assets/js/modalPopup-account.js"></script>
 <script type="text/javascript" src="./assets/js/alert.js"></script>
 </html>
