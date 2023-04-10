@@ -20,46 +20,7 @@
 <body>
 <%--<%@include file="navbar.jsp"%>--%>
 
-<%--Side Bar--%>
-<div class="sidebar">
-    <%--My Account Button--%>
-    <div class="background_circle">
-        <form action="account">
-            <input type="image" class="btn_sidebar" src="./assets/Interactivity/account_circle.png"
-                   alt="Account Icon">
-        </form>
-        <div>
-            <form action="account-notifications">
-                <input type="image" class="img_notification" src="./assets/Interactivity/Notification%20Popup.png"
-                       alt="Notification Icon">
-            </form>
-        </div>
-    </div>
-
-    <%--Go to Dashboard Button--%>
-    <div class="background_circle">
-        <form action="dash">
-            <input type="image" class="btn_sidebar" src="./assets/Interactivity/home.png"
-                   alt="Home Icon">
-        </form>
-    </div>
-
-    <%--Go to 'View My Listings' Button--%>
-    <div class="background_circle">
-        <form action="listing">
-            <input type="image" class="btn_sidebar" src="./assets/Interactivity/Create%20New.png"
-                   alt="Create New Listing Icon">
-        </form>
-    </div>
-
-    <%--Logout Button--%>
-    <div class="background_circle_logout">
-        <form action="logout">
-            <input type="image" class="btn_sidebar_logout" src="./assets/Interactivity/logout.png"
-                   alt="Logout Icon">
-        </form>
-    </div>
-</div>
+<%@include file="sideBar.jsp"%>
 
 <%--Create a Listing Button--%>
 <div class="search-container">
@@ -69,6 +30,14 @@
 <%--Listings Display--%>
 <div class="listingBG">
     <div class="listingCard-row">
+        <c:if test="${empty books}">
+            <div class="listingCard-column">
+                <div class="listingCard-NoneFound">
+                    <p class = "listingCard-NoneFound-main">No Listings Found!</p>
+                    <p class = "listingCard-NoneFound-sub">Please double check your search parameters</p>
+                </div>
+            </div>
+        </c:if>
         <!-- Repeating code for card -->
         <c:forEach var="book" items="${books}">
             <div class="listingCard-column">

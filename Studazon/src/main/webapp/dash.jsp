@@ -20,6 +20,14 @@
     <div class="listingBG">
         <div class="listingCard-row">
             <!-- Repeating code for card -->
+            <c:if test="${empty books}">
+                <div class="listingCard-column">
+                    <div class="listingCard-NoneFound">
+                        <p class = "listingCard-NoneFound-main">No Listings Found!</p>
+                        <p class = "listingCard-NoneFound-sub">Please double check your search parameters</p>
+                    </div>
+                </div>
+            </c:if>
             <c:forEach var="book" items="${books}">
                 <div class="listingCard-column">
                     <div class="listingCard" onclick="changeModal.call(this)" data-title="${book.title}" data-author="${book.author}" data-isbn="${book.ISBN}"
@@ -94,20 +102,19 @@
 <div id="sendNotes-modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id="sendNotes_modal_close" class="modal_close" src="assets/Interactivity/cancel.png"
-             alt="Exit Modal Buttons">
+        <img id="sendNotes_modal_close" class="modal_close" src="assets/Interactivity/cancel.png" alt="Exit Modal Buttons">
 
         <!-- Begin modal data -->
         <div class="modal-masterContainerAddNote">
-            <form action="dash" method="post">
-                <input type="hidden" name="action" value="SendInterestWNotes">
-                <input type="hidden" id="send-bookID" name="notes_bookID" value="">
-                <label for="send-note">Add a message to the seller (optional):</label>
-                <textarea id="send-note" name="send-note" required></textarea>
-                <div style="text-align: right">
-                    <button class="modal-sendWithNotes" id="sendNote" type="submit">Send Interest With Message</button>
-                </div>
-            </form>
+             <form action="dash" method="post">
+                 <input type="hidden" name="action" value="SendInterestWNotes">
+                 <input type="hidden" id="send-bookID" name="bookID" value="">
+                 <label for="send-note">Add a message to the seller (optional):</label>
+                 <textarea id="send-note" name="send-note" required></textarea>
+                 <div style = "text-align: right">
+                     <button class = "modal-sendWithNotes" id="sendNote" type="submit">Send Interest With Message</button>
+                 </div>
+             </form>
         </div>
     </div>
 </div>
