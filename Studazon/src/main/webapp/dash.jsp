@@ -102,19 +102,20 @@
 <div id="sendNotes-modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id="sendNotes_modal_close" class="modal_close" src="assets/Interactivity/cancel.png" alt="Exit Modal Buttons">
+        <img id="sendNotes_modal_close" class="modal_close" src="assets/Interactivity/cancel.png"
+             alt="Exit Modal Buttons">
 
         <!-- Begin modal data -->
         <div class="modal-masterContainerAddNote">
-             <form action="dash" method="post">
-                 <input type="hidden" name="action" value="SendInterestWNotes">
-                 <input type="hidden" id="send-bookID" name="bookID" value="">
-                 <label for="send-note">Add a message to the seller (optional):</label>
-                 <textarea id="send-note" name="send-note" required></textarea>
-                 <div style = "text-align: right">
-                     <button class = "modal-sendWithNotes" id="sendNote" type="submit">Send Interest With Message</button>
-                 </div>
-             </form>
+            <form action="dash" method="post">
+                <input type="hidden" name="action" value="SendInterestWNotes">
+                <input type="hidden" id="send-bookID" name="notes_bookID" value="">
+                <label for="send-note">Add a message to the seller (optional):</label>
+                <textarea id="send-note" name="send-note" required></textarea>
+                <div style="text-align: right">
+                    <button class="modal-sendWithNotes" id="sendNote" type="submit">Send Interest With Message</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

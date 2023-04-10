@@ -14,6 +14,8 @@ public class UserDAO {
     protected static Properties props;
     private static final String UPDATE_USER_SQL = "UPDATE users SET fullname=? WHERE id=?";
     private static final String UPDATE_USER_W_PSWD_SQL = "UPDATE users SET fullname=?,password=? WHERE id=?";
+    private static final String FIND_USER_BY_ID_SQL = "SELECT * FROM users WHERE id = ?";
+
 
     protected static Connection getConnection() {
         props = new Properties();
@@ -95,5 +97,20 @@ public class UserDAO {
         }
         statement.executeUpdate();
         currentCon.close();
+    }
+
+    public static User getUserById(int id) {
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(FIND_USER_BY_ID_SQL)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(rs.getString("fullname"), rs.getString("email"), rs.getString("password"));
+                return user;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
