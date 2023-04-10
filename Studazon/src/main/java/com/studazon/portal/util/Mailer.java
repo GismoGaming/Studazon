@@ -20,6 +20,7 @@ public class Mailer {
     protected String to_name;
     protected String to_email;
     protected String type_of_email;
+    protected String notes;
 
     protected Book book;
 
@@ -95,6 +96,14 @@ public class Mailer {
         this.book = book;
     }
 
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     public void send() throws MessagingException, IOException {
         String subject = "";
         String body = "";
@@ -124,6 +133,50 @@ public class Mailer {
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">The Studazon Team</h4>\n" +
                         "</body>\n" +
                         "</html>";
+                break;
+            case "book_interest":
+                subject += "Someone is interested in your book, " + book.getTitle();
+                body += "<!DOCTYPE html>\n" +
+                        "<html>\n" +
+                        "<head>\n" +
+                        "\t<title>" + book.getTitle() + "</title>\n" +
+                        "</head>\n" +
+                        "<body style=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #f9f9f9;\">\n" +
+                        "\t<h1 style=\"color: #D7B358; font-size: 28px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;\">" + book.getTitle() + "</h1>\n" +
+                        "\t<h3 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">Hello " + to_name + ",</h3>\n" +
+                        "\t<p><b>" + buyer_name + " is interested in purchasing this book.</b></p>\n" +
+                        "\t<p><b>Here is their information:</b></p>\n" +
+                        "\t<p style=\"color: #7bb97b;\"><i>Email - " + buyer_email + "</i><p>\n" +
+                        "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">As always, if you have any questions or feedback, don't hesitate to reach out to our support team.</h4>\n" +
+                        "\t<a href=\"http://18.206.192.122:8080/studazon/listing\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #6fc2d9; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">View your listings</a>\n" +
+                        "\t<p>Happy selling!</p>\n" +
+                        "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">The Studazon Team</h4>\n" +
+                        "</body>\n" +
+                        "</html>";
+                break;
+            case "book_interest_notes":
+                subject += "Someone is interested in your book, " + book.getTitle();
+                body += "<!DOCTYPE html>\n" +
+                        "<html>\n" +
+                        "<head>\n" +
+                        "\t<title>" + book.getTitle() + "</title>\n" +
+                        "</head>\n" +
+                        "<body style=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #f9f9f9;\">\n" +
+                        "\t<h1 style=\"color: #D7B358; font-size: 28px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;\">" + book.getTitle() + "</h1>\n" +
+                        "\t<h3 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">Hello " + to_name + ",</h3>\n" +
+                        "\t<p><b>" + buyer_name + " is interested in purchasing this book.</b></p>\n" +
+                        "\t<p><b>Here is their information:</b></p>\n" +
+                        "\t<p style=\"color: #7bb97b;\"><i>Email - " + buyer_email + "</i><p>\n" +
+                        "\t<p><b>Message from the buyer: </b></p>\n" +
+                        "\t<p style=\"color: #7bb97b;\"><i>" + notes + "</i></p>\n" +
+                        "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">As always, if you have any questions or feedback, don't hesitate to reach out to our support team.</h4>\n" +
+                        "\t<a href=\"http://18.206.192.122:8080/studazon/listing\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #6fc2d9; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">View your listings</a>\n" +
+                        "\t<p>Happy selling!</p>\n" +
+                        "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">The Studazon Team</h4>\n" +
+                        "</body>\n" +
+                        "</html>";
+                break;
+
         }
 
         // Set up mail server properties
