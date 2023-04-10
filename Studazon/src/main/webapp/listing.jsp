@@ -101,51 +101,28 @@
         <form action="book" method="post" enctype="multipart/form-data" id="myForm">
             <input type="hidden" name="action" value="create">
 
-            <div class="tooltip">
-                <input type="text" id="title" name="title" placeholder="Title" class="inputField" required>
-                <span class="tooltiptext">Enter the title as it should be shown</span>
-            </div>
-
-            <div class="tooltip">
-                <input type="text" id="author" name="author" placeholder="Author" class="inputField" required>
-                <span class="tooltiptext">Enter the author(s) as it should be shown</span>
-            </div>
-
-            <div class="tooltip">
-                <input type="number" id="isbn" name="isbn" placeholder="ISBN" class="inputField" required>
-                <span class="tooltiptext">Enter the ISBN without dashes and spaces</span>
-            </div>
+            <input type="text" id="title" name="title" placeholder="Title" class="inputField" title="Enter the title as it should be shown" required>
+            <input type="text" id="author" name="author" placeholder="Author" class="inputField" title="Enter the author(s) as it should be shown" required>
+            <input type="number" id="isbn" name="isbn" placeholder="ISBN" class="inputField" title="Enter the ISBN without dashes and spaces" required>
 
             <div class="condition_container">
-                <label for="condition">Book Condition: </label>
-                <div class="tooltip" id="condition_tooltip">
-                    <select id="condition" name="condition">
-                        <option value="New">New</option>
-                        <option value="Good">Good</option>
-                        <option value="Fair">Fair</option>
-                        <option value="Poor">Poor</option>
-                    </select>
-                    <span class="tooltiptext">Choose the book condition using the drop menu</span>
-                </div>
+                <label for="condition" title="Choose the book condition using the drop menu">Book Condition: </label>
+                <select id="condition" name="condition" title="Choose the book condition using the drop menu">
+                    <option value="New">New</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
+                </select>
             </div>
 
-            <div class="tooltip">
-                <input type="number" id="price" name="price" placeholder="Price" step="0.01" required>
-                <span class="tooltiptext">Enter price in the format XXX.XX</span>
-            </div>
+            <input type="number" id="price" name="price" placeholder="Price" step="0.01" title="Enter price in the format XXX.XX" required>
 
             <div class="image_container">
-                <label for="imageUrl"class="tooltiptext">Image:</label>
-                <div class="tooltip" id="image_tooltip">
-                    <input type="file" accept="image/*" id="imageUrl" name="imageUrl">
-                    <span class="tooltiptext">Supported File Types: .jpg, .png</span>
-                </div>
+                <label for="imageUrl"class="tooltiptext" title="Supported File Types: .jpg, .png">Image:</label>
+                <input type="file" accept="image/*" id="imageUrl" name="imageUrl" title="Supported File Types: .jpg, .png">
             </div>
 
-            <div class="tooltip">
-                <textarea id="comments" name="comments" placeholder="Comments" required></textarea>
-                <span class="tooltiptext">Enter comments for potential buyer to see</span>
-            </div>
+            <textarea id="comments" name="comments" placeholder="Comments" title="Enter comments for potential buyer to see" required></textarea>
 
             <button id="createListingBtn" type="submit">Create Listing</button>
         </form>
@@ -164,51 +141,28 @@
             <input type="hidden" name="action" id="action" value="update">
             <input type="hidden" name="edit-id" id="edit-id" value="">
 
-            <div class="tooltip">
-                <input type="text" id="edit-title" name="edit-title" placeholder="Title" required>
-                <span class="tooltiptext">Enter the title as it should be shown</span>
-            </div>
-
-            <div class="tooltip">
-                <input type="text" id="edit-author" name="edit-author" placeholder="Author" required>
-                <span class="tooltiptext">Enter the author(s) as it should be shown</span>
-            </div>
-
-            <div class="tooltip">
-                <input type="number" id="edit-isbn" name="edit-isbn" placeholder="ISBN" required>
-                <span class="tooltiptext">Enter the ISBN without dashes and spaces</span>
-            </div>
+            <input type="text" id="edit-title" name="edit-title" placeholder="Title" title="Enter the title as it should be shown" required>
+            <input type="text" id="edit-author" name="edit-author" placeholder="Author" title="Enter the author(s) as it should be shown" required>
+            <input type="number" id="edit-isbn" name="edit-isbn" placeholder="ISBN" title="Enter the ISBN without dashes and spaces" required>
 
             <div class="condition_container">
-                <label for="edit-condition">Book Condition: </label>
-                <div class="tooltip" id="edit-condition_tooltip">
-                    <select id="edit-condition" name="edit-condition">
-                        <option value="New">New</option>
-                        <option value="Good">Good</option>
-                        <option value="Fair">Fair</option>
-                        <option value="Poor">Poor</option>
-                    </select>
-                    <span class="tooltiptext">Choose the book condition using the drop menu</span>
-                </div>
+                <label for="edit-condition" title="Choose the book condition using the drop menu">Book Condition: </label>
+                <select id="edit-condition" name="edit-condition" title="Choose the book condition using the drop menu">
+                    <option value="New">New</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
+                </select>
             </div>
 
-            <div class="tooltip">
-                <input type="number" id="edit-price" name="edit-price" placeholder="Price" step="0.01" required>
-                <span class="tooltiptext">Enter price in the format XXX.XX</span>
-            </div>
+            <input type="number" id="edit-price" name="edit-price" placeholder="Price" step="0.01" title="Enter price in the format XXX.XX" required>
 
             <div class="image_container">
-                <label for="imageUrl"class="tooltiptext">Image:</label>
-                <div class="tooltip" id="edit-image_tooltip">
-                    <input type="file" accept="image/*" id="edit-imageUrl" name="edit-imageUrl">
-                    <span class="tooltiptext">Supported File Types: .jpg, .png</span>
-                </div>
+                <label for="imageUrl"class="tooltiptext" title="Supported File Types: .jpg, .png">Image:</label>
+                <input type="file" accept="image/*" id="edit-imageUrl" name="edit-imageUrl" title="Supported File Types: .jpg, .png">
             </div>
 
-            <div class="tooltip">
-                <textarea id="edit-comments" name="edit-comments" placeholder="Comments" required></textarea>
-                <span class="tooltiptext">Enter comments for potential buyer to see</span>
-            </div>
+            <textarea id="edit-comments" name="edit-comments" placeholder="Comments" title="Enter comments for potential buyer to see" required></textarea>
 
             <button id="modifyListingBtn" type="submit">Modify Listing</button>
             <button id="deleteListingBtn" type="submit">Delete Listing</button>
