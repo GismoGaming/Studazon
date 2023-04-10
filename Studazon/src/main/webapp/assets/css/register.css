@@ -82,6 +82,22 @@ button
     padding: 0;
 }
 
+select
+{
+    height: fit-content;
+    width: 90%;
+    font-size: 18px;
+    font-family: "Segoe UI";
+    border-radius: 5px;
+    margin-bottom: 2%;
+    font-weight: lighter;
+    background-color: lightgray;
+}
+select option
+{
+    background-color: white;
+}
+
 @media only screen and (min-width: 500px)
 {
     h1
