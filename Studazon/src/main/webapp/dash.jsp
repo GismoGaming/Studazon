@@ -61,46 +61,51 @@
 
                 <p class="modal-condComments-header"><i><b>Comments:</b></i></p>
                 <div>
-                <p id = "view-comments" class="modal-condComments-content">
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-            </div>
+                    <p id="view-comments" class="modal-condComments-content">
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
                 <div class="modal-bookCostInterest">
-                    <p id = "view-price" class="modal-bookCostInterest-bookCost"><i><b>$100</b></i></p>
-                        <div class = "modal-buttonFlex">
-                            <form action = "SendInterestWONotes">
-                                <input type="hidden" id ="view-bookID" name="bookID" value = "">
-                        <button id="sendInterest" type="submit" class="modal-bookCostInterest-sendInterestButton">
-                            Send Interest
-                        </button>
-                            </form>
-                        <div title = "Send interest with a note attached" class = "modal-bookCostInterest-sendInterestButton-addNotes" onclick="changeSendModal.call(this)">
-                            <img class = "modal-image-addNotes" src="assets/Interactivity/add_notes.png" alt="Add note to interest button">
+                    <p id="view-price" class="modal-bookCostInterest-bookCost"><i><b>$100</b></i></p>
+                    <div class="modal-buttonFlex">
+                        <form action="dash" method="post">
+                            <input type="hidden" name="action" value="SendInterestWONotes">
+                            <input type="hidden" id="view-bookID" name="bookID" value="">
+                            <button id="sendInterest" type="submit" class="modal-bookCostInterest-sendInterestButton">
+                                Send Interest
+                            </button>
+                        </form>
+                        <div title="Send interest with a note attached"
+                             class="modal-bookCostInterest-sendInterestButton-addNotes"
+                             onclick="changeSendModal.call(this)">
+                            <img class="modal-image-addNotes" src="assets/Interactivity/add_notes.png"
+                                 alt="Add note to interest button">
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <!-- End modal popup -->
+<!-- End modal popup -->
 
 <!-- Start modal popup - Send Notes -->
 <div id="sendNotes-modalPopup" class="modal_bg">
     <!-- Modal content -->
     <div class="modal_content">
-        <img id="sendNotes_modal_close" class="modal_close" src="assets/Interactivity/cancel.png" alt="Exit Modal Buttons">
+        <img id="sendNotes_modal_close" class="modal_close" src="assets/Interactivity/cancel.png"
+             alt="Exit Modal Buttons">
 
         <!-- Begin modal data -->
         <div class="modal-masterContainerAddNote">
-             <form action="SendInterestWNotes">
-                 <label for="send-note">Add a message to the seller (optional):</label>
-                 <textarea id="send-note" name="send-note" required></textarea>
-                 <div style = "text-align: right">
-                     <button class = "modal-sendWithNotes" id="sendNote" type="submit">Send Interest With Message</button>
-                 </div>
-             </form>
+            <form action="dash">
+                <label for="send-note">Add a message to the seller (optional):</label>
+                <textarea id="send-note" name="send-note" required></textarea>
+                <div style="text-align: right">
+                    <button class="modal-sendWithNotes" id="sendNote" type="submit">Send Interest With Message</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

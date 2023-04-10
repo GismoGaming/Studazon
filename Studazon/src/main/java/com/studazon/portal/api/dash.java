@@ -48,9 +48,11 @@ public class dash extends HttpServlet {
 
     private void sendInterestWithoutNotes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("Dash (sendInterestWithoutNotes): Request: " + request);
+        String bookID = request.getParameter("bookID");
         User user = (User) request.getSession().getAttribute("user");
 
         // Handle the Send Interest Without Notes action here
+        System.out.println("dash (sendInterestWithoutNotes) BookId: " + bookID);
 
         // Redirect to a success page or the next step
         request.setAttribute("status", "success");
@@ -63,6 +65,7 @@ public class dash extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
 
         String notes = request.getParameter("send-note");
+        System.out.println("dash(sendInterestWithnotes) Notes: " + notes);
         // Handle the Send Interest With Notes action here using the notes variable
 
         // Redirect to a success page or the next step
