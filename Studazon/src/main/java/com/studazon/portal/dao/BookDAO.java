@@ -43,7 +43,6 @@ public class BookDAO {
             ResultSet rs = stmt.executeQuery(SELECT_ALL_BOOKS_SQL);
             while (rs.next()) {
                 Book book = new Book(rs.getInt("id"), rs.getInt("user_id"), rs.getString("title"), rs.getString("author"), rs.getString("isbn"), rs.getString("book_condition"), rs.getBytes("image_url"), rs.getString("comments"), rs.getDouble("price"));
-                System.out.println(book.getTitle());
                 books.add(book);
             }
             conn.close();

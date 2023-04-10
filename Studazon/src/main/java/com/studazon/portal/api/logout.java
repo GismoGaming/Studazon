@@ -11,6 +11,11 @@ import java.io.IOException;
 
 @WebServlet(name = "logout", value = "/logout")
 public class logout extends HttpServlet {
+    @Override
+    public void init() {
+        System.out.println("Logout (init): Servlet initialized");
+    }
+
     private static final long serialVersionUID = 1L;
 
     public logout() {

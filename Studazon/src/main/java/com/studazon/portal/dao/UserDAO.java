@@ -12,7 +12,8 @@ import java.util.Properties;
 public class UserDAO {
 
     protected static Properties props;
-    private static final String UPDATE_USER_SQL = "UPDATE users SET fullname=?,email=?,password=? WHERE id=?";
+    private static final String UPDATE_USER_SQL = "UPDATE users SET fullname=? WHERE id=?";
+    private static final String UPDATE_USER_W_PSWD_SQL = "UPDATE users SET fullname=?,password=? WHERE id=?";
 
     protected static Connection getConnection() {
         props = new Properties();
@@ -76,19 +77,23 @@ public class UserDAO {
         return user;
     }
 
-    public static void updateUser(User user) throws SQLException {
+    public static void updateUser(User user, boolean passwordFlag) throws SQLException {
 
         Connection currentCon = getConnection();
 
-        PreparedStatement statement = currentCon.prepareStatement(UPDATE_USER_SQL);
+        PreparedStatement statement = null;
 
-        statement.setString(1, user.getFullname());
-        statement.setString(2, user.getEmail());
-        statement.setString(3, Crypt.crypt(user.getPassword(), "$1$SZ"));
-        statement.setInt(4, user.getId());
-
+        if (passwordFlag) {
+            statement = currentCon.prepareStatement(UPDATE_USER_W_PSWD_SQL);
+            statement.setString(1, user.getFullname());
+            statement.setString(2, Crypt.crypt(user.getPassword(), "$1$SZ"));
+            statement.setInt(3, user.getId());
+        } else {
+            statement = currentCon.prepareStatement(UPDATE_USER_SQL);
+            statement.setString(1, user.getFullname());
+            statement.setInt(2, user.getId());
+        }
         statement.executeUpdate();
-
         currentCon.close();
     }
 }

@@ -15,6 +15,11 @@ import java.sql.SQLException;
 @WebServlet(name = "account", value = "/account")
 public class account extends HttpServlet {
     @Override
+    public void init() {
+        System.out.println("Account (init): Servlet initialized");
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setAttribute("user", request.getSession().getAttribute("user"));
@@ -37,6 +42,7 @@ public class account extends HttpServlet {
         String fullname = request.getParameter("fullname");
         String old_pswd = request.getParameter("old_password");
         String new_pswd = request.getParameter("new_password");
+        boolean passwordFlag = false;
 
         if (fullname == null || fullname.isEmpty()) {
             request.setAttribute("status", "failed");
@@ -56,9 +62,10 @@ public class account extends HttpServlet {
                 return;
             }
             userRecord.setPassword(new_pswd);
+            passwordFlag = true;
         }
 
-        UserDAO.updateUser(userRecord);
+        UserDAO.updateUser(userRecord, passwordFlag);
         request.setAttribute("user", userRecord);
 
         request.setAttribute("status", "success");

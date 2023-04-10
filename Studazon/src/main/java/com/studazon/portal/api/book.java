@@ -21,6 +21,11 @@ import java.util.List;
 )
 public class book extends HttpServlet {
     @Override
+    public void init() {
+        System.out.println("Book (init): Servlet initialized");
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {

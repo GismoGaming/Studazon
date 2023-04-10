@@ -11,6 +11,11 @@ import java.io.IOException;
 @WebServlet(name = "index", value = "/index")
 public class index extends HttpServlet {
     @Override
+    public void init() {
+        System.out.println("Index (init): Servlet initialized");
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }

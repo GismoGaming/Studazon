@@ -18,6 +18,11 @@ import java.sql.SQLException;
 @WebServlet(name = "register", value = "/register")
 public class register extends HttpServlet {
     @Override
+    public void init() {
+        System.out.println("Logout (init): Servlet initialized");
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("register.jsp").forward(request, response);
     }

@@ -14,6 +14,11 @@ import java.util.List;
 @WebServlet(name = "dash", value = "/dash")
 public class dash extends HttpServlet {
     @Override
+    public void init() {
+        System.out.println("Dash (init): Servlet initialized");
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String searchQuery = request.getParameter("searchQuery");
         List<Book> books;

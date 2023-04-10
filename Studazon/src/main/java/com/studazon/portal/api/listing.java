@@ -15,6 +15,11 @@ import java.util.List;
 @WebServlet(name = "listing", value = "/listing")
 public class listing extends HttpServlet {
     @Override
+    public void init() {
+        System.out.println("Listing (init): Servlet initialized");
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
         List<Book> books = BookDAO.getAllBooks(user.getId());
