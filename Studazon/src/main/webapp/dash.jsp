@@ -20,6 +20,14 @@
     <div class="listingBG">
         <div class="listingCard-row">
             <!-- Repeating code for card -->
+            <c:if test="${empty books}">
+                <div class="listingCard-column">
+                    <div class="listingCard-NoneFound">
+                        <p class = "listingCard-NoneFound-main">No Listings Found!</p>
+                        <p class = "listingCard-NoneFound-sub">Please double check your search parameters</p>
+                    </div>
+                </div>
+            </c:if>
             <c:forEach var="book" items="${books}">
                 <div class="listingCard-column">
                     <div class="listingCard" onclick="changeModal.call(this)" data-title="${book.title}" data-author="${book.author}" data-isbn="${book.ISBN}"
