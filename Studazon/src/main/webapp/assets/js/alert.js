@@ -1,8 +1,6 @@
 var status = document.getElementById("status").value;
 var message = document.getElementById("message").value;
 
-console.log(status)
-console.log(message)
 if (status === "failed") {
     swal("Something went wrong!", message, "error")
         .then(function () {

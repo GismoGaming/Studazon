@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,6 +22,11 @@ public class listing extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+
         User user = (User) request.getSession().getAttribute("user");
         List<Book> books = BookDAO.getAllBooks(user.getId());
         request.setAttribute("books", books);

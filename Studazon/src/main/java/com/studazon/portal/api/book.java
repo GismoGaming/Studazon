@@ -27,16 +27,14 @@ public class book extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+
         String action = request.getParameter("action");
         if (action == null) {
             action = "list";
-        }
-
-        HttpSession session = request.getSession();
-        String user = (String) session.getAttribute("user");
-        if (user == null) {
-            response.sendRedirect("login");
-            return;
         }
 
         switch (action) {

@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.apache.commons.codec.digest.Crypt;
 
 import java.io.IOException;
@@ -21,7 +22,10 @@ public class account extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
         request.setAttribute("user", request.getSession().getAttribute("user"));
         request.getRequestDispatcher("account.jsp").forward(request, response);
     }

@@ -2,6 +2,7 @@ package com.studazon.portal.api;
 
 import com.studazon.portal.dao.BookDAO;
 import com.studazon.portal.entity.Book;
+import com.studazon.portal.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -20,6 +21,7 @@ public class dash extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("Dash (get): Request received");
         String searchQuery = request.getParameter("searchQuery");
         List<Book> books;
         if (searchQuery == null || searchQuery.equals("")) {
@@ -32,6 +34,41 @@ public class dash extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("Dash (post): Request received");
+        String action = request.getParameter("action");
+
+        if ("SendInterestWONotes".equals(action)) {
+            sendInterestWithoutNotes(request, response);
+        } else if ("SendInterestWNotes".equals(action)) {
+            sendInterestWithNotes(request, response);
+        }  // Handle other actions or redirect to an error page
+
     }
+
+    private void sendInterestWithoutNotes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("Dash (sendInterestWithoutNotes): Request: " + request);
+        User user = (User) request.getSession().getAttribute("user");
+
+        // Handle the Send Interest Without Notes action here
+
+        // Redirect to a success page or the next step
+        request.setAttribute("status", "success");
+        request.setAttribute("message", "Your interest has been sent to the seller!");
+        request.getRequestDispatcher("dash.jsp").include(request, response);
+    }
+
+    private void sendInterestWithNotes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("Dash (sendInterestWithNotes): Request: " + request);
+        User user = (User) request.getSession().getAttribute("user");
+
+        String notes = request.getParameter("send-note");
+        // Handle the Send Interest With Notes action here using the notes variable
+
+        // Redirect to a success page or the next step
+        request.setAttribute("status", "success");
+        request.setAttribute("message", "Your interest (with your message) has been sent to the seller!");
+        request.getRequestDispatcher("dash.jsp").include(request, response);
+    }
+
 }
