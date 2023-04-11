@@ -55,7 +55,7 @@
     <div class="footer-container">
         <div class="left-col">
             <a href="${pageContext.request.contextPath}/index"><img
-                    src="assets/Images/Studazon Logo/icon/Studazon%20-%20Icon%20Style.svg" alt="heir_atlas_logo" class="logo"></a>
+                    src="./assets/icon/Studazon%20-%20Icon%20Style.svg" alt="heir_atlas_logo" class="logo"></a>
             <p class="rights-text">&copy 2023 <b>Studazon</b> All Rights Reserved.</p>
         </div>
 
