@@ -24,6 +24,7 @@
 
         <label class="password" for="password">Password</label>
         <input type="password" id="password" name="password" required>
+        <label><u>Forget your password?</u></label>
 
         <button id="login" type="submit">Login</button>
     </form>
