@@ -32,6 +32,11 @@ button:hover {
     vertical-align: middle;
 }
 
+#edit-image
+{
+    height: 175px;
+}
+
 h1
 {
     height: auto;

@@ -95,6 +95,7 @@ listingCards.forEach(listingCard => {
         const condition = listingCard.dataset.condition;
         const price = listingCard.dataset.price;
         const comments = listingCard.dataset.comments;
+        const imageUrl = listingCard.querySelector('.listing-picture').src;
         const id = listingCard.dataset.id;
 
         // Display the values in the modal
@@ -104,6 +105,9 @@ listingCards.forEach(listingCard => {
         document.getElementById('edit-condition').value = condition;
         document.getElementById('edit-price').value = price;
         document.getElementById('edit-comments').value = comments;
+        document.getElementById('edit-image').src = imageUrl;
+        console.log(imageUrl);
+        document.getElementById('edit-image').alt = title;
         document.getElementById('edit-id').value = id;
         document.getElementById('edit-modalPopup').style.display = 'block';
     });
