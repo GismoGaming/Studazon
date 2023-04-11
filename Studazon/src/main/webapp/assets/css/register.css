@@ -1,0 +1,122 @@
+body
+{
+    background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
+    color: #000000;
+    flex-wrap: wrap;
+}
+
+h1
+{
+    height: auto;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 32px;
+
+    text-align: center;
+    margin: 0;
+
+    color: #000000;
+}
+
+img
+{
+    height: 101px;
+    width: 80px;
+}
+
+label
+{
+    height: 32px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 32px;
+
+    display: flex;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+
+    color: #000000;
+}
+
+input
+{
+    box-sizing: border-box;
+
+    height: 50px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+
+    font-weight: bold;
+    padding: 1%;
+    border-radius: 6px;
+}
+
+.login
+{
+    font-weight: 400;
+    text-align: center;
+    display: block;
+}
+
+button
+{
+    display: block;
+}
+
+#register
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loginLink
+{
+    color: black;
+    padding: 0;
+}
+
+select
+{
+    height: fit-content;
+    width: 90%;
+    font-size: 18px;
+    font-family: "Segoe UI";
+    border-radius: 5px;
+    margin-bottom: 2%;
+    font-weight: lighter;
+    background-color: lightgray;
+}
+select option
+{
+    background-color: white;
+}
+
+@media only screen and (min-width: 500px)
+{
+    h1
+    {
+        width: 100%;
+    }
+
+    input
+    {
+        width: 90%;
+    }
+
+    label
+    {
+        width: 90%;
+    }
+
+    .login
+    {
+        width: 100%;
+    }
+}

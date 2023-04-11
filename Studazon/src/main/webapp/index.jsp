@@ -2,13 +2,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Studazon</title>
+    <%@include file="header.jsp" %>
+    <title>Studazon - For Students</title>
+    <link rel="stylesheet" href="./assets/css/SHARED.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
-<h1>Welcome to Studazon!</h1>
-<h3>A book selling platform</h3>
-<br/>
-<a href="loginUser">Login</a><br>
-<a href="registerUser">Register</a>
+<div class="banner">
+    <img src="assets/banner/Studazon%20-%20Banner%20Style.png" alt="Studazon Logo">
+</div>
+<div class="main">
+    <div class="btn-holder">
+        <form action = "login">
+            <input title = "Log into your Studazon account" class="login" type="submit" value="Login">
+        </form>
+        <form action = "register">
+            <input title = "Register a new account with Studazon" class="register" type="submit" value="Register">
+        </form>
+    </div>
+</div>
+
+<%@include file="footer.jsp" %>
 </body>
 </html>

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+:root {
+
+    /* Colors */
+    --sg-blue: #6FC2D9;
+    --sg-blue-clicked: #5090A2FF;
+
+    --sg-gold: #D7B358;
+    --sg-gold-clicked: #856B21FF;
+
+    --sg-bronze: #A7750D;
+    --sg-bronze-clicked:#72510BFF;
+
+    --sg-black: #000000;
+    --sg-white: #FFFFFF;
+
+    /* Fonts  */
+    --font: "Segoe UI", Arial, sans-serif;
+    --font-size-button: 20px;
+    --font-size-header: 40px;
+    --font-size-title: 25px;
+}

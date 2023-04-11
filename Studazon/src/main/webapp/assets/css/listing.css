@@ -1,0 +1,130 @@
+body {
+    background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
+    font-family: 'Segoe UI';
+}
+
+.search-container button{
+    border-radius: 20px;
+    height: 100%;
+    width: fit-content;
+    background: white;
+    color: #555;
+    text-align: left;
+    font-size: 24px;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+#modal_open:hover{
+    background-color: lightgray;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: var(--sg-gold-clicked);
+    text-decoration: none;
+}
+
+#create_img
+{
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+}
+
+h1
+{
+    height: auto;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 32px;
+
+    padding: 10px;
+
+    text-align: center;
+    margin-bottom: 1vh;
+    margin-top: 0;
+
+    color: #000000;
+}
+
+input
+{
+    height: 6vh;
+    width: 100%;
+    margin-bottom: 1vh;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+label
+{
+    height: 6vh;
+    width: fit-content;
+
+    font-style: normal;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 32px;
+
+    text-align: left;
+
+    color: #000000;
+    display: flex;
+}
+
+select
+{
+    height: 6vh;
+    width: auto;
+    font-size: 18px;
+    margin-bottom: 1vh;
+    margin-left: 5px;
+    border-radius: 6px;
+    border: 2px solid;
+    left: 0;
+}
+
+textarea
+{
+    height: 6vh;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 2px solid;
+}
+
+.condition_container
+{
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.image_container
+{
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+input[type=file]
+{
+    margin-left: 5px;
+    width: 235px;
+}
+
+.inputField::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: "Segoe UI";
+    opacity: 1; /* Firefox */
+}
+
+.inputField:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: "Segoe UI";
+}
+
+.inputField::-ms-input-placeholder { /* Microsoft Edge */
+    font-family: "Segoe UI";
+}

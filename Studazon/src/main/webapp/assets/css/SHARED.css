@@ -1,0 +1,514 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    font-family: var(--font);
+}
+
+button {
+    background: var(--sg-gold);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+
+    border:none;
+    cursor: pointer;
+
+    margin: 10px;
+    font-style: normal;
+    font-weight: 30;
+    font-size: var(--font-size-button);
+    line-height: 32px;
+    /* or 89% */
+
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+button:hover {
+    background-color: var(--sg-gold-clicked);
+    text-decoration: none;
+}
+
+:focus {
+    border: var(--sg-bronze);
+    color: #555555;
+}
+
+/*Remove */
+a {
+    color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.main {
+    display: inline-flex;
+}
+
+.btn-holder {
+    display:flex;
+    flex-direction: column;
+}
+
+/* MODAL */
+
+/* The Modal (background) */
+.modal_bg {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 90px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    backdrop-filter: blur(2px);
+}
+
+/* Modal Content */
+.modal_content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 2.5vh;
+    width: 80%;
+    height: fit-content;
+
+    border-radius: 32px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* The Close Button */
+.modal_close {
+    float: right;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal_close:hover
+{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.modal_close:focus {
+    cursor: pointer;
+}
+
+.search-container :focus-visible {
+    outline: none;
+}
+
+.img_account {
+    padding: 10%;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sidebar */
+@media only screen and (min-width: 550px) {
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        max-width: 100px;
+        width: 7%;
+        float: left;
+        height: 100%;
+        /* background: #000; */
+    }
+
+    .img_notification {
+        visibility: hidden;
+        width: 32px;
+        height: 32px;
+        left: 30px;
+        top: -10px;
+        position: absolute;
+    }
+    .img_notification:hover
+    {
+        transform: scale(1.1);
+    }
+    .background_circle {
+        background: #ffffff;
+
+        height: 50px;
+        width: 50px;
+
+        border-radius: 100%;
+        margin-left: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .btn_sidebar_logout {
+        background: white;
+
+        height: 50px;
+        width: 50px;
+        padding: 5px;
+        margin-top: auto;
+        border-radius: 100%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transition: 0.3s;
+    }
+    .btn_sidebar_logout:hover
+    {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+        transform: scale(1.01);
+    }
+    .background_circle_logout {
+        background: #ffffff;
+
+        height: 50px;
+        width: 50px;
+
+        border-radius: 100%;
+        margin-top: auto;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+}
+.btn_sidebar:hover
+{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.01);
+}
+
+.btn_sidebar {
+    background: #ffffff;
+
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+
+    border-radius: 100%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: 0.3s;
+}
+@media only screen and (max-width: 549px) {
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        max-height: 100px;
+        height: 7%;
+        float: top;
+        width: 100%;
+        /* background: #000; */
+    }
+
+    .img_notification {
+        visibility: hidden;
+        width: 32px;
+        height: 32px;
+        left: 30px;
+        top: -10px;
+        position: absolute;
+        transition:0.3s;
+    }
+    .img_notification:hover
+    {
+        transform: scale(1.1);
+    }
+    .background_circle {
+        /* background: #ffffff; */
+
+        height: 50px;
+        width: 50px;
+
+        border-radius: 100%;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .btn_sidebar_logout {
+        background: #ffffff;
+
+        height: 50px;
+        width: 50px;
+        padding: 5px;
+        margin-left: 10px;
+        border-radius: 100%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transition: 0.3s;
+    }
+    .btn_sidebar_logout:hover
+    {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+        transform: scale(1.01);
+    }
+
+    .background_circle_logout {
+        /* background: #ffffff; */
+
+        height: 50px;
+        width: 50px;
+
+        border-radius: 100%;
+        margin: 10px 20px 10px auto;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+}
+
+/* Search bar */
+
+.search-container form {
+    background-color: #ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: #555;
+    display: flex;
+    border-radius: 20px;
+    padding: 5px 5px;
+
+    transition: 0.3s;
+}
+
+.search-container form:hover
+{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.01);
+}
+
+.search-container input[type="text"] {
+    border: none;
+    font-size: 24px;
+    width: 100%;
+    background: transparent;
+}
+
+.search-container input[type="image"] {
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+
+.search-container :focus-visible {
+    outline: none;
+}
+@media only screen and (min-width: 550px) {
+    .search-container {
+        align-self: center;
+        align-items: center;
+        padding-top: 10px;
+        margin-left: 70px;
+        padding-right: 5px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+}
+@media only screen and (max-width: 549px)
+{
+    .search-container {
+        align-self: center;
+        align-items: center;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+}
+/* Start listing */
+@media only screen and (min-width: 550px) {
+    .listingBG {
+        margin-top: 10px;
+        height: 85vh;
+        clip-path: inset(0 0 0 0);
+        overflow-y:auto;
+        margin-left: 50px;
+        margin-right: 5px
+    }
+}
+@media only screen and (max-width: 549px) {
+    .listingBG {
+        margin-top: 10px;
+        height: 85vh;
+        clip-path: inset(0 0 0 0);
+        overflow-y:auto;
+        margin-left: 0;
+        margin-right: 5px
+    }
+}
+/* Float two columns side by side */
+.listingCard-column {
+    float: left;
+    width: 33%;
+    padding: 10px 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.listingCard-row {
+    margin: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 539px) {
+    .listingCard-column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* Style the counter cards */
+.listingCard {
+    display: block;
+    background: rgb(251, 251, 251);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    cursor:pointer;
+    max-width: 300px;
+
+    transition: 0.3s;
+}
+
+.listingCard-NoneFound
+{
+    display: inline-block;
+    background: rgb(251, 251, 251);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    width: 200px;
+
+    height:300px;
+
+    transition: 0.3s;
+}
+.listingCard-NoneFound:hover
+{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.01);
+}
+.listingCard-NoneFound-main
+{
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size:30px;
+    font-style: italic;
+}
+.listingCard-NoneFound-sub
+{
+    position: relative;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-style: italic;
+}
+
+.listingCard:hover
+{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.01);
+}
+
+.listing-priceCond
+{
+    position: relative;
+    width: 100%;
+}
+
+.listing-price
+{
+    position: absolute;
+    color: white;
+    margin-top: 20px;
+    line-height:  50px;
+    font-size: clamp( 18px,3vw, 30px );
+
+    width:40%;
+    max-width: 150px;
+    min-width: 60px;
+
+    height: 50px;
+
+    background-color:#95CD95;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+}
+.listing-cond
+{
+    position: absolute;
+    color: white;
+    right: 0;
+    margin-top: 20px;
+    line-height:  50px;
+    font-size: clamp( 18px,3vw, 30px );
+
+    width:40%;
+    max-width: 150px;
+    min-width: 60px;
+
+    height: 50px;
+
+    /* Assume the condition is good to reduce popin color effects */
+    background-color:rgba(111, 194, 217, 1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+}
+
+.listing-picture
+{
+    vertical-align: middle;
+    margin-top: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.listing-text
+{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rectangle
+{
+    position: absolute;
+    height: auto;
+    width: 450px;
+
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    align-content: center;
+    padding: 1vh;
+
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

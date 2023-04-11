@@ -1,0 +1,104 @@
+body
+{
+    background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
+}
+
+input
+{
+    height: 80px;
+    font-size: var(--font-size-header);
+    border: 2px solid #FFFFFF;
+
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+.login
+{
+    color:white;
+    background:#95CD95;
+    transition:0.3s;
+
+}
+.register
+{
+    color:white;
+    background: #D7B358;
+    transition:0.3s;
+}
+.login:hover,
+.login:focus
+{
+    background: #7bb97b;
+    border: 2px solid #FFFFFF;
+}
+.register:hover,
+.register:focus
+{
+    background: #A7750D;
+    border: 2px solid #FFFFFF;
+}
+
+@media only screen and (min-width: 410px)
+{
+    input
+    {
+        width: 390px;
+    }
+}
+
+@media only screen and (max-width: 409px)
+{
+    input
+    {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 210px)
+{
+    input
+    {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width:770px) {
+    .banner
+    {
+        height: 202px;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+
+        align-content: center;
+
+        background: rgba(255, 255, 255,1);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .banner img {
+        height:100%;
+        object-fit:scale-down;
+        padding: 10px 30px;
+    }
+}
+@media only screen and (max-width:769px)
+{
+    .banner
+    {
+        height: 20vh;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+
+        align-content: center;
+
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .banner img
+    {
+        height: 100%;
+        width: 100%;
+        object-fit:scale-down;
+        padding: 10px 30px;
+    }
+}
