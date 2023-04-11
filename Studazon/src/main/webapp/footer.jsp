@@ -66,6 +66,7 @@
             <%--            <h3><a href="#">Privacy Policy</a></h3>--%>
             <%--            <h3><a href="#">Terms of Use</a></h3>--%>
             <h3><a href="http://18.206.192.122:8080/manager/html" target="_blank">Admin</a></h3>
+            <h3><a href="https://github.com/GismoGaming/Studazon" target="_blank">GitHub</a></h3>
         </div>
     </div>
 </footer>

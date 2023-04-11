@@ -11,6 +11,7 @@ if (status === "success") {
     swal("Congratulations!", message, "success")
         .then(function () {
             history.replaceState(null, null, window.location.pathname);
+            location.reload();
         });
 }
 
