@@ -35,7 +35,6 @@ public class register extends HttpServlet {
         String secret_question = request.getParameter("security-question");
         String secret_answer = request.getParameter("secret-word");
         User user = new User(fullName, email, password, secret_question, secret_answer);
-        System.out.println(fullName + email + password + secret_question + secret_answer);
 
         try {
             UserDAO.registerUser(user);
