@@ -69,9 +69,10 @@ public class dash extends HttpServlet {
             mailer.setBook(book);
             mailer.send();
             // Redirect to a success page or the next step
-            request.setAttribute("status", "success");
-            request.setAttribute("message", "Your interest has been sent to the seller!");
-            request.getRequestDispatcher("dash.jsp").include(request, response);
+//            request.setAttribute("status", "success");
+//            request.setAttribute("message", "Your interest has been sent to the seller!");
+//            request.getRequestDispatcher("dash.jsp").include(request, response);
+            response.sendRedirect("dash");
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
