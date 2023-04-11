@@ -23,6 +23,7 @@ public class Mailer {
     protected String notes;
 
     protected Book book;
+    protected String new_password;
 
     public Mailer() {
         props = new Properties();
@@ -104,6 +105,14 @@ public class Mailer {
         this.notes = notes;
     }
 
+    public String getNew_password() {
+        return new_password;
+    }
+
+    public void setNew_password(String new_password) {
+        this.new_password = new_password;
+    }
+
     public void send() throws MessagingException, IOException {
         String subject = "";
         String body = "";
@@ -172,6 +181,29 @@ public class Mailer {
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">As always, if you have any questions or feedback, don't hesitate to reach out to our support team.</h4>\n" +
                         "\t<a href=\"http://18.206.192.122:8080/studazon/listing\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #6fc2d9; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">View your listings</a>\n" +
                         "\t<p>Happy selling!</p>\n" +
+                        "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">The Studazon Team</h4>\n" +
+                        "</body>\n" +
+                        "</html>";
+                break;
+            case "forgot_password":
+                subject += "Forgot your password";
+                body += "<!DOCTYPE html>\n" +
+                        "<html>\n" +
+                        "<head>\n" +
+                        "\t<title>Forgot your password</title>\n" +
+                        "</head>\n" +
+                        "<body style=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #f9f9f9;\">\n" +
+                        "\t<h1 style=\"color: #F29D4D; font-size: 28px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;\">Welcome to Studazon!</h1>\n" +
+                        "\t<h3 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">Dear " + to_name + ",</h3>\n" +
+                        "\t<p>We have received a request to reset your password</p>\n" +
+                        "\t<p>Your new password is <b>" + new_password + "</b>. To change your password:</p>\n" +
+                        "\t<ul>\n" +
+                        "\t\t<li>Visit http://18.206.192.122:8080/studazon/ and login with your new password provided in this email</li>\n" +
+                        "\t\t<li>Go to 'My Account'</li>\n" +
+                        "\t\t<li>Go to 'Update My Account'</li>\n" +
+                        "\t\t<li>Use the dialog to update your password with the new password provided in this email</li>\n" +
+                        "\t</ul>\n" +
+                        "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">As always, if you have any questions or feedback, don't hesitate to reach out to our support team.</h4>\n" +
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">The Studazon Team</h4>\n" +
                         "</body>\n" +
                         "</html>";

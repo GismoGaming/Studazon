@@ -8,12 +8,14 @@ import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.sql.*;
 import java.util.Properties;
+import java.util.UUID;
 
 public class UserDAO {
 
     protected static Properties props;
     private static final String UPDATE_USER_SQL = "UPDATE users SET fullname=? WHERE id=?";
     private static final String UPDATE_USER_W_PSWD_SQL = "UPDATE users SET fullname=?,password=? WHERE id=?";
+    private static final String UPDATE_USER_EMAIL_SQL = "UPDATE users SET password=? WHERE email=? AND security_question=? AND security_answer=?";
     private static final String FIND_USER_BY_ID_SQL = "SELECT * FROM users WHERE id = ?";
 
 
@@ -36,13 +38,15 @@ public class UserDAO {
 
         Connection currentCon = getConnection();
 
-        String sql = "INSERT INTO users (fullname, email, password) VALUES (?,?,?)";
+        String sql = "INSERT INTO users (fullname, email, password, security_question, security_answer) VALUES (?,?,?,?,?)";
         PreparedStatement statement = currentCon.prepareStatement(sql);
 
 
         statement.setString(1, user.getFullname());
         statement.setString(2, user.getEmail());
         statement.setString(3, Crypt.crypt(user.getPassword(), "$1$SZ"));
+        statement.setString(4, user.getSecret_question());
+        statement.setString(5, Crypt.crypt(user.getSecret_answer(),"$1$SZ"));
 
         int result = statement.executeUpdate();
 
@@ -65,12 +69,16 @@ public class UserDAO {
                 String name = rs.getString("fullname");
                 String emailFound = rs.getString("email");
                 String password = rs.getString("password");
+                String secret_question = rs.getString("security_question");
+                String secret_answer = rs.getString("security_answer");
 
                 // create a new User object using the retrieved values
                 user.setId(Integer.parseInt(id));
                 user.setEmail(emailFound);
                 user.setPassword(password);
                 user.setFullname(name);
+                user.setSecret_question(secret_question);
+                user.setSecret_answer(secret_answer);
             }
         } catch (SQLException exception) {
             System.err.println("UserDAO (findByEmail): ERROR: " + exception);
@@ -105,7 +113,7 @@ public class UserDAO {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                User user = new User(rs.getString("fullname"), rs.getString("email"), rs.getString("password"));
+                User user = new User(rs.getString("fullname"), rs.getString("email"), rs.getString("password"), rs.getString("security_question"), rs.getString("security_answer"));
                 return user;
             }
         } catch (SQLException e) {
@@ -113,4 +121,36 @@ public class UserDAO {
         }
         return null;
     }
+
+    public static String updateUserForgotPass(String email, String security_question, String security_answer) throws SQLException {
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(UPDATE_USER_EMAIL_SQL)) {
+
+            // Generate a random UUID
+            UUID uuid = UUID.randomUUID();
+            // Get the UUID as a string
+            String uuidString = uuid.toString();
+            // Remove the hyphens from the UUID string
+            String withoutHyphens = uuidString.replaceAll("-", "");
+            // Take the first 8 characters as the random password
+            String unsalted_password = withoutHyphens.substring(0, 8);
+            // Salt it
+            String temp_password = Crypt.crypt(unsalted_password, "$1$SZ");
+
+            stmt.setString(1, temp_password);
+            stmt.setString(2, email);
+            stmt.setString(3, security_question);
+            stmt.setString(4, Crypt.crypt(security_answer, "$1$SZ"));
+            stmt.executeUpdate();
+
+            return temp_password;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
 }

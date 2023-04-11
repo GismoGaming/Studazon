@@ -33,7 +33,9 @@
             <option>What is your oldest sibling's middle name?</option>
             <option>In what city or town did your parents meet?</option>
         </select>
-        <input type="text" id="security-question-answer" name="security-question-answer">
+
+        <label for="secret-word">Security Question</label>
+        <input type="password" id="secret-word" name="secret-word">
 
         <button id="register" type="submit">Register</button>
     </form>
