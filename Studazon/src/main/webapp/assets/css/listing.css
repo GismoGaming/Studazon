@@ -3,16 +3,33 @@ body {
     font-family: 'Segoe UI';
 }
 
-.search-container button {
+.search-container button{
     border-radius: 20px;
     height: 100%;
-    width: 100%;
+    width: fit-content;
     background: white;
     color: #555;
     text-align: left;
     font-size: 24px;
     padding: 10px 15px;
     margin: 0;
+}
+
+#modal_open:hover{
+    background-color: lightgray;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: var(--sg-gold-clicked);
+    text-decoration: none;
+}
+
+#create_img
+{
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
 }
 
 h1
@@ -110,74 +127,4 @@ input[type=file]
 
 .inputField::-ms-input-placeholder { /* Microsoft Edge */
     font-family: "Segoe UI";
-}
-
-#modal_open:hover{
-    background-color: lightgray;
-    text-decoration: none;
-}
-
-button:hover {
-    background-color: var(--sg-gold-clicked);
-    text-decoration: none;
-}
-
-/* Tooltip container */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px black;
-    width: 100%;
-    align-content: start;
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 10vw;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    transition: 10s;
-}
-
-.tooltip .tooltiptext::after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    right: 100%; /* To the left of the tooltip */
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent black transparent transparent;
-}
-
-#condition_tooltip
-{
-    width: fit-content;
-}
-
-#image_tooltip
-{
-    width: fit-content;
-}
-#edit-condition_tooltip
-{
-    width: fit-content;
-}
-
-#edit-image_tooltip
-{
-    width: fit-content;
 }

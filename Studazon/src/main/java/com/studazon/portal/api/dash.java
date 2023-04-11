@@ -68,14 +68,13 @@ public class dash extends HttpServlet {
             mailer.setType_of_email("book_interest");
             mailer.setBook(book);
             mailer.send();
+            // Redirect to a success page or the next step
+            request.setAttribute("status", "success");
+            request.setAttribute("message", "Your interest has been sent to the seller!");
+            request.getRequestDispatcher("dash.jsp").include(request, response);
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-
-        // Redirect to a success page or the next step
-        request.setAttribute("status", "success");
-        request.setAttribute("message", "Your interest has been sent to the seller!");
-        request.getRequestDispatcher("dash.jsp").include(request, response);
     }
 
     private void sendInterestWithNotes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -100,16 +99,17 @@ public class dash extends HttpServlet {
             mailer.setNotes(notes);
             mailer.setBook(book);
             mailer.send();
+            // Redirect to a success page or the next step
+            request.setAttribute("status", "success");
+            request.setAttribute("message", "Your interest (with your message) has been sent to the seller!");
+            request.getRequestDispatcher("dash.jsp").include(request, response);
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
 
         // Handle the Send Interest With Notes action here using the notes variable
 
-        // Redirect to a success page or the next step
-        request.setAttribute("status", "success");
-        request.setAttribute("message", "Your interest (with your message) has been sent to the seller!");
-        request.getRequestDispatcher("dash.jsp").include(request, response);
+
     }
 
 }
