@@ -8,6 +8,7 @@ function openSendModal() {
     modalSendNote.style.display = "block";
     sendNotesUp = true;
     document.getElementById('send-bookID').value = document.getElementById('view-bookID').value;
+    console.log(document.getElementById('send-bookID').value)
 }
 
 let sendNotesUp = false;
