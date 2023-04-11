@@ -24,7 +24,10 @@
 
 <%--Create a Listing Button--%>
 <div class="search-container">
-    <button id="modal_open" type="button" onclick="openModal()">Create a Listing</button>
+    <button id="modal_open" type="button" onclick="openModal()" onmouseover="hover(create_img)" onmouseout="unhover(create_img)">
+        <img id="create_img" src="./assets/Interactivity/Create%20Listing.png" alt="Create Listing Icon">
+        Create a Listing
+    </button>
 </div>
 
 <%--Listings Display--%>

@@ -110,15 +110,22 @@ listingCards.forEach(listingCard => {
 });
 
 // If the user clicks on the "Modify" button, update the listing
- modifyButton.onclick = function() {
-     document.getElementById('action').value = "update";
-     closeEditModal();
- }
+modifyButton.onclick = function() {
+ document.getElementById('action').value = "update";
+ closeEditModal();
+}
 
 // If the user clicks on the "Delete" button, get confirmation and then delete listing
- deleteButton.onclick = function() {
-     if(confirm('Are you sure you want to delete this listing?')){
-         document.getElementById('action').value = "delete";
-     }
-     closeEditModal();
+deleteButton.onclick = function() {
+ if(confirm('Are you sure you want to delete this listing?')){
+     document.getElementById('action').value = "delete";
  }
+ closeEditModal();
+}
+
+function hover(element){
+    element.setAttribute('src', './assets/Interactivity/Create%20Listing%20Hover.png')
+}
+function unhover(element){
+    element.setAttribute('src', './assets/Interactivity/Create%20Listing.png')
+}
