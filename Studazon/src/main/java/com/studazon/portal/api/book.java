@@ -120,20 +120,13 @@ public class book extends HttpServlet {
     }
 
     private void updateBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(request.getParameter("edit-id"));
         int id = Integer.parseInt(request.getParameter("edit-id"));
-        System.out.println(id);
         String title = request.getParameter("edit-title");
         String author = request.getParameter("edit-author");
         String isbn = request.getParameter("edit-isbn");
         String book_condition = request.getParameter("edit-condition");
         String comments = request.getParameter("edit-comments");
         double price = Double.parseDouble(request.getParameter("edit-price"));
-
-//        // read the image file as a byte array
-//        Part imagePart = request.getPart("edit-imageUrl");
-//        InputStream imageStream = imagePart.getInputStream();
-//        byte[] imageData = imageStream.readAllBytes();
 
         System.out.println("Book (updateBook): Title: " + title + " Author: " + author + " ISBN: " + isbn + " BookCondition: " + book_condition + " Comments: " + comments + "Price: " + price);
         if (null == title || null == author || null == isbn || null == book_condition || null == comments) {
@@ -145,12 +138,24 @@ public class book extends HttpServlet {
 
         Book book = BookDAO.getBookById(id);
 
+        // read the image file as a byte array
+        Part imagePart = request.getPart("edit-imageUrl");
+        if (imagePart.getSize() != 0) {
+            InputStream imageStream = imagePart.getInputStream();
+            byte[] imageData = imageStream.readAllBytes();
+            assert book != null;
+            book.setImageUrl(imageData);
+        }
+
+        assert book != null;
         book.setTitle(title);
         book.setAuthor(author);
         book.setISBN(isbn);
         book.setBook_condition(book_condition);
         book.setComments(comments);
         book.setPrice(price);
+
+
         BookDAO.updateBook(book);
 
 
