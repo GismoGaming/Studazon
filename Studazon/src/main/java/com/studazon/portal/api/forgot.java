@@ -26,17 +26,17 @@ public class forgot extends HttpServlet {
 
         try {
             String new_password = UserDAO.updateUserForgotPass(email, secret_question, secret_answer);
-            if (new_password == null){
-                System.err.println("This shouldn't be null - There is an error");
+            if (new_password != null){
+                User user = UserDAO.findByEmail(email);
+                Mailer mailer = new Mailer();
+                mailer.setTo_name(user.getFullname());
+                mailer.setTo_email(user.getEmail());
+                mailer.setType_of_email("forgot_password");
+                mailer.setNew_password(new_password);
+                mailer.send();
+                response.sendRedirect("login.jsp");
             }
-            User user = UserDAO.findByEmail(email);
-            Mailer mailer = new Mailer();
-            mailer.setTo_name(user.getFullname());
-            mailer.setTo_email(user.getEmail());
-            mailer.setType_of_email("forgot_password");
-            mailer.setNew_password(new_password);
-            mailer.send();
-            response.sendRedirect("login.jsp");
+
         } catch (SQLException ex) {
             throw new ServletException(ex);
         } catch (MessagingException e) {
