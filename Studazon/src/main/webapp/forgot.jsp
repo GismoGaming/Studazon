@@ -4,7 +4,7 @@
 <head>
   <%@include file="header.jsp" %>
   <link rel="stylesheet" href="./assets/css/SHARED.css">
-  <link rel="stylesheet" href="./assets/css/login.css">
+  <link rel="stylesheet" href="./assets/css/forgot.css">
   <title>Studazon - Forgot my Password</title>
 </head>
   <%-- Alert Code (has to be on every page)--%>
@@ -15,7 +15,7 @@
 <body>
 <div class="rectangle">
   <a href="index"><img src="./assets/icon/Studazon%20-%20Icon%20Style.svg" class="icon" alt="Studazon logo"></a>
-  <h1>Login</h1>
+  <h1>Reset Password</h1>
 
   <form action="forgot" method="post">
     <label class="email" for="email">Email</label>
@@ -33,7 +33,7 @@
     <label class="password" for="secret-word">Answer</label>
     <input type="password" id="secret-word" name="secret-word" required>
 
-    <button id="login" type="submit">Reset Password</button>
+    <button id="reset" type="submit">Reset Password</button>
   </form>
 
 </div>

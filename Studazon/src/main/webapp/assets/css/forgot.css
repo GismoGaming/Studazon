@@ -2,6 +2,7 @@ body
 {
     background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
     color: #000000;
+    flex-wrap: wrap;
 }
 
 h1
@@ -14,7 +15,7 @@ h1
     line-height: 32px;
 
     text-align: center;
-    margin: 0;
+    margin: 0 0 10px 0;
 
     color: #000000;
 }
@@ -35,66 +36,51 @@ label
     font-size: 18px;
     line-height: 32px;
 
-    text-align: left;
-
-    color: #000000;
     display: flex;
-
+    text-align: left;
     margin-right: auto;
     margin-left: auto;
+
+    color: #000000;
 }
 
 input
 {
     box-sizing: border-box;
+
     height: 50px;
 
     background: #FFFFFF;
     border: 1px solid #000000;
 
     font-weight: bold;
-    padding: 10px;
+    padding: 1%;
     border-radius: 6px;
 }
 
-.register
+select
 {
-    font-weight: 400;
-    text-align: center;
-    display: block;
+    height: fit-content;
+    width: 90%;
+    font-size: 18px;
+    font-family: "Segoe UI";
+    border-radius: 5px;
+    font-weight: lighter;
+    background-color: lightgray;
+}
+select option
+{
+    background-color: white;
 }
 
 button
 {
     display: block;
-}
-
-#login
-{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#signup
-{
-    color: black;
-    padding: 0;
-}
-
-a
-{
-    color: black;
-    padding-left: 0;
+    margin: 15px auto;
 }
 
 @media only screen and (min-width: 500px)
 {
-    body
-    {
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-
     h1
     {
         width: 100%;
@@ -108,10 +94,5 @@ a
     label
     {
         width: 90%;
-    }
-
-    .register
-    {
-        width: 100%;
     }
 }

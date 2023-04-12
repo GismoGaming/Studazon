@@ -34,7 +34,6 @@
             <option>In what city or town did your parents meet?</option>
         </select>
 
-        <label for="secret-word">Security Question</label>
         <input type="password" id="secret-word" name="secret-word">
 
         <button id="register" type="submit">Register</button>
