@@ -90,7 +90,7 @@
             <input type="number" id="price" name="price" placeholder="Price" step="0.01" title="Enter price in the format XXX.XX" required>
 
             <div class="image_container">
-                <label for="imageUrl"class="tooltiptext" title="Supported File Types: .jpg, .png">Image:</label>
+                <label for="imageUrl"class="tooltiptext" title="Supported File Types: .jpg, .png, .jfif, .tiff">Image:</label>
                 <input type="file" accept="image/*" id="imageUrl" name="imageUrl" title="Supported File Types: .jpg, .png, .jfif, .tiff">
             </div>
 
@@ -129,12 +129,13 @@
 
             <input type="number" id="edit-price" name="edit-price" placeholder="Price" step="0.01" title="Enter price in the format XXX.XX" required>
 
-            <label>Current Image:</label>
-            <img id="edit-image">
-
             <div class="image_container">
-                <label for="imageUrl"class="tooltiptext" title="Supported File Types: .jpg, .png">New Image:</label>
-                <input type="file" accept="image/*" id="edit-imageUrl" name="edit-imageUrl" title="Supported File Types: .jpg, .png">
+                <label>Current Image:</label>
+                <img id="edit-image">
+                <div class="new_image_container">
+                    <label id="new_image_label" for="imageUrl" class="tooltiptext" title="Supported File Types: .jpg, .png, .jfif, .tiff">New Image:</label>
+                    <input type="file" accept="image/*" id="edit-imageUrl" name="edit-imageUrl" title="Supported File Types: .jpg, .png, .jfif, .tiff">
+                </div>
             </div>
 
             <textarea id="edit-comments" name="edit-comments" placeholder="Comments" title="Enter comments for potential buyer to see" required></textarea>
