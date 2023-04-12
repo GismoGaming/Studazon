@@ -123,32 +123,31 @@ public class UserDAO {
     }
 
     public static String updateUserForgotPass(String email, String security_question, String security_answer) throws SQLException {
-        try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(UPDATE_USER_EMAIL_SQL)) {
+        Connection conn = getConnection();
+        PreparedStatement stmt = conn.prepareStatement(UPDATE_USER_EMAIL_SQL);
+        // Generate a random UUID
+        UUID uuid = UUID.randomUUID();
+        // Get the UUID as a string
+        String uuidString = uuid.toString();
+        // Remove the hyphens from the UUID string
+        String withoutHyphens = uuidString.replaceAll("-", "");
+        // Take the first 8 characters as the random password
+        String unsalted_password = withoutHyphens.substring(0, 8);
+        // Salt it
+        String temp_password = Crypt.crypt(unsalted_password, "$1$SZ");
 
-            // Generate a random UUID
-            UUID uuid = UUID.randomUUID();
-            // Get the UUID as a string
-            String uuidString = uuid.toString();
-            // Remove the hyphens from the UUID string
-            String withoutHyphens = uuidString.replaceAll("-", "");
-            // Take the first 8 characters as the random password
-            String unsalted_password = withoutHyphens.substring(0, 8);
-            // Salt it
-            String temp_password = Crypt.crypt(unsalted_password, "$1$SZ");
-
-            stmt.setString(1, temp_password);
-            stmt.setString(2, email);
-            stmt.setString(3, security_question);
-            stmt.setString(4, Crypt.crypt(security_answer, "$1$SZ"));
+        stmt.setString(1, temp_password);
+        stmt.setString(2, email);
+        stmt.setString(3, security_question);
+        stmt.setString(4, Crypt.crypt(security_answer, "$1$SZ"));
+        try {
             stmt.executeUpdate();
-
-            return temp_password;
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
-        return null;
+        return temp_password;
     }
 
 
