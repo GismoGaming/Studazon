@@ -164,7 +164,7 @@ button
     }
 }
 
-@media only screen and (min-width: 700px)
+@media only screen and (min-width: 650px)
 {
     .image_container {
         display: flex;
@@ -173,14 +173,33 @@ button
 
 @media only screen and (max-width: 699px)
 {
+    .new_image_container
+    {
+        padding-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 670px)
+{
     .image_container {
         display: block;
         align-content: start;
     }
+}
 
-    .new_image_container
+@media only screen and (max-height: 549px)
+{
+    #modalPopup
     {
-        padding-left: 0;
+        padding-top: 10vh;
+    }
+}
+
+@media only screen and (max-height: 669px)
+{
+    #edit-modalPopup
+    {
+        padding-top: 3vh;
     }
 }
 

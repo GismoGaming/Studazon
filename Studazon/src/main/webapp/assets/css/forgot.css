@@ -8,6 +8,7 @@ body
 h1
 {
     height: auto;
+    width: 100%;
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 700;
@@ -29,6 +30,7 @@ img
 label
 {
     height: 32px;
+    width: 90%;
 
     font-family: 'Segoe UI';
     font-style: normal;
@@ -49,6 +51,7 @@ input
     box-sizing: border-box;
 
     height: 50px;
+    width: 90%;
 
     background: #FFFFFF;
     border: 1px solid #000000;
@@ -67,10 +70,13 @@ select
     border-radius: 5px;
     font-weight: lighter;
     background-color: lightgray;
+    margin-bottom: 2%;
 }
+
 select option
 {
     background-color: white;
+    width: 90%;
 }
 
 button
@@ -79,20 +85,34 @@ button
     margin: 15px auto;
 }
 
-@media only screen and (min-width: 500px)
+@media only screen and (max-width: 479px)
 {
-    h1
+    .rectangle {
+        width: 90%;
+    }
+
+    #edit-modalPopup
     {
-        width: 100%;
+        padding-top: 1%;
+    }
+}
+
+@media only screen and (max-height: 439px)
+{
+    .rectangle
+    {
+        height: fit-content;
+    }
+
+    img
+    {
+        height: 20vh;
+        width: auto;
+        margin-top: 5px;
     }
 
     input
     {
-        width: 90%;
-    }
-
-    label
-    {
-        width: 90%;
+        height: 10vh;
     }
 }

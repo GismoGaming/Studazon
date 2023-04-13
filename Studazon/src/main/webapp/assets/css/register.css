@@ -8,6 +8,7 @@ body
 h1
 {
     height: auto;
+    width: 100%;
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 700;
@@ -29,6 +30,7 @@ img
 label
 {
     height: 32px;
+    width: 90%;
 
     font-family: 'Segoe UI';
     font-style: normal;
@@ -49,6 +51,7 @@ input
     box-sizing: border-box;
 
     height: 50px;
+    width: 90%;
 
     background: #FFFFFF;
     border: 1px solid #000000;
@@ -60,6 +63,7 @@ input
 
 .login
 {
+    width: 100%;
     font-weight: 400;
     text-align: center;
     display: block;
@@ -68,6 +72,7 @@ input
 button
 {
     display: block;
+    margin-bottom: 0;
 }
 
 #register
@@ -93,30 +98,36 @@ select
     font-weight: lighter;
     background-color: lightgray;
 }
+
 select option
 {
     background-color: white;
 }
 
-@media only screen and (min-width: 500px)
+@media only screen and (max-width: 497px)
 {
-    h1
+    .rectangle
     {
-        width: 100%;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-height: 697px)
+{
+    .rectangle
+    {
+        height: fit-content;
+    }
+
+    img
+    {
+        height: 15vh;
+        width: auto;
+        margin-top: 5px;
     }
 
     input
     {
-        width: 90%;
-    }
-
-    label
-    {
-        width: 90%;
-    }
-
-    .login
-    {
-        width: 100%;
+        height: 5vh;
     }
 }

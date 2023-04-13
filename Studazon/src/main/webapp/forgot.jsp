@@ -30,8 +30,7 @@
       <option>In what city or town did your parents meet?</option>
     </select>
 
-    <label class="password" for="secret-word">Answer</label>
-    <input type="password" id="secret-word" name="secret-word" required>
+    <input type="password" id="secret-word" name="secret-word" title="Enter the answer to the security question" required>
 
     <button id="reset" type="submit">Reset Password</button>
   </form>
