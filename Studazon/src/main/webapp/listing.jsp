@@ -36,8 +36,8 @@
         <c:if test="${empty books}">
             <div class="listingCard-column">
                 <div class="listingCard-NoneFound">
-                    <p class = "listingCard-NoneFound-main">No Listings Found!</p>
-                    <p class = "listingCard-NoneFound-sub">Please double check your search parameters</p>
+                    <p class = "listingCard-NoneFound-main">No Listings!</p>
+                    <p class = "listingCard-NoneFound-sub">Create a listing and it will show up here!</p>
                 </div>
             </div>
         </c:if>
