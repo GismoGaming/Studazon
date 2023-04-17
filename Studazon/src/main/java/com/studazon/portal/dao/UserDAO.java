@@ -15,8 +15,9 @@ public class UserDAO {
     protected static Properties props;
     private static final String UPDATE_USER_SQL = "UPDATE users SET fullname=? WHERE id=?";
     private static final String UPDATE_USER_W_PSWD_SQL = "UPDATE users SET fullname=?,password=? WHERE id=?";
-    private static final String UPDATE_USER_EMAIL_SQL = "UPDATE users SET password=? WHERE email=? AND security_question=? AND security_answer=?";
+    private static final String UPDATE_USER_PASS_FORGOT_PASS = "UPDATE users SET password=? WHERE email=? AND security_question=? AND security_answer=?";
     private static final String FIND_USER_BY_ID_SQL = "SELECT * FROM users WHERE id = ?";
+    private static final String FIND_MATCH_FORGOT_PASS = "SELECT * FROM users WHERE EXISTS (SELECT * FROM users WHERE email=? AND security_question=? AND security_answer=?)";
 
 
     protected static Connection getConnection() {
@@ -122,19 +123,30 @@ public class UserDAO {
         return null;
     }
 
-    public static String updateUserForgotPass(String email, String security_question, String security_answer) throws SQLException {
+    public static boolean findUserMatchForgotPass(String email, String security_question, String security_answer) throws SQLException {
         Connection conn = getConnection();
-        PreparedStatement stmt = conn.prepareStatement(UPDATE_USER_EMAIL_SQL);
-        // Generate a random UUID
-        UUID uuid = UUID.randomUUID();
-        // Get the UUID as a string
-        String uuidString = uuid.toString();
-        // Remove the hyphens from the UUID string
-        String withoutHyphens = uuidString.replaceAll("-", "");
-        // Take the first 8 characters as the random password
-        String unsalted_password = withoutHyphens.substring(0, 8);
-        // Salt it
-        String temp_password = Crypt.crypt(unsalted_password, "$1$SZ");
+        PreparedStatement stmt = conn.prepareStatement(FIND_MATCH_FORGOT_PASS);
+
+        stmt.setString(1, email);
+        stmt.setString(2, security_question);
+        stmt.setString(3, Crypt.crypt(security_answer, "$1$SZ"));
+
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                System.err.println("UserDAO (findUserMatchForgotPass): ERROR: " + rs);
+                return true;
+            }
+        } catch (SQLException exception) {
+            System.err.println("UserDAO (findUserMatchForgotPass): ERROR: " + exception);
+        }
+        conn.close();
+        return false;
+
+
+    }
+    public static void updateUserForgotPass(String email, String security_question, String security_answer, String temp_password) throws SQLException {
+        Connection conn = getConnection();
+        PreparedStatement stmt = conn.prepareStatement(UPDATE_USER_PASS_FORGOT_PASS);
 
         stmt.setString(1, temp_password);
         stmt.setString(2, email);
@@ -144,10 +156,9 @@ public class UserDAO {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
+            System.err.println("UserDAO (updateUserForgotPass): ERROR: " + e);
         }
-        return temp_password;
+        conn.close();
     }
 
 
