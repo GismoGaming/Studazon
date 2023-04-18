@@ -55,7 +55,10 @@ public class forgot extends HttpServlet {
                 mailer.setType_of_email("forgot_password");
                 mailer.setNew_password(unsalted_password);
                 mailer.send();
-                response.sendRedirect("login.jsp");
+                request.setAttribute("status", "success");
+                request.setAttribute("message", "An email has been sent to " + email);
+                response.sendRedirect("login");
+
             }
 
             request.setAttribute("status", "failed");

@@ -137,7 +137,7 @@ public class Mailer {
                         "\t\t<li>Explore our features and settings to customize your experience</li>\n" +
                         "\t</ul>\n" +
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">As always, if you have any questions or feedback, don't hesitate to reach out to our support team.</h4>\n" +
-                        "\t<a href=\"http://18.206.192.122:8080/studazon/\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #41B883; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">Get started now</a>\n" +
+                        "\t<a href=\"http://studazon.live/\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #41B883; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">Get started now</a>\n" +
                         "\t<p>Happy reading!</p>\n" +
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">The Studazon Team</h4>\n" +
                         "</body>\n" +
@@ -157,7 +157,7 @@ public class Mailer {
                         "\t<p><b>Here is their information:</b></p>\n" +
                         "\t<p style=\"color: #7bb97b;\"><i>Email - " + buyer_email + "</i><p>\n" +
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">As always, if you have any questions or feedback, don't hesitate to reach out to our support team.</h4>\n" +
-                        "\t<a href=\"http://18.206.192.122:8080/studazon/listing\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #6fc2d9; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">View your listings</a>\n" +
+                        "\t<a href=\"http://studazon.live/\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #6fc2d9; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">View your listings</a>\n" +
                         "\t<p>Happy selling!</p>\n" +
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">The Studazon Team</h4>\n" +
                         "</body>\n" +
@@ -179,7 +179,7 @@ public class Mailer {
                         "\t<p><b>Message from the buyer: </b></p>\n" +
                         "\t<p style=\"color: #7bb97b;\"><i>" + notes + "</i></p>\n" +
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">As always, if you have any questions or feedback, don't hesitate to reach out to our support team.</h4>\n" +
-                        "\t<a href=\"http://18.206.192.122:8080/studazon/listing\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #6fc2d9; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">View your listings</a>\n" +
+                        "\t<a href=\"http://studazon.live/\" class=\"cta-button\" style=\"display: inline-block; padding: 10px 15px; background-color: #6fc2d9; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 20px; font-weight: bold; text-align: center;\">View your listings</a>\n" +
                         "\t<p>Happy selling!</p>\n" +
                         "\t<h4 style=\"font-size: 20px; color: #666; margin-top: 20px; margin-bottom: 10px; font-weight: normal;\">The Studazon Team</h4>\n" +
                         "</body>\n" +
@@ -198,7 +198,7 @@ public class Mailer {
                         "\t<p>We have received a request to reset your password</p>\n" +
                         "\t<p>Your new password is <b>" + new_password + "</b>. To change your password:</p>\n" +
                         "\t<ul>\n" +
-                        "\t\t<li>Visit http://18.206.192.122:8080/studazon/ and login with your new password provided in this email</li>\n" +
+                        "\t\t<li>Visit <a href=\"http://studazon.live/\"> and login with your new password provided in this email</li>\n" +
                         "\t\t<li>Go to 'My Account'</li>\n" +
                         "\t\t<li>Go to 'Update My Account'</li>\n" +
                         "\t\t<li>Use the dialog to update your password with the new password provided in this email</li>\n" +
