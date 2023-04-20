@@ -16,6 +16,8 @@ public class BookDAO {
     private static final String SELECT_BOOK_BY_ID_SQL = "SELECT * FROM books WHERE id = ?";
     private static final String INSERT_BOOK_SQL = "INSERT INTO books (user_id, title, author, isbn, book_condition, image_url,comments,price) VALUES (?, ?, ?, ?, ?, ?,?,?)";
     private static final String UPDATE_BOOK_SQL = "UPDATE books SET user_id = ?, title = ?, author = ?, isbn = ?, book_condition = ?, image_url = ?, comments = ?, price = ? WHERE id = ?";
+//    private static final String UPDATE_BOOK_W_IMAGE_SQL = "UPDATE books SET user_id = ?, title = ?, author = ?, isbn = ?, book_condition = ?, image_url = ?, comments = ?, price = ? WHERE id = ?";
+
     private static final String DELETE_BOOK_SQL = "DELETE FROM books WHERE id = ?";
 
 

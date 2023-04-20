@@ -11,6 +11,12 @@
         left: 0;
     }
 
+    @media screen and (max-width: 500px) {
+        footer {
+            display:none;
+        }
+    }
+
     .footer-container {
         max-width: 1300px;
         margin: auto;

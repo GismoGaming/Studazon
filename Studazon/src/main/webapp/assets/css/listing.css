@@ -1,9 +1,11 @@
-body {
+body
+{
     background: linear-gradient(102.63deg, #6FC2D9 0%, #D7B358 100%) fixed;
     font-family: 'Segoe UI';
 }
 
-.search-container button{
+.search-container button
+{
     border-radius: 20px;
     height: 100%;
     width: fit-content;
@@ -15,13 +17,9 @@ body {
     margin: 0;
 }
 
-#modal_open:hover{
+#modal_open:hover
+{
     background-color: lightgray;
-    text-decoration: none;
-}
-
-button:hover {
-    background-color: var(--sg-gold-clicked);
     text-decoration: none;
 }
 
@@ -30,6 +28,11 @@ button:hover {
     height: 40px;
     width: auto;
     vertical-align: middle;
+}
+
+#edit-modalPopup
+{
+    padding-top: 50px;
 }
 
 h1
@@ -75,6 +78,13 @@ label
     display: flex;
 }
 
+.condition_container
+{
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
 select
 {
     height: 6vh;
@@ -87,6 +97,30 @@ select
     left: 0;
 }
 
+.image_container
+{
+    width: 100%;
+    margin: 0;
+}
+
+#edit-image
+{
+    height: 175px;
+    padding-left: 10px;
+    padding-bottom: 10px
+}
+
+.new_image_container
+{
+    padding-left: 20%;
+}
+
+input[type=file]
+{
+    margin-left: 5px;
+    width: 235px;
+}
+
 textarea
 {
     height: 6vh;
@@ -96,35 +130,76 @@ textarea
     border: 2px solid;
 }
 
-.condition_container
+button:hover
 {
-    display: flex;
-    width: 100%;
-    margin: 0;
+    background-color: var(--sg-gold-clicked);
+    text-decoration: none;
 }
 
-.image_container
+#deleteListingBtn
 {
-    display: flex;
-    width: 100%;
-    margin: 0;
+    background-color: #E85F5C;
 }
 
-input[type=file]
+#deleteListingBtn and #modifyListingBtn
 {
-    margin-left: 5px;
-    width: 235px;
+    width: 100px;
 }
 
-.inputField::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    font-family: "Segoe UI";
-    opacity: 1; /* Firefox */
+#deleteListingBtn:hover
+{
+    background-color: #EC807E;
 }
 
-.inputField:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    font-family: "Segoe UI";
+button
+{
+    height: 40px;
 }
 
-.inputField::-ms-input-placeholder { /* Microsoft Edge */
-    font-family: "Segoe UI";
+@media only screen and (min-width: 890px)
+{
+    button
+    {
+        width: 20%;
+    }
 }
+
+@media only screen and (min-width: 650px)
+{
+    .image_container {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 699px)
+{
+    .new_image_container
+    {
+        padding-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 670px)
+{
+    .image_container {
+        display: block;
+        align-content: start;
+    }
+}
+
+@media only screen and (max-height: 549px)
+{
+    #modalPopup
+    {
+        padding-top: 10vh;
+    }
+}
+
+@media only screen and (max-height: 669px)
+{
+    #edit-modalPopup
+    {
+        padding-top: 3vh;
+    }
+}
+

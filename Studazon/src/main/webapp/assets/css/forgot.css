@@ -16,7 +16,7 @@ h1
     line-height: 32px;
 
     text-align: center;
-    margin: 0;
+    margin: 0 0 10px 0;
 
     color: #000000;
 }
@@ -61,32 +61,6 @@ input
     border-radius: 6px;
 }
 
-.login
-{
-    width: 100%;
-    font-weight: 400;
-    text-align: center;
-    display: block;
-}
-
-button
-{
-    display: block;
-    margin-bottom: 0;
-}
-
-#register
-{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#loginLink
-{
-    color: black;
-    padding: 0;
-}
-
 select
 {
     height: fit-content;
@@ -94,25 +68,36 @@ select
     font-size: 18px;
     font-family: "Segoe UI";
     border-radius: 5px;
-    margin-bottom: 2%;
     font-weight: lighter;
     background-color: lightgray;
+    margin-bottom: 2%;
 }
 
 select option
 {
     background-color: white;
+    width: 90%;
 }
 
-@media only screen and (max-width: 497px)
+button
 {
-    .rectangle
-    {
+    display: block;
+    margin: 15px auto;
+}
+
+@media only screen and (max-width: 479px)
+{
+    .rectangle {
         width: 90%;
+    }
+
+    #edit-modalPopup
+    {
+        padding-top: 1%;
     }
 }
 
-@media only screen and (max-height: 697px)
+@media only screen and (max-height: 439px)
 {
     .rectangle
     {
@@ -121,13 +106,13 @@ select option
 
     img
     {
-        height: 15vh;
+        height: 20vh;
         width: auto;
         margin-top: 5px;
     }
 
     input
     {
-        height: 5vh;
+        height: 10vh;
     }
 }

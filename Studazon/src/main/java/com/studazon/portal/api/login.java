@@ -57,7 +57,7 @@ public class login extends HttpServlet {
 
             session = request.getSession(true);
             session.setAttribute("user", userRecord);
-            session.setMaxInactiveInterval(2 * 60); // Set session timeout to 2 minutes
+            session.setMaxInactiveInterval(200 * 60); // Set session timeout to 2 minutes
             System.out.println("Login (POST) : " + userRecord.getId() + " logged in successfully!");
             response.sendRedirect("dash");
         } catch (SQLException e) {

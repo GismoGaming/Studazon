@@ -36,8 +36,8 @@
         <c:if test="${empty books}">
             <div class="listingCard-column">
                 <div class="listingCard-NoneFound">
-                    <p class = "listingCard-NoneFound-main">No Listings Found!</p>
-                    <p class = "listingCard-NoneFound-sub">Please double check your search parameters</p>
+                    <p class = "listingCard-NoneFound-main">No Listings!</p>
+                    <p class = "listingCard-NoneFound-sub">Create a listing and it will show up here!</p>
                 </div>
             </div>
         </c:if>
@@ -74,8 +74,8 @@
             <input type="hidden" name="action" value="create">
 
             <input type="text" id="title" name="title" placeholder="Title" class="inputField" title="Enter the title as it should be shown" required>
-            <input type="text" id="author" name="author" placeholder="Author" class="inputField" title="Enter the author(s) as it should be shown" required>
-            <input type="number" id="isbn" name="isbn" placeholder="ISBN" class="inputField" title="Enter the ISBN without dashes and spaces" required>
+            <input type="text" id="author" name="author" placeholder="Author" class="inputField" title="Enter the author(s) as it should be shown with commas as needed" required>
+            <input type="number" id="isbn" name="isbn" placeholder="ISBN" class="inputField" title="Enter the ISBN-13 without dashes and spaces" required>
 
             <div class="condition_container">
                 <label for="condition" title="Choose the book condition using the drop menu">Book Condition: </label>
@@ -90,8 +90,8 @@
             <input type="number" id="price" name="price" placeholder="Price" step="0.01" title="Enter price in the format XXX.XX" required>
 
             <div class="image_container">
-                <label for="imageUrl"class="tooltiptext" title="Supported File Types: .jpg, .png">Image:</label>
-                <input type="file" accept="image/*" id="imageUrl" name="imageUrl" title="Supported File Types: .jpg, .png">
+                <label for="imageUrl"class="tooltiptext" title="Supported File Types: .jpg, .png, .jfif, .tiff">Image:</label>
+                <input type="file" accept="image/*" id="imageUrl" name="imageUrl" title="Supported File Types: .jpg, .png, .jfif, .tiff">
             </div>
 
             <textarea id="comments" name="comments" placeholder="Comments" title="Enter comments for potential buyer to see" required></textarea>
@@ -115,7 +115,7 @@
 
             <input type="text" id="edit-title" name="edit-title" placeholder="Title" title="Enter the title as it should be shown" required>
             <input type="text" id="edit-author" name="edit-author" placeholder="Author" title="Enter the author(s) as it should be shown" required>
-            <input type="number" id="edit-isbn" name="edit-isbn" placeholder="ISBN" title="Enter the ISBN without dashes and spaces" required>
+            <input type="number" id="edit-isbn" name="edit-isbn" placeholder="ISBN" title="Enter the ISBN-13 without dashes and spaces" required>
 
             <div class="condition_container">
                 <label for="edit-condition" title="Choose the book condition using the drop menu">Book Condition: </label>
@@ -130,8 +130,12 @@
             <input type="number" id="edit-price" name="edit-price" placeholder="Price" step="0.01" title="Enter price in the format XXX.XX" required>
 
             <div class="image_container">
-                <label for="imageUrl"class="tooltiptext" title="Supported File Types: .jpg, .png">Image:</label>
-                <input type="file" accept="image/*" id="edit-imageUrl" name="edit-imageUrl" title="Supported File Types: .jpg, .png">
+                <label>Current Image:</label>
+                <img id="edit-image">
+                <div class="new_image_container">
+                    <label id="new_image_label" for="imageUrl" class="tooltiptext" title="Supported File Types: .jpg, .png, .jfif, .tiff">New Image:</label>
+                    <input type="file" accept="image/*" id="edit-imageUrl" name="edit-imageUrl" title="Supported File Types: .jpg, .png, .jfif, .tiff">
+                </div>
             </div>
 
             <textarea id="edit-comments" name="edit-comments" placeholder="Comments" title="Enter comments for potential buyer to see" required></textarea>

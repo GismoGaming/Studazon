@@ -5,6 +5,8 @@ public class User {
     private String fullname;
     private String email;
     private String password;
+    private String secret_question;
+    private String secret_answer;
 
     public User() {
 
@@ -42,9 +44,28 @@ public class User {
         this.password = password;
     }
 
-    public User(String fullname, String email, String password) {
+    public String getSecret_answer() {
+        return secret_answer;
+    }
+
+    public void setSecret_answer(String secret_answer) {
+        this.secret_answer = secret_answer;
+    }
+
+    public String getSecret_question() {
+        return secret_question;
+    }
+
+    public void setSecret_question(String secret_question) {
+        this.secret_question = secret_question;
+    }
+
+    public User(String fullname, String email, String password, String secret_question, String secret_answer) {
         this.fullname = fullname;
         this.email = email;
         this.password = password;
+        this.secret_question = secret_question;
+        this.secret_answer = secret_answer;
     }
+
 }
